@@ -60,4 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ Validado y Desplegado (V37).
+    - **Estado**: ❌ REVERTIDO (Rollback inmediato por feedback negativo user: "regresa a v36").
+        - **Nota**: El usuario solicitó explícitamente volver a la versión SIN botones de tema (estado de limpieza). Se conservó el fix de espaciado.

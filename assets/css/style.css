@@ -409,73 +409,7 @@
       color: var(--accent-2);
     }
 
-    /* ===== V37: MOBILE THEME BAR (Full Width Sticky) ===== */
-    .theme-bar-mobile {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      width: 100%;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--panel);
-      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-      border: none;
-      border-bottom: 1px solid var(--stroke);
-      color: var(--ink);
-      font-family: inherit;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
 
-    .theme-bar-mobile .theme-content {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-size: var(--fs-small);
-      opacity: 0.9;
-    }
-
-    .theme-bar-mobile i {
-      color: var(--accent);
-      font-size: 16px;
-    }
-
-    /* Hide Desktop Controls on Mobile */
-    .top-controls {
-      display: none;
-    }
-
-    @media (min-width: 861px) {
-
-      /* Hide Mobile Bar on Desktop */
-      .theme-bar-mobile {
-        display: none;
-      }
-
-      /* Show Desktop Controls */
-      .top-controls {
-        display: flex;
-        position: fixed;
-        top: 24px;
-        right: 24px;
-        z-index: 90;
-        align-items: center;
-        gap: 14px;
-      }
-
-      .brand-name {
-        font-weight: 900;
-        font-size: 16px;
-        color: var(--ink);
-        letter-spacing: -0.5px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-    }
 
     /* Layout (mobile-first) */
     header.hero {

@@ -7,47 +7,34 @@ import { SKILLS } from './modules/constants.js';
 import { initTheme, toggleTheme, getThemeLabel } from './modules/theme.js';
 import { renderSkillIcon, generateStars, toggleMenuState } from './modules/ui.js';
 
-console.error("App Version: v37 (DUAL THEME)");
+console.error("App Version: v36 (MOBILE CLEANUP)");
 
-// Theme Initialization & Event Handling
-// Theme Initialization & Event Handling
-const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+const themeToggleBtn = document.getElementById('themeToggle');
 const yearSpan = document.getElementById('year');
 
-if (themeToggleBtns.length > 0) {
-  // Initialize on body (first run)
+if (themeToggleBtn) {
   initTheme(document.body);
 
-  const updateLabels = () => {
-    const isLight = document.body.classList.contains('theme-light');
-    const labelText = getThemeLabel(isLight);
-
-    themeToggleBtns.forEach(btn => {
-      // Find text span within the button (handles both structure types)
-      const label = btn.querySelector('span') || btn.querySelector('.theme-text');
-      if (label) {
-        label.textContent = labelText;
-      }
-    });
+  const updateLabel = () => {
+    const label = themeToggleBtn.querySelector('span');
+    if (label) {
+      label.textContent = getThemeLabel(document.body.classList.contains('theme-light'));
+    }
   };
 
-  // Initial label sync
-  updateLabels();
+  updateLabel();
 
   const handleThemeToggle = () => {
     toggleTheme(document.body);
-    updateLabels();
+    updateLabel();
   };
 
-  // Bind events to all buttons
-  themeToggleBtns.forEach(btn => {
-    btn.addEventListener('click', handleThemeToggle);
-    btn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        handleThemeToggle();
-      }
-    });
+  themeToggleBtn.addEventListener('click', handleThemeToggle);
+  themeToggleBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleThemeToggle();
+    }
   });
 }
 
