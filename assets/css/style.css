@@ -186,14 +186,8 @@
     }
 
     /* ========= BOTÓN THEME ========= */
-    .top-controls {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      z-index: 90;
-      display: flex;
-      gap: 10px;
-    }
+    /* NOTE: .top-controls base styles moved to desktop media query (min-width: 861px) */
+    /* to prevent conflicts with mobile fixed positioning */
 
     .btn-solid {
       border: 1px solid var(--stroke);
@@ -1370,6 +1364,17 @@
 
     /* ===== Desktop/tablet ===== */
     @media (min-width: 861px) {
+
+      /* Desktop: botón theme flotante arriba-derecha */
+      .top-controls {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 90;
+        display: flex;
+        gap: 10px;
+      }
+
       :root {
         --page-pad: 34px;
         --section-pad: 34px;

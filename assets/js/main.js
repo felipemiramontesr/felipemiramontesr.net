@@ -7,7 +7,7 @@ import { SKILLS } from './modules/constants.js';
 import { initTheme, toggleTheme, getThemeLabel } from './modules/theme.js';
 import { renderSkillIcon, generateStars, toggleMenuState } from './modules/ui.js';
 
-console.error("App Version: v31 (RECOVERY)");
+console.error("App Version: v32 (CSS FIX)");
 
 // Theme Initialization & Event Handling
 const themeToggleBtn = document.getElementById('themeToggle');
