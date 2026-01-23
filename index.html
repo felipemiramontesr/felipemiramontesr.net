@@ -76,11 +76,23 @@
 </head>
 
 <body>
-  <div
-    style="position: fixed; top: 0; left: 0; background: red; color: white; z-index: 20000; font-size: 10px; padding: 2px 5px; pointer-events: none;">
-    v35 (CLEAN REBUILD)</div>
+  <!-- MOBILE: Full Width Sticky Bar -->
+  <button class="theme-bar-mobile theme-toggle-btn" type="button" aria-label="Cambiar tema">
+    <div class="theme-content">
+      <i class="fa-solid fa-moon"></i>
+      <span class="theme-text">Modo Oscuro</span>
+    </div>
+  </button>
 
-  <!-- Botón Theme (Moved to Top for Sticky) -->
+  <!-- DESKTOP: Top Right Floating Controls -->
+  <div class="top-controls">
+    <div class="brand-name">Felipe M.R.</div>
+    <button class="btn-solid theme-toggle-btn" type="button" aria-label="Cambiar tema">
+      <i class="fa-solid fa-moon"></i>
+      <span>Modo Oscuro</span>
+    </button>
+  </div>
+
   <!-- HERO -->
 
   <!-- Botón flotante Descarga (solo escritorio) -->
@@ -608,15 +620,7 @@
     </footer>
   </main>
 
-  <!-- REFACTOR V35: New clean mobile header structure -->
-  <!-- Se inserta via JS o CSS en mobile? No, directo en markup pero solo visible en mobile -->
-  <div class="mobile-header-bar">
-    <div class="brand-name">Felipe M.</div>
-    <button class="theme-btn-mobile" id="themeToggle" type="button" aria-label="Cambiar tema">
-      <!-- Icon changes via CSS/JS -->
-      <i class="fa-solid fa-moon"></i>
-    </button>
-  </div>
+
 
 
 

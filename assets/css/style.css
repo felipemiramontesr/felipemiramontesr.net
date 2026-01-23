@@ -409,11 +409,77 @@
       color: var(--accent-2);
     }
 
+    /* ===== V37: MOBILE THEME BAR (Full Width Sticky) ===== */
+    .theme-bar-mobile {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--panel);
+      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+      border: none;
+      border-bottom: 1px solid var(--stroke);
+      color: var(--ink);
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .theme-bar-mobile .theme-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: var(--fs-small);
+      opacity: 0.9;
+    }
+
+    .theme-bar-mobile i {
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    /* Hide Desktop Controls on Mobile */
+    .top-controls {
+      display: none;
+    }
+
+    @media (min-width: 861px) {
+
+      /* Hide Mobile Bar on Desktop */
+      .theme-bar-mobile {
+        display: none;
+      }
+
+      /* Show Desktop Controls */
+      .top-controls {
+        display: flex;
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        z-index: 90;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-name {
+        font-weight: 900;
+        font-size: 16px;
+        color: var(--ink);
+        letter-spacing: -0.5px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+
     /* Layout (mobile-first) */
     header.hero {
       padding: var(--page-pad);
-      padding-top: 76px;
-      /* espacio para botón theme fijo */
       background: var(--bg);
     }
 
@@ -1298,118 +1364,7 @@
       font-size: var(--fs-small);
     }
 
-    /* ===== MOBILE: botón theme fijo y centrado arriba, rectangular, con icono + texto Dark/Light ===== */
-    /* ===== MOBILE: theme 100% FIXED, cero movimiento ===== */
-    @media (max-width: 860px) {
-      .floating-wrap {
-        display: none !important;
-      }
 
-      /* Barra fija superior (anclaje real, sin transforms, blindada) */
-      /* REFACTOR V34: Using position: sticky as fallback for robust mobile behavior */
-      /* REFACTOR V35: New Mobile Header Bar (Clean Slate) */
-      .mobile-header-bar {
-        display: flex !important;
-        align-items: center;
-        justify-content: space-between;
-
-        position: fixed !important;
-        /* Volvemos a fixed con clean slate */
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 60px;
-        z-index: 99999;
-
-        background: rgba(5, 7, 19, 0.95);
-        /* Fondo sólido casi opaco */
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-        padding: 0 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Brand Name */
-      .brand-name {
-        font-weight: 800;
-        font-size: 16px;
-        color: var(--ink);
-        letter-spacing: -0.5px;
-      }
-
-      /* Theme Button Mobile */
-      .theme-btn-mobile {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--ink);
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-
-      .theme-btn-mobile i {
-        font-size: 16px;
-      }
-
-      /* Ajuste del body para no tapar contenido */
-      body {
-        padding-top: 60px;
-        /* Compensa la barra fija */
-      }
-
-      padding: 16px var(--page-pad) !important;
-      background: var(--bg) !important;
-      border-bottom: 1px solid var(--stroke);
-
-      /* Importante: NADA de transform en móvil */
-      transform: none !important;
-      will-change: auto !important;
-    }
-
-    /* Botón fijo dentro de la barra */
-    .btn-solid {
-      width: 100% !important;
-      height: 44px !important;
-      padding: 0 14px !important;
-      border-radius: 14px !important;
-
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 10px !important;
-
-      /* CERO transforms */
-      transform: none !important;
-      transition: none !important;
-      animation: none !important;
-    }
-
-    /* Mata el “brinco” por hover/active en móviles */
-    .btn-solid:hover,
-    .btn-solid:active {
-      transform: none !important;
-      box-shadow: var(--shadow-soft) !important;
-    }
-
-    .btn-solid span {
-      display: inline !important;
-    }
-
-    .btn-solid i {
-      font-size: 16px !important;
-    }
-
-    /* El hero necesita compensar la barra fija para no quedar tapado (blindado) */
-    header.hero {
-      padding-top: 80px !important;
-    }
-    }
 
 
 
