@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+private.felipemiramontesr.net/
+.vscode/
+node_modules/
+.gemini/
+brain/
+*.log

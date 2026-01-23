@@ -1,0 +1,349 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+    :root {
+        --sidebar-bg: #0f172a;
+        --sidebar-text: #f1f5f9;
+        --accent: #06b6d4;
+        --accent-dark: #0e7490;
+    }
+
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #555;
+        font-family: 'Roboto', sans-serif;
+        font-size: 8pt;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    .page {
+        width: 210mm;
+        height: 297mm;
+        background: white;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    @media print {
+        body {
+            background: white;
+            display: block;
+            padding: 0;
+            gap: 0;
+        }
+
+        .page {
+            box-shadow: none;
+            page-break-after: always;
+            height: 297mm;
+        }
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 58mm;
+        /* Increased to 58mm */
+        background: var(--sidebar-bg);
+        color: var(--sidebar-text);
+        padding: 5mm 3mm;
+        flex-shrink: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-img-wrap {
+        width: 40mm;
+        /* Reduced from 44mm to save space */
+        height: 40mm;
+        min-width: 40mm;
+        min-height: 40mm;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+        overflow: hidden;
+        margin: 0 auto 3mm auto;
+        /* Reduced margin below image */
+        background: #fff;
+    }
+
+    .profile-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .side-block {
+        margin-bottom: 3.2mm;
+        /* Increased to 3.2mm for better spacing */
+    }
+
+    .side-title {
+        font-size: 8.5pt;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 0.5mm;
+        margin-bottom: 1.5mm;
+        color: var(--accent);
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .contact-row {
+        display: flex;
+        align-items: center;
+        gap: 1.5mm;
+        margin-bottom: 1.2mm;
+        font-size: 7pt;
+        color: #cbd5e1;
+        text-align: left;
+    }
+
+    .contact-row i {
+        color: var(--accent);
+        width: 3.5mm;
+        text-align: center;
+    }
+
+    .contact-row a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1mm;
+    }
+
+    .skill-pill {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.5mm 1mm;
+        border-radius: 0.8mm;
+        font-size: 6.5pt;
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .edu-item {
+        margin-bottom: 2mm;
+        text-align: left;
+    }
+
+    .edu-deg {
+        font-weight: 700;
+        color: white;
+        font-size: 7pt;
+        line-height: 1.1;
+    }
+
+    .edu-school {
+        font-size: 7pt;
+        color: #94a3b8;
+        margin-top: 0;
+    }
+
+    .edu-date {
+        font-size: 6.5pt;
+        color: var(--accent);
+        margin-top: 0;
+    }
+
+    .edu-date a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    .lang-item {
+        display: block;
+        margin-bottom: 3mm;
+        font-size: 7.5pt;
+        text-align: left;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+        flex-grow: 1;
+        padding: 5mm 5mm;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 1.5mm;
+        margin-bottom: 2mm;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 15pt;
+        font-weight: 900;
+        margin: 0 0 0.5mm 0;
+        color: var(--sidebar-bg);
+        text-transform: uppercase;
+        line-height: 0.9;
+        text-align: left;
+    }
+
+    .subtitle {
+        font-size: 8.5pt;
+        color: var(--sidebar-bg);
+        font-weight: 700;
+        margin-bottom: 1mm;
+        text-align: left;
+    }
+
+    .chips-row {
+        display: flex;
+        gap: 1.5mm;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        justify-content: flex-start;
+    }
+
+    .role-chip {
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
+        padding: 0.5mm 1.5mm;
+        border-radius: 2mm;
+        font-size: 7pt;
+        font-weight: 700;
+        color: #334155;
+    }
+
+    .section-head {
+        display: flex;
+        align-items: center;
+        gap: 2mm;
+        margin: 2.5mm 0 1.5mm 0;
+        /* Reduced to 2.5mm */
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 0.5mm;
+    }
+
+    .section-icon {
+        width: 4mm;
+        height: 4mm;
+        background: var(--sidebar-bg);
+        color: white;
+        border-radius: 1mm;
+        display: grid;
+        place-items: center;
+        font-size: 7pt;
+    }
+
+    .section-title {
+        font-size: 9pt;
+        font-weight: 800;
+        color: var(--sidebar-bg);
+        text-transform: uppercase;
+    }
+
+    /* LINEAR STACK STYLES (Projects) */
+    .stack-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5mm;
+        margin-bottom: 1mm;
+        /* Tightened spacing before next section */
+    }
+
+    /* GRID FOR WORK XP */
+    .grid-2-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5mm 4mm;
+        /* Row gap / Col gap */
+        align-items: start;
+    }
+
+    .item-row {
+        text-align: left;
+    }
+
+    .item-title {
+        font-size: 8pt;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 0;
+        line-height: 1.2;
+        /* Increased to 1.2 */
+    }
+
+    .item-role {
+        font-size: 8pt;
+        font-weight: 700;
+        color: var(--accent-dark);
+        margin-bottom: 0;
+        line-height: 1.2;
+        /* Increased to 1.2 */
+    }
+
+    .item-meta {
+        font-size: 7.5pt;
+        font-weight: 500;
+        color: #64748b;
+        margin-bottom: 0.5mm;
+        line-height: 1.2;
+        /* Increased to 1.2 */
+    }
+
+    /* Standard Bullets */
+    .item-row ul {
+        margin: 0.5mm 0 0 3.5mm;
+        padding: 0;
+        list-style: disc;
+    }
+
+    .item-row li {
+        margin-bottom: 0.2mm;
+        /* Breathing room */
+        font-size: 8pt;
+        line-height: 1.2;
+        /* Set to 1.2 */
+        color: #334155;
+        text-align: left;
+    }
+
+    /* Work Experience Specific Spacing */
+    .grid-2-col .item-title,
+    .grid-2-col .item-role,
+    .grid-2-col .item-meta,
+    .grid-2-col .item-row li {
+        line-height: 1.3;
+    }
+
+    .skill-cat {
+        margin-bottom: 2mm;
+        font-size: 7.5pt;
+        line-height: 1.3;
+        color: #cbd5e1;
+    }
+
+    .skill-cat strong {
+        color: #fff;
+        font-weight: 600;
+        margin-right: 1mm;
+    }
