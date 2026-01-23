@@ -25,3 +25,12 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
     - Inicialización de Git y vinculación a repositorio remoto.
     - Creación de `.gitignore` (exclusión de datos privados).
     - Pipeline de despliegue automático configurado.
+- **7**: Refactorización Profesional & Unit Testing.
+    - Lógica de JavaScript migrada a Módulos ES (Modularización Senior).
+    - Documentación técnica exhaustiva con estándar JSDoc.
+    - Suite de 7 pruebas unitarias con Vitest (100% éxito).
+    - Integración de Calidad (Tests) en el flujo de CI/CD.
+- **8**: Refactorización de UI (Botón Theme).
+    - Botón de tema configurado como `fixed` en el top para dispositivos móviles.
+    - Se eliminó el comportamiento de desplazamiento para mantener la visibilidad constante.
+    - Sincronización de estilos para evitar que el botón cubra el contenido del Hero.

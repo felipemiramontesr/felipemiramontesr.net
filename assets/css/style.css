@@ -1359,7 +1359,7 @@
       /* Asegura espacio real arriba para que no tape el hero */
       header.hero {
         padding-top: calc(76px + 16px) !important;
-        /* barra + respiro */
+        /* barra + respiro (fijo en móvil) */
       }
     }
 
