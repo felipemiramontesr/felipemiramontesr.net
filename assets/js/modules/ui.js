@@ -68,4 +68,18 @@ export function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
     menu.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen.toString());
     chevron.className = isOpen ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+
+    if (isOpen) {
+        /**
+         * Closes menu on Escape key.
+         * @param {KeyboardEvent} e 
+         */
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                toggleMenuState({ menu, toggle, chevron }, true);
+                window.removeEventListener('keydown', handleEscape);
+            }
+        };
+        window.addEventListener('keydown', handleEscape);
+    }
 }

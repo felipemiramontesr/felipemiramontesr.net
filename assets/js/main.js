@@ -25,9 +25,17 @@ if (themeToggleBtn) {
 
   updateLabel();
 
-  themeToggleBtn.addEventListener('click', () => {
+  const handleThemeToggle = () => {
     toggleTheme(document.body);
     updateLabel();
+  };
+
+  themeToggleBtn.addEventListener('click', handleThemeToggle);
+  themeToggleBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleThemeToggle();
+    }
   });
 }
 
@@ -44,9 +52,16 @@ const floatingWrap = document.querySelector('.floating-wrap');
 if (downloadToggle && downloadMenu && downloadChevron && floatingWrap) {
   const menuElements = { menu: downloadMenu, toggle: downloadToggle, chevron: downloadChevron };
 
-  downloadToggle.addEventListener('click', (e) => {
-    e.preventDefault();
+  const handleDownloadToggle = (e) => {
+    if (e) e.preventDefault();
     toggleMenuState(menuElements);
+  };
+
+  downloadToggle.addEventListener('click', handleDownloadToggle);
+  downloadToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      handleDownloadToggle(e);
+    }
   });
 
   document.addEventListener('click', (e) => {

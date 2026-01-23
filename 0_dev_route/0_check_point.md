@@ -34,8 +34,8 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
     - Botón de tema configurado como `fixed` en el top para dispositivos móviles.
     - Cobertura de tests expandida a 11 casos finales (Menu, Icons, UI logic).
     - Sincronización de estilos y visualización constante del Tema.
-- **8**: Refactorización de UI (Botón Theme).
-    - Botón de tema configurado como `fixed` en el top para dispositivos móviles.
-    - Se eliminó el comportamiento de desplazamiento para mantener la visibilidad constante.
-    - Sincronización de estilos para evitar que el botón cubra el contenido del Hero.
-    - Cobertura de tests expandida a 11 casos para blindar la interactividad de la UI.
+- **9**: Optimización Integral (Senior Phase).
+    - SEO: JSON-LD Schema y Meta Tags avanzados implementados.
+    - Performance: Lazy loading y Resource Hints para CDNs.
+    - A11y: Soporte total de teclado (Enter/Space/Escape) y roles ARIA.
+    - Suite de 17 pruebas unitarias (Vitest) verificadas en CI/CD.
