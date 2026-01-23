@@ -53,3 +53,11 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Refactor Estructural**: Se movió el elemento HTML `.top-controls` al **inicio** del `<body>`.
         - **Sticky Fallback**: Se cambió de `position: fixed` a `position: sticky !important` con `top: 0`. Esto garantiza que el elemento se mantenga en el viewport respetando el flujo del documento, una solución mucho más robusta para móviles.
     - **Estado**: ✅ Desplegado en V34. Esperando validación final del usuario.
+- **12**: Optimización Móvil y Dualidad de Tema (V35-V37)
+    - **Problema**: El diseño móvil tenía exceso de espaciado superior y la barra de tema necesitaba "pegarse" al borde sin superponerse ni ocultarse incorrectamente.
+    - **Solución (V37 - Dual Theme)**:
+        - **Estrategia Híbrida**: Se separa el control de escritorio (`.top-controls` fijo) del móvil (`.theme-bar-mobile` sticky).
+        - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
+        - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
+        - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
+    - **Estado**: ✅ Validado y Desplegado (V37).
