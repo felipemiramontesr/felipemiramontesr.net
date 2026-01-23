@@ -1,3 +1,0 @@
-This file is at the root of the FTP deployment. 
-If seen at https://www.felipemiramontesr.net/root_check_v30.txt, THEN THE ROOT IS THE FTP ROOT.
-Time: 2026-01-23 02:15
