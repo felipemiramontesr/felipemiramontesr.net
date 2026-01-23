@@ -78,29 +78,38 @@ if (downloadToggle && downloadMenu && downloadChevron && floatingWrap) {
 const grid = document.getElementById('skillsGrid');
 
 if (grid) {
-  SKILLS.forEach((skill) => {
-    const card = document.createElement('a');
-    card.className = 'skill-card';
-    card.href = skill.url;
-    card.target = '_blank';
-    card.rel = 'noopener';
+  try {
+    if (Array.isArray(SKILLS) && SKILLS.length > 0) {
+      SKILLS.forEach((skill) => {
+        const card = document.createElement('a');
+        card.className = 'skill-card';
+        card.href = skill.url;
+        card.target = '_blank';
+        card.rel = 'noopener';
 
-    const iconBox = document.createElement('div');
-    iconBox.className = 'skill-ico';
-    renderSkillIcon(iconBox, skill);
+        const iconBox = document.createElement('div');
+        iconBox.className = 'skill-ico';
+        renderSkillIcon(iconBox, skill);
 
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'skill-info';
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'skill-info';
 
-    const nameRow = document.createElement('div');
-    nameRow.className = 'skill-name';
-    nameRow.innerHTML = `<span>${skill.name}</span><i class="fa-solid fa-arrow-up-right-from-square skill-link-ico"></i>`;
+        const nameRow = document.createElement('div');
+        nameRow.className = 'skill-name';
+        nameRow.innerHTML = `<span>${skill.name}</span><i class="fa-solid fa-arrow-up-right-from-square skill-link-ico"></i>`;
 
-    infoDiv.appendChild(nameRow);
-    infoDiv.appendChild(generateStars(skill.rating));
+        infoDiv.appendChild(nameRow);
+        infoDiv.appendChild(generateStars(skill.rating));
 
-    card.appendChild(iconBox);
-    card.appendChild(infoDiv);
-    grid.appendChild(card);
-  });
+        card.appendChild(iconBox);
+        card.appendChild(infoDiv);
+        grid.appendChild(card);
+      });
+      console.log('Skills rendered successfully:', SKILLS.length);
+    } else {
+      console.error('SKILLS data is missing or empty', SKILLS);
+    }
+  } catch (err) {
+    console.error('Error rendering skills:', err);
+  }
 }
