@@ -43,19 +43,13 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
     - Botón de tema corregido para móviles (v2 Robust) usando `position: fixed !important` y reajuste de padding en el hero.
     - Suite expandida a **19 tests** con la inclusión de `layout.test.js`.
     - Proyecto validado al 100%, desplegado y listo para producción con protocolos de L y CP activos.
-- **11**: Debug Exhaustivo del Botón de Tema Móvil (V30-V32).
-    - **Problema Identificado**: El botón del tema no permanece fijo (position: fixed) en viewport móvil durante el scroll.
-    - **Iteraciones de Debug**:
-        - **(V30)**: Cache busting, stacking context (movió `.top-controls` al final del body), version logging.
-        - **(V31)**: Corrección de ruta de despliegue FTP (`public_html/` confirmado como web root).
-        - **(V32)**: Fix de especificidad CSS - Movió estilos base `.top-controls` al media query desktop para evitar conflictos.
-    - **Estado Actual**: 
-        - ✅ CSS correcto desplegado: `position: fixed !important` en media query móvil (`@media (max-width: 860px)`).
-        - ✅ Estilos base movidos a desktop (`@media (min-width: 861px)`).
-        - ❌ **Problema persiste**: El botón aún se mueve durante scroll en viewport móvil.
-    - **Próximas Acciones a Investigar**:
-        1. **Stacking Context Parents**: Verificar si `html`, `body`, o algún contenedor padre tiene `transform`, `perspective`, `filter`, o `will-change` que cree un nuevo stacking context y rompa el `position: fixed`.
-        2. **Overflow Hidden**: Confirmar si `html` o `body` tienen `overflow-x: hidden` que podría afectar el comportamiento de fixed positioning en algunos navegadores móviles.
-        3. **JavaScript Interference**: Revisar si algún script está manipulando dinámicamente los estilos del elemento durante el scroll.
-        4. **Enfoque Alternativo**: Considerar `position: sticky` con `top: 0` como fallback si `position: fixed` tiene problemas específicos del navegador móvil del usuario.
-        5. **Viewport Meta Tag**: Verificar si hay conflictos con el `<meta name="viewport">` que afecten el fixed positioning.
+- **11**: Debug Exhaustivo del Botón de Tema Móvil (V30-V34).
+    - **Problema**: El botón del tema no permanecía fijo (fixed) en viewport móvil durante el scroll.
+    - **Causa Raíz Descubierta**: 
+        1. **Conflictos CSS**: `body { overflow-x: hidden; }` rompía `position: fixed` en móviles.
+        2. **Markup Incorrecto**: El elemento `.top-controls` estaba al **final** del `<body>`, lo que lo hacía vulnerable a problemas de stacking context y dificultaba un fallback a `sticky`.
+    - **Solución Implementada (V34)**:
+        - **Fix CSS**: Se movió `overflow-x: hidden` al `html` tag.
+        - **Refactor Estructural**: Se movió el elemento HTML `.top-controls` al **inicio** del `<body>`.
+        - **Sticky Fallback**: Se cambió de `position: fixed` a `position: sticky !important` con `top: 0`. Esto garantiza que el elemento se mantenga en el viewport respetando el flujo del documento, una solución mucho más robusta para móviles.
+    - **Estado**: ✅ Desplegado en V34. Esperando validación final del usuario.

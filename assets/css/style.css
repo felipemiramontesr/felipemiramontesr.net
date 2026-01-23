@@ -1307,63 +1307,108 @@
 
       /* Barra fija superior (anclaje real, sin transforms, blindada) */
       /* REFACTOR V34: Using position: sticky as fallback for robust mobile behavior */
-      .top-controls {
-        position: sticky !important;
-        position: -webkit-sticky !important;
-        /* Safari support */
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        z-index: 10000 !important;
+      /* REFACTOR V35: New Mobile Header Bar (Clean Slate) */
+      .mobile-header-bar {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
 
-        /* Barra sólida */
-        padding: 16px var(--page-pad) !important;
-        background: var(--bg) !important;
-        border-bottom: 1px solid var(--stroke);
+        position: fixed !important;
+        /* Volvemos a fixed con clean slate */
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        z-index: 99999;
 
-        /* Importante: NADA de transform en móvil */
-        transform: none !important;
-        will-change: auto !important;
+        background: rgba(5, 7, 19, 0.95);
+        /* Fondo sólido casi opaco */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        padding: 0 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       }
 
-      /* Botón fijo dentro de la barra */
-      .btn-solid {
-        width: 100% !important;
-        height: 44px !important;
-        padding: 0 14px !important;
-        border-radius: 14px !important;
-
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 10px !important;
-
-        /* CERO transforms */
-        transform: none !important;
-        transition: none !important;
-        animation: none !important;
+      /* Brand Name */
+      .brand-name {
+        font-weight: 800;
+        font-size: 16px;
+        color: var(--ink);
+        letter-spacing: -0.5px;
       }
 
-      /* Mata el “brinco” por hover/active en móviles */
-      .btn-solid:hover,
-      .btn-solid:active {
-        transform: none !important;
-        box-shadow: var(--shadow-soft) !important;
+      /* Theme Button Mobile */
+      .theme-btn-mobile {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--ink);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
       }
 
-      .btn-solid span {
-        display: inline !important;
+      .theme-btn-mobile i {
+        font-size: 16px;
       }
 
-      .btn-solid i {
-        font-size: 16px !important;
+      /* Ajuste del body para no tapar contenido */
+      body {
+        padding-top: 60px;
+        /* Compensa la barra fija */
       }
 
-      /* El hero necesita compensar la barra fija para no quedar tapado (blindado) */
-      header.hero {
-        padding-top: 80px !important;
-      }
+      padding: 16px var(--page-pad) !important;
+      background: var(--bg) !important;
+      border-bottom: 1px solid var(--stroke);
+
+      /* Importante: NADA de transform en móvil */
+      transform: none !important;
+      will-change: auto !important;
+    }
+
+    /* Botón fijo dentro de la barra */
+    .btn-solid {
+      width: 100% !important;
+      height: 44px !important;
+      padding: 0 14px !important;
+      border-radius: 14px !important;
+
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+
+      /* CERO transforms */
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+
+    /* Mata el “brinco” por hover/active en móviles */
+    .btn-solid:hover,
+    .btn-solid:active {
+      transform: none !important;
+      box-shadow: var(--shadow-soft) !important;
+    }
+
+    .btn-solid span {
+      display: inline !important;
+    }
+
+    .btn-solid i {
+      font-size: 16px !important;
+    }
+
+    /* El hero necesita compensar la barra fija para no quedar tapado (blindado) */
+    header.hero {
+      padding-top: 80px !important;
+    }
     }
 
 
