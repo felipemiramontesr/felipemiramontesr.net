@@ -21,3 +21,7 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
 - **5**: Sesión de Continuidad (2026-01-23).
     - Verificación de integridad del sistema (V26 estable).
     - Preparación para nueva fase de desarrollo.
+- **6**: Implementación de CI/CD (GitHub Actions + FTP).
+    - Inicialización de Git y vinculación a repositorio remoto.
+    - Creación de `.gitignore` (exclusión de datos privados).
+    - Pipeline de despliegue automático configurado.

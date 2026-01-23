@@ -13,6 +13,17 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
 
+    - name: 🛠️ Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: 📦 Install dependencies
+      run: npm install
+
+    - name: ✅ Run unit tests
+      run: npm test
+
     - name: 📂 Sync files to FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
@@ -25,3 +36,8 @@ jobs:
           **/.git*/**
           **/private.felipemiramontesr.net/**
           **/0_dev_route/**
+          **/tests/**
+          **/node_modules/**
+          **/package.json
+          **/package-lock.json
+          **/vitest.config.js
