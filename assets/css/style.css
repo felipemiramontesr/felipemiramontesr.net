@@ -78,17 +78,22 @@
       box-sizing: border-box;
     }
 
-    html,
+    /* CRITICAL: overflow-x must be on html, NOT body, to preserve position: fixed on mobile */
+    html {
+      overflow-x: hidden;
+      min-height: 100%;
+    }
+
     body {
       min-height: 100%;
     }
 
+    /* Body styles - overflow-x removed (now on html) */
     body {
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--ink);
       background: var(--bg);
-      overflow-x: hidden;
       font-size: var(--fs-body);
     }
 
