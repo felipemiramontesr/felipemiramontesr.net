@@ -1,0 +1,2 @@
+Deployment test at 2026-01-23. If you can see this, the FTP deployment is working correctly and hitting the public_html folder.
+Version: v30_canary
