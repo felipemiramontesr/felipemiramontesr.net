@@ -1306,8 +1306,11 @@
       }
 
       /* Barra fija superior (anclaje real, sin transforms, blindada) */
+      /* REFACTOR V34: Using position: sticky as fallback for robust mobile behavior */
       .top-controls {
-        position: fixed !important;
+        position: sticky !important;
+        position: -webkit-sticky !important;
+        /* Safari support */
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;

@@ -7,7 +7,7 @@ import { SKILLS } from './modules/constants.js';
 import { initTheme, toggleTheme, getThemeLabel } from './modules/theme.js';
 import { renderSkillIcon, generateStars, toggleMenuState } from './modules/ui.js';
 
-console.error("App Version: v33 (OVERFLOW FIX)");
+console.error("App Version: v34 (STICKY FIX)");
 
 // Theme Initialization & Event Handling
 const themeToggleBtn = document.getElementById('themeToggle');
