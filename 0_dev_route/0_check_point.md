@@ -30,7 +30,12 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
     - Documentación técnica exhaustiva con estándar JSDoc.
     - Suite de 7 pruebas unitarias con Vitest (100% éxito).
     - Integración de Calidad (Tests) en el flujo de CI/CD.
+- **8**: Refactorización de UI & Blindaje de Tests.
+    - Botón de tema configurado como `fixed` en el top para dispositivos móviles.
+    - Cobertura de tests expandida a 11 casos finales (Menu, Icons, UI logic).
+    - Sincronización de estilos y visualización constante del Tema.
 - **8**: Refactorización de UI (Botón Theme).
     - Botón de tema configurado como `fixed` en el top para dispositivos móviles.
     - Se eliminó el comportamiento de desplazamiento para mantener la visibilidad constante.
     - Sincronización de estilos para evitar que el botón cubra el contenido del Hero.
+    - Cobertura de tests expandida a 11 casos para blindar la interactividad de la UI.
