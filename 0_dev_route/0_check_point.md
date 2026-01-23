@@ -40,6 +40,6 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
     - A11y: Soporte total de teclado (Enter/Space/Escape) y roles ARIA.
     - Suite de 17 pruebas unitarias (Vitest) verificadas en CI/CD.
 - **10**: Refinamiento Final & UI Fixes.
-    - Botón de tema corregido para móviles usando `position: sticky` y limpieza del contexto de scroll (`height: auto`).
+    - Botón de tema corregido para móviles (v2 Robust) usando `position: fixed !important` y reajuste de padding en el hero.
     - Suite expandida a **19 tests** con la inclusión de `layout.test.js`.
-    - Proyecto validado al 100% y listo para producción.
+    - Proyecto validado al 100%, desplegado y listo para producción con protocolos de L y CP activos.

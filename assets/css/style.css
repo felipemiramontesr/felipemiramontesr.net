@@ -1306,13 +1306,14 @@
         display: none !important;
       }
 
-      /* Barra pegajosa superior (mejor compatibilidad móvil que fixed) */
+      /* Barra fija superior (anclaje real, sin transforms, blindada) */
       .top-controls {
-        position: sticky !important;
+        position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
-        z-index: 9999 !important;
+        width: 100% !important;
+        z-index: 10000 !important;
 
         /* Barra sólida */
         padding: 16px var(--page-pad) !important;
@@ -1357,9 +1358,9 @@
         font-size: 16px !important;
       }
 
-      /* El hero ya no necesita un padding exagerado porque sticky ocupa espacio real en el flujo */
+      /* El hero necesita compensar la barra fija para no quedar tapado (blindado) */
       header.hero {
-        padding-top: 18px !important;
+        padding-top: 80px !important;
       }
     }
 
