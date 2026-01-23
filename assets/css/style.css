@@ -80,7 +80,7 @@
 
     html,
     body {
-      height: 100%;
+      min-height: 100%;
     }
 
     body {
@@ -1306,9 +1306,9 @@
         display: none !important;
       }
 
-      /* Barra fija superior (anclaje real, sin transforms) */
+      /* Barra pegajosa superior (mejor compatibilidad móvil que fixed) */
       .top-controls {
-        position: fixed !important;
+        position: sticky !important;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
@@ -1317,6 +1317,7 @@
         /* Barra sólida */
         padding: 16px var(--page-pad) !important;
         background: var(--bg) !important;
+        border-bottom: 1px solid var(--stroke);
 
         /* Importante: NADA de transform en móvil */
         transform: none !important;
@@ -1356,10 +1357,9 @@
         font-size: 16px !important;
       }
 
-      /* Asegura espacio real arriba para que no tape el hero */
+      /* El hero ya no necesita un padding exagerado porque sticky ocupa espacio real en el flujo */
       header.hero {
-        padding-top: calc(76px + 16px) !important;
-        /* barra + respiro (fijo en móvil) */
+        padding-top: 18px !important;
       }
     }
 
