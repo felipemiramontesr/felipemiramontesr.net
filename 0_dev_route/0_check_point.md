@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V63 (CSS Cleanup: Fix Double Nesting).
-        - **Nota**: Se eliminó un bloque CSS duplicado (heredado de versiones anteriores) que aplicaba bordes y fondo al contenedor padre 3D, causando el efecto visual de "tarjeta dentro de tarjeta". Ahora el contenedor es transparente y solo las caras (front/back) tienen estilo. 3D Glass Flip perfeccionado.
+    - **Estado**: ✅ DESPLEGADO V64 (Center Balance).
+        - **Nota**: Alineación centrada perfecta para todos los elementos de la tarjeta (Icono, Nombre, Estrellas). Corrección visual de "doble borde" (V63) confirmada. UX pulida. Release v64 activo.

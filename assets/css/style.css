@@ -952,10 +952,13 @@
     }
 
     .skill-link-ico {
-      opacity: .58;
-      font-size: 14px;
+      opacity: .4;
+      font-size: 12px;
       transition: opacity .18s ease, transform .18s ease, color .18s ease;
-      flex: 0 0 auto;
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      color: var(--muted);
     }
 
     .skill-card:hover .skill-link-ico {

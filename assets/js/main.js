@@ -209,13 +209,17 @@ if (grid) {
 
         const nameRow = document.createElement('div');
         nameRow.className = 'skill-name';
-        nameRow.innerHTML = `<span>${skill.name}</span><i class="fa-solid fa-arrow-up-right-from-square skill-link-ico"></i>`;
+        nameRow.innerHTML = `<span>${skill.name}</span>`;
+
+        const linkIcon = document.createElement('i');
+        linkIcon.className = 'fa-solid fa-arrow-up-right-from-square skill-link-ico';
 
         infoDiv.appendChild(nameRow);
         infoDiv.appendChild(generateStars(skill.rating));
 
         front.appendChild(iconBox);
         front.appendChild(infoDiv);
+        front.appendChild(linkIcon); // V65: Absolute positioning target
 
         // --- BACK FACE (Exposed Glass Experience) ---
         const back = document.createElement('a');
