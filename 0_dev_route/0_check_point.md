@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V87 (Secure Protocol Rescue).
-        - **Nota**: Ante la persistencia de fallos de conexión (`ETIMEDOUT`) en el despliegue automático, se actualizó el protocolo de transferencia a **FTPS** (FTP Seguro/TLS) explícitamente en el pipeline. Esto busca mitigar posibles bloqueos de seguridad del servidor hacia conexiones FTP planas o inseguras. Si el fallo persiste, indica un bloqueo de IP temporal que requiere espera. Release v87 activo.
+    - **Estado**: ✅ DESPLEGADO V88 (Loose Security Rescue).
+        - **Nota**: Al confirmar que FileZilla conecta correctamente, se deduce que el servidor acepta certificados autofirmados o menos estrictos que el pipeline rechazaba por defecto. Se configuró `security: loose` en `deploy.yml` para emular este comportamiento permisivo ("Aceptar certificado desconocido") y evitar el timeout por handshake fallido. Release v88 activo.

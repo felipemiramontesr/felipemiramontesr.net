@@ -29,6 +29,7 @@ jobs:
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         log-level: verbose
         timeout: 600000 # 10 minutes
         port: 21
