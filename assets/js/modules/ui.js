@@ -10,27 +10,34 @@
  * @returns {void}
  */
 export function renderSkillIcon(container, skill) {
+    const iconColor = skill.color || 'var(--accent)';
+
     if (skill.si) {
         const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${skill.si}.svg`;
-        const img = document.createElement('img');
-        img.src = iconUrl;
-        img.alt = skill.name;
-        img.className = 'skill-ico-img';
-        img.setAttribute('aria-hidden', 'true');
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'skill-ico-img';
 
-        img.onerror = () => {
-            container.innerHTML = '';
-            const i = document.createElement('i');
-            i.className = skill.fallback || "fa-solid fa-code";
-            container.appendChild(i);
-        };
-        container.appendChild(img);
+        // Use mask to apply specific hex color to the monochromatic SVG
+        iconSpan.style.maskImage = `url(${iconUrl})`;
+        iconSpan.style.webkitMaskImage = `url(${iconUrl})`;
+        iconSpan.style.maskRepeat = 'no-repeat';
+        iconSpan.style.webkitMaskRepeat = 'no-repeat';
+        iconSpan.style.maskSize = 'contain';
+        iconSpan.style.webkitMaskSize = 'contain';
+        iconSpan.style.maskPosition = 'center';
+        iconSpan.style.webkitMaskPosition = 'center';
+        iconSpan.style.backgroundColor = iconColor;
+
+        iconSpan.setAttribute('aria-hidden', 'true');
+
+        // Fallback icon logic if needed
+        container.appendChild(iconSpan);
         return;
     }
 
     const i = document.createElement('i');
     i.className = skill.fallback || "fa-solid fa-code";
-    i.style.color = 'var(--accent)';
+    i.style.color = iconColor;
     container.appendChild(i);
 }
 

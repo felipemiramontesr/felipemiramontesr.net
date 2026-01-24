@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V53 (Superposición sutil -4px).
-        - **Nota**: El espacio se redujo otros 10px reales, resultando en un margen negativo de -4px. Esto crea un efecto de ensamblado físico más fuerte entre la pestaña de tema y el Hero. Caché v53 activa.
+    - **Estado**: ✅ DESPLEGADO V54 (Square Photograph).
+        - **Nota**: Se eliminó el border-radius de la fotografía de perfil para hacerla totalmente cuadrada. Versión de activos v54 activa para forzar actualización de caché. Sincronía total.
