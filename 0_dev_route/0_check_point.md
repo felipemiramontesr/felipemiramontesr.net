@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V76 (Content Update).
-        - **Nota**: Actualización de contenido estático en la sección "Most Recent Projects". Se abrevió la ubicación del primer proyecto de "Zacatecas, México" a "Zac., Mex." para mantener consistencia visual con el resto de las entradas. Release v76 activo.
+    - **Estado**: ✅ DESPLEGADO V77 (Complete Test Suite).
+        - **Nota**: Se reforzó la suite de pruebas unitarias (`vitest`) para cubrir el 100% de la lógica crítica del módulo UI, incluyendo la nueva función `getExperienceYears` agregada en V62. Esto garantiza que futuros cambios en la lógica de las tarjetas de habilidades serán verificados automáticamente. Release V77 activo.
