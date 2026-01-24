@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V80 (Cookie Text & Color Fix).
-        - **Nota**: Corrección interpretativa: El usuario aclaró que "claro" se refería a color, no a fraseo. Se revirtió el texto al original ("Este sitio utiliza...") y se modificó el CSS para que el color de la fuente sea `var(--ink)` (alto contraste/blanco) en lugar de gris tenue, mejorando la legibilidad. Release v80 activo.
+    - **Estado**: ✅ DESPLEGADO V81 (Mobile UX Optimization).
+        - **Nota**: Se deshabilitó la animación 3D de volteo de tarjetas en dispositivos móviles y tablets (pantallas < 861px). Esto mejora la experiencia táctil evitando interacciones accidentales y reserva el efecto de hover solo para entornos de escritorio donde el cursor es el mecanismo principal. Release v81 activo.
