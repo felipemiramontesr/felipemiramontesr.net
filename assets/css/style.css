@@ -1926,7 +1926,8 @@
       .mobile-theme-bar .theme-toggle-btn {
         width: 100% !important;
         max-width: none !important;
-        border-radius: 18px !important;
+        border-radius: 0 0 18px 18px !important;
+        /* Drawer effect: Flat top, rounded bottom */
         justify-content: center !important;
         margin: 0 !important;
       }
