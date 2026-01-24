@@ -279,8 +279,13 @@ if (grid) {
         backInfoDiv.appendChild(backNameRow);
         backInfoDiv.appendChild(yearsDiv);
 
+        // 5. Link Icon for Back (V95 Fix)
+        const backLinkIcon = document.createElement('i');
+        backLinkIcon.className = 'fa-solid fa-arrow-up-right-from-square skill-link-ico';
+
         back.appendChild(backIconBox);
         back.appendChild(backInfoDiv);
+        back.appendChild(backLinkIcon);
 
         // Assemble 3D Object
         inner.appendChild(front);
