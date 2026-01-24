@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V67 (Consistent 3D Flip).
-        - **Nota**: Se unificó el diseño de ambas caras de la tarjeta. El reverso ahora es un clon estructural del frente (mismo material Tech White, Icono y Nombre), reemplazando únicamente las estrellas por el dato de "Años de Experiencia". La transición 3D es completamente coherente y sólida. Release v67 activo.
+    - **Estado**: ✅ DESPLEGADO V68 (Hotfix: Missing Append).
+        - **Nota**: Se corrigió un error crítico introducido en la refactorización V67 donde la línea `grid.appendChild(card)` fue eliminada accidentalmente, causando que las tarjetas se generaran en memoria pero no se adjuntaran al DOM (iconos invisibles). Funcionalidad restaurada. Release v68 activo.

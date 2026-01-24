@@ -889,13 +889,15 @@
     }
 
     .exp-years-badge {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      color: #475569;
+      /* Slate 600 - High Quality Ink */
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-top: 4px;
-      /* Align roughly with where stars were */
+      white-space: nowrap;
+      /* Prevent overflow wrap */
     }
 
     .exp-label {
