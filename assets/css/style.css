@@ -1817,7 +1817,7 @@
     }
 
     /* =========================
-       THEME CONTROLS (DESKTOP)
+       THEME CONTROLS (DESKTOP) - V43 PREMIUM
        ========================= */
     .top-controls {
       position: fixed;
@@ -1826,6 +1826,52 @@
       z-index: 9999;
       display: flex;
       gap: 10px;
+    }
+
+    .theme-toggle-btn {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      cursor: pointer;
+      color: var(--fg);
+      backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
+      -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease;
+      position: relative;
+      font-size: 18px;
+    }
+
+    /* Glow Effect Border */
+    .theme-toggle-btn::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, .045);
+      opacity: .75;
+    }
+
+    body.theme-light .theme-toggle-btn {
+      box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
+    }
+
+    body.theme-light .theme-toggle-btn::before {
+      border: 1px solid rgba(8, 13, 24, .05);
+      opacity: .55;
+    }
+
+    .theme-toggle-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(34, 211, 238, .15);
+      /* Cyan hint */
+      border-color: rgba(34, 211, 238, .4);
+      color: var(--accent-2);
     }
 
     /* Hide on mobile/tablet */

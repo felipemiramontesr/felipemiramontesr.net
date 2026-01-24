@@ -124,9 +124,10 @@ const themeToggleBtn = document.getElementById('themeToggle');
 if (themeToggleBtn) {
   initTheme(document.body);
   const updateLabel = () => {
-    const label = themeToggleBtn.querySelector('span');
-    if (label) {
-      label.textContent = getThemeLabel(document.body.classList.contains('theme-light'));
+    const icon = themeToggleBtn.querySelector('i');
+    if (icon) {
+      const isLight = document.body.classList.contains('theme-light');
+      icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
     }
   };
   updateLabel();

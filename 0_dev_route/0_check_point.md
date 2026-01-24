@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ RESTAURADO V40 (Fix Monolith) + Fix Duplicados.
-        - **Nota**: Se restauró la versión V40 que corrige la renderización de Skills (refactor Monolith) y problemas de CORS local. La UI permanece limpia (sin barra móvil). Se corrigió bug de renderizado doble limpiando el contenedor antes de iterar.
+    - **Estado**: ✅ DESPLEGADO V41 (Skills + UI Restore).
+        - **Nota**: Sitio completamente funcional. Skills restauradas (sin duplicados), Cookies integradas, Botón de Tema restaurado en Desktop, Console Clean. Protocolo L cumplido.
