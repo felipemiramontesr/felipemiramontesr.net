@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V51 (Drawer Aesthetic).
-        - **Nota**: Refinamiento estético final: Borde superior recto ("Drawer Effect") y borde inferior redondeado para conectar visualmente el panel al flujo de la página. UI Móvil Pulida.
+    - **Estado**: ✅ DESPLEGADO V52 (Compact Mobile Layout).
+        - **Nota**: El espacio entre la pestaña de tema y el Hero se redujo al 50% (6px) para una integración visual más fluida. Versión de activos v52 activa. Bloque estático móvil y versión desktop sincronizados.
