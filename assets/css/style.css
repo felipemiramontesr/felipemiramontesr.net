@@ -1889,11 +1889,11 @@
         transform: rotate(0deg);
       }
 
-      10% {
+      16.67% {
         transform: rotate(360deg);
       }
 
-      /* Spin for 3s (10% of 30s) */
+      /* Spin for 5s (16.67% of 30s) */
       100% {
         transform: rotate(360deg);
       }
