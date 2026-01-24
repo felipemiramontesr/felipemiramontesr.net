@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V46 (Mobile Static Theme Bar).
-        - **Nota**: Implementación de barra de tema estática exclusiva para móviles (arriba del Hero) para mejorar UX y liberar espacio de pantalla. Sincronización JS multi-botón exitosa. Animación V45 mantenida.
+    - **Estado**: ✅ DESPLEGADO V47 (Full-Width Mobile Bar).
+        - **Nota**: Evolución final de la barra móvil a bloque "Card" de ancho completo (100%), centrado y estilizado. Corrección de icono por defecto (fa-sun) para evitar glitch visual. Consistencia total Desktop/Mobile.

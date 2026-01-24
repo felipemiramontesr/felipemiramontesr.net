@@ -1920,11 +1920,12 @@
         margin-bottom: 12px;
       }
 
-      /* Transform button into a full-width block/card */
+      /* Transform button into a full-width block/card (FORCED) */
       .mobile-theme-bar .theme-toggle-btn {
-        width: 100%;
-        border-radius: 18px;
-        /* Match standard glass card radius */
-        justify-content: center;
+        width: 100% !important;
+        max-width: none !important;
+        border-radius: 18px !important;
+        justify-content: center !important;
+        margin: 0 !important;
       }
     }
