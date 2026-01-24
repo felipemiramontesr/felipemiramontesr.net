@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V77 (Complete Test Suite).
-        - **Nota**: Se reforzó la suite de pruebas unitarias (`vitest`) para cubrir el 100% de la lógica crítica del módulo UI, incluyendo la nueva función `getExperienceYears` agregada en V62. Esto garantiza que futuros cambios en la lógica de las tarjetas de habilidades serán verificados automáticamente. Release V77 activo.
+    - **Estado**: ✅ DESPLEGADO V78 (Single Line Banner).
+        - **Nota**: Ajuste de diseño en el banner de cookies. Se liberó la restricción de ancho (`max-width: fit-content`) y se forzó `flex-wrap: nowrap` en escritorio para garantizar que el texto y el botón permanezcan siempre en una sola línea horizontal, mejorando la legibilidad en pantallas grandes. Release v78 activo.
