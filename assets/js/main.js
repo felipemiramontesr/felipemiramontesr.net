@@ -17,7 +17,7 @@ const SKILLS = [
   { name: "Twig", url: "https://twig.symfony.com/", si: null, fallback: "fa-solid fa-code", rating: 5, color: "#999900" },
   { name: "Composer", url: "https://getcomposer.org/", si: "composer", fallback: "fa-solid fa-cube", rating: 4, color: "#885630" },
   { name: "Drush", url: "https://www.drush.org/", si: null, fallback: "fa-solid fa-terminal", rating: 4, color: "#0077C0" },
-  { name: "JavaScript", url: "https://developer.mozilla.org/docs/Web/JavaScript", si: "javascript", fallback: "fa-brands fa-js", rating: 4, color: "#F7DF1E" },
+  { name: "JavaScript", url: "https://developer.mozilla.org/docs/Web/JavaScript", si: "javascript", fallback: "fa-brands fa-js", rating: 4, color: "#E5C500" },
   { name: "HTML", url: "https://developer.mozilla.org/docs/Web/HTML", si: "html5", fallback: "fa-brands fa-html5", rating: 5, color: "#E34F26" },
   { name: "CSS", url: "https://developer.mozilla.org/docs/Web/CSS", si: "css3", fallback: "fa-brands fa-css3-alt", rating: 4, color: "#1572B6" },
   { name: "SASS", url: "https://sass-lang.com/", si: "sass", fallback: "fa-brands fa-sass", rating: 4, color: "#CC6699" },

@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V72 (Synced Star Color).
-        - **Nota**: Sincronización exacta de color. Se definió una variable global `--star-gold` (`#FFC107`) y se aplicó tanto a los iconos de estrellas como al texto de "Años". Garantiza consistencia visual absoluta entre ambas caras de la tarjeta según solicitud del usuario. Release v72 activo.
+    - **Estado**: ✅ DESPLEGADO V73 (Black Icons).
+        - **Nota**: A solicitud del usuario, se actualizó el color hexadecimal de los iconos de "Linux" y "PrestaShop" a negro puro (`#000000`) para mejorar su contraste y fidelidad de marca dentro del grid de habilidades. Release v73 activo.
