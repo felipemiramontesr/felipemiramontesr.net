@@ -164,6 +164,7 @@ const grid = document.getElementById('skillsGrid');
 if (grid) {
   try {
     if (typeof SKILLS !== 'undefined' && Array.isArray(SKILLS) && SKILLS.length > 0) {
+      grid.innerHTML = ''; // Clear container to prevent duplicates
       SKILLS.forEach((skill) => {
         const card = document.createElement('a');
         card.className = 'skill-card';
