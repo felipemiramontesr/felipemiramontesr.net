@@ -182,16 +182,23 @@ if (grid) {
     if (typeof SKILLS !== 'undefined' && Array.isArray(SKILLS) && SKILLS.length > 0) {
       grid.innerHTML = ''; // Clear container to prevent duplicates
       SKILLS.forEach((skill) => {
-        const card = document.createElement('a');
+        const card = document.createElement('div'); // Changed to div container
         card.className = 'skill-card';
-        card.href = skill.url;
-        card.target = '_blank';
-        card.rel = 'noopener';
 
-        // V61 Interaction Data
+        // V62 Interaction Data
         const yearsMap = { 5: '10+', 4: '8+', 3: '6+', 2: '4+', 1: '2+' };
         const years = yearsMap[skill.rating] || '1+';
-        card.setAttribute('data-years', `${years} Years`);
+
+        // 3D Wrapper
+        const inner = document.createElement('div');
+        inner.className = 'skill-inner';
+
+        // --- FRONT FACE (Original Content) ---
+        const front = document.createElement('a');
+        front.className = 'skill-front';
+        front.href = skill.url;
+        front.target = '_blank';
+        front.rel = 'noopener';
 
         const iconBox = document.createElement('div');
         iconBox.className = 'skill-ico';
@@ -207,8 +214,25 @@ if (grid) {
         infoDiv.appendChild(nameRow);
         infoDiv.appendChild(generateStars(skill.rating));
 
-        card.appendChild(iconBox);
-        card.appendChild(infoDiv);
+        front.appendChild(iconBox);
+        front.appendChild(infoDiv);
+
+        // --- BACK FACE (Exposed Glass Experience) ---
+        const back = document.createElement('a');
+        back.className = 'skill-back';
+        back.href = skill.url;
+        back.target = '_blank';
+        back.rel = 'noopener';
+
+        back.innerHTML = `
+            <div class="exp-label">Experience</div>
+            <div class="exp-years">${years} Years</div>
+        `;
+
+        // Assemble 3D Object
+        inner.appendChild(front);
+        inner.appendChild(back);
+        card.appendChild(inner);
         grid.appendChild(card);
       });
       console.log('Skills rendered successfully (Monolith):', SKILLS.length);

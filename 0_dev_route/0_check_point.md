@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V60 (Larger Icons).
-        - **Nota**: Aumento del tamaño de iconos a **28px** (antes 20-22px) para aprovechar el nuevo fondo "Tech White". Los iconos ahora llenan el ~60% del contenedor, creando un impacto visual mucho más fuerte y legible. Release v60 activo.
+    - **Estado**: ✅ DESPLEGADO V61 (Sticker Lift Interaction).
+        - **Nota**: Implementación del efecto "Levantar Etiqueta". Al pasar el mouse, el icono se atenúa y la tarjeta "sube", revelando los Años de Experiencia (calculados dinámicamente desde el rating) en tipografía bold. Gamificación elegante. Release v61 activo.

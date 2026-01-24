@@ -902,7 +902,7 @@
       color: var(--accent-2);
     }
 
-    /* ========================= SKILLS ========================= */
+    /* ========================= SKILLS (V62 3D GLASS FLIP) ========================= */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -910,26 +910,53 @@
     }
 
     .skill-card {
-      text-decoration: none;
-      border: 1px solid var(--stroke);
+      /* Scene Container */
+      background: transparent;
+      perspective: 1000px;
+      min-height: 120px;
+      cursor: pointer;
+    }
+
+    .skill-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .skill-card:hover .skill-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Common Face Styles */
+    .skill-front,
+    .skill-back {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       border-radius: 18px;
-      padding: 16px;
+      border: 1px solid var(--stroke);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    /* --- FRONT FACE (Tech White) --- */
+    .skill-front {
       background: var(--panel);
       backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-      -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-      position: relative;
-      overflow: hidden;
-
+      padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 14px;
-      min-height: 120px;
-      min-width: 0;
     }
 
-    .skill-card::before {
+    .skill-front::before {
       content: "";
       position: absolute;
       inset: 1px;
@@ -939,54 +966,43 @@
       opacity: .75;
     }
 
-    body.theme-light .skill-card {
+    body.theme-light .skill-front {
       box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
     }
 
-    body.theme-light .skill-card::before {
+    body.theme-light .skill-front::before {
       border: 1px solid rgba(8, 13, 24, .05);
       opacity: .55;
     }
 
-    .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, .15);
-      border-color: rgba(34, 211, 238, .4);
+    /* --- BACK FACE (Frosted Glass) --- */
+    .skill-back {
+      transform: rotateY(180deg);
+      background: rgba(255, 255, 255, 0.15);
+      /* More translucent */
+      backdrop-filter: blur(12px) saturate(120%);
+      -webkit-backdrop-filter: blur(12px) saturate(120%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
-    /* V61 Interaction: Reveal Years */
-    .skill-card::after {
-      content: attr(data-years);
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 20px;
+    .exp-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .exp-years {
+      font-size: 24px;
       font-weight: 900;
       color: var(--accent);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .25s ease, transform .25s ease;
-      pointer-events: none;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(4px);
-    }
-
-    .skill-card:hover::after {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .skill-card:hover .skill-ico,
-    .skill-card:hover .skill-info {
-      opacity: 0.1;
-      transform: scale(0.95);
-      filter: blur(2px);
-    }
-
-    .skill-card:focus-visible {
-      outline: 3px solid var(--ring-2);
-      outline-offset: 4px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .skill-ico {
