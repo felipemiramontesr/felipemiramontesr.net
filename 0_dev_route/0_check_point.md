@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V79 (Content Clarity).
-        - **Nota**: Simplificación del texto del banner de cookies por solicitud del usuario para mayor claridad y concisión. Se actualizó de "Este sitio utiliza..." a "Uso cookies para mejorar tu experiencia...". Release V79 activo.
+    - **Estado**: ✅ DESPLEGADO V80 (Cookie Text & Color Fix).
+        - **Nota**: Corrección interpretativa: El usuario aclaró que "claro" se refería a color, no a fraseo. Se revirtió el texto al original ("Este sitio utiliza...") y se modificó el CSS para que el color de la fuente sea `var(--ink)` (alto contraste/blanco) en lugar de gris tenue, mejorando la legibilidad. Release v80 activo.

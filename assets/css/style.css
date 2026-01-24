@@ -809,8 +809,11 @@
       transform-style: preserve-3d;
     }
 
-    .skill-card:hover .skill-inner {
-      transform: rotateY(180deg);
+    /* V81: Desktop Only Flip */
+    @media (min-width: 861px) {
+      .skill-card:hover .skill-inner {
+        transform: rotateY(180deg);
+      }
     }
 
     /* Common Face Styles */
