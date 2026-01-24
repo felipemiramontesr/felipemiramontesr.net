@@ -126,30 +126,30 @@ function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
 
 // Version logic (Desktop vs Mobile)
 const themeBtns = document.querySelectorAll('.theme-toggle-btn');
-if (themeBtns.length \u003e 0) {
+if (themeBtns.length > 0) {
   const body = document.body;
 
   // Init state
   initTheme(body);
 
-  const updateAllIcons = () =\u003e {
+  const updateAllIcons = () => {
     const isLight = body.classList.contains('theme-light');
-  themeBtns.forEach(btn =\u003e {
-    const icon = btn.querySelector('i');
-    if(icon) icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-  });
-};
+    themeBtns.forEach(btn => {
+      const icon = btn.querySelector('i');
+      if (icon) icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    });
+  };
 
-// Run init sync
-updateAllIcons();
+  // Run init sync
+  updateAllIcons();
 
-// Attach events to ALL found buttons
-themeBtns.forEach(btn =\u003e {
-  btn.addEventListener('click', () =\u003e {
-    toggleTheme(body);
+  // Attach events to ALL found buttons
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleTheme(body);
       updateAllIcons();
+    });
   });
-});
 }
 
 // Year update
@@ -162,26 +162,26 @@ const downloadMenu = document.getElementById('downloadMenu');
 const downloadChevron = document.getElementById('downloadChevron');
 const floatingWrap = document.querySelector('.floating-wrap');
 
-if (downloadToggle \u0026\u0026 downloadMenu \u0026\u0026 downloadChevron \u0026\u0026 floatingWrap) {
+if (downloadToggle && downloadMenu && downloadChevron && floatingWrap) {
   const menuElements = { menu: downloadMenu, toggle: downloadToggle, chevron: downloadChevron };
-  downloadToggle.addEventListener('click', (e) =\u003e {
-    if(e) e.preventDefault();
+  downloadToggle.addEventListener('click', (e) => {
+    if (e) e.preventDefault();
     toggleMenuState(menuElements);
   });
-  document.addEventListener('click', (e) =\u003e {
-    if(downloadMenu.classList.contains('open') \u0026\u0026 !floatingWrap.contains(e.target)) {
-    toggleMenuState(menuElements, true);
-  }
-});
+  document.addEventListener('click', (e) => {
+    if (downloadMenu.classList.contains('open') && !floatingWrap.contains(e.target)) {
+      toggleMenuState(menuElements, true);
+    }
+  });
 }
 
 // Skills Rendering (Robust)
 const grid = document.getElementById('skillsGrid');
 if (grid) {
   try {
-    if (typeof SKILLS !== 'undefined' \u0026\u0026 Array.isArray(SKILLS) \u0026\u0026 SKILLS.length \u003e 0) {
+    if (typeof SKILLS !== 'undefined' && Array.isArray(SKILLS) && SKILLS.length > 0) {
       grid.innerHTML = ''; // Clear container to prevent duplicates
-      SKILLS.forEach((skill) =\u003e {
+      SKILLS.forEach((skill) => {
         const card = document.createElement('a');
         card.className = 'skill-card';
         card.href = skill.url;
@@ -197,7 +197,7 @@ if (grid) {
 
         const nameRow = document.createElement('div');
         nameRow.className = 'skill-name';
-        nameRow.innerHTML = `\u003cspan\u003e${skill.name}\u003c/span\u003e\u003ci class=\"fa-solid fa-arrow-up-right-from-square skill-link-ico\"\u003e\u003c/i\u003e`;
+        nameRow.innerHTML = `<span>${skill.name}</span><i class="fa-solid fa-arrow-up-right-from-square skill-link-ico"></i>`;
 
         infoDiv.appendChild(nameRow);
         infoDiv.appendChild(generateStars(skill.rating));
@@ -225,26 +225,26 @@ function initCookieBanner() {
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
   banner.innerHTML = `
-    \u003cdiv class=\"cookie-content\"\u003e
-      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi \u003ca href=\"cookies.html\" class=\"cookie-link\"\u003epolítica de uso\u003c/a\u003e.
-    \u003c/div\u003e
-    \u003cbutton class=\"cookie-btn\" id=\"acceptCookies\"\u003e
+    <div class="cookie-content">
+      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi <a href="cookies.html" class="cookie-link">política de uso</a>.
+    </div>
+    <button class="cookie-btn" id="acceptCookies">
       Entendido
-    \u003c/button\u003e
+    </button>
   `;
 
   document.body.appendChild(banner);
 
   const btn = banner.querySelector('#acceptCookies');
   if (btn) {
-    btn.addEventListener('click', () =\u003e {
+    btn.addEventListener('click', () => {
       localStorage.setItem(STORAGE_KEYS.COOKIES, 'true');
       banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
       banner.style.opacity = '0';
       banner.style.transform = 'translateY(10px)';
-      setTimeout(() =\u003e banner.remove(), 300);
-  });
-}
+      setTimeout(() => banner.remove(), 300);
+    });
+  }
 }
 
 // Auto-init cookies
