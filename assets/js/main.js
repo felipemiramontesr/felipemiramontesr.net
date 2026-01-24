@@ -221,23 +221,42 @@ if (grid) {
         front.appendChild(infoDiv);
         front.appendChild(linkIcon); // V65: Absolute positioning target
 
-        // --- BACK FACE (Exposed Glass Experience) ---
+        // --- BACK FACE (Mirrored Content with Years) ---
         const back = document.createElement('a');
         back.className = 'skill-back';
         back.href = skill.url;
         back.target = '_blank';
         back.rel = 'noopener';
 
-        back.innerHTML = `
-            <div class="exp-label">Experience</div>
-            <div class="exp-years">${years} Years</div>
-        `;
+        // 1. Clone Icon
+        const backIconBox = document.createElement('div');
+        backIconBox.className = 'skill-ico';
+        renderSkillIcon(backIconBox, skill); // Reuse render logic
+
+        // 2. Clone Info Container
+        const backInfoDiv = document.createElement('div');
+        backInfoDiv.className = 'skill-info';
+
+        // 3. Clone Name (Text Only)
+        const backNameRow = document.createElement('div');
+        backNameRow.className = 'skill-name';
+        backNameRow.innerHTML = `<span>${skill.name}</span>`;
+
+        // 4. Create Years Element (Replacing Stars)
+        const yearsDiv = document.createElement('div');
+        yearsDiv.className = 'exp-years-badge';
+        yearsDiv.textContent = `${years} Years`;
+
+        backInfoDiv.appendChild(backNameRow);
+        backInfoDiv.appendChild(yearsDiv);
+
+        back.appendChild(backIconBox);
+        back.appendChild(backInfoDiv);
 
         // Assemble 3D Object
         inner.appendChild(front);
         inner.appendChild(back);
         card.appendChild(inner);
-        grid.appendChild(card);
       });
       console.log('Skills rendered successfully (Monolith):', SKILLS.length);
     } else {

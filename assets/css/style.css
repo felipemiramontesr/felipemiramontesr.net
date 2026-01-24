@@ -860,18 +860,42 @@
       opacity: .55;
     }
 
-    /* --- BACK FACE (Frosted Glass) --- */
+    /* --- BACK FACE (Same Material as Front) --- */
     .skill-back {
       transform: rotateY(180deg);
-      background: rgba(255, 255, 255, 0.15);
-      /* More translucent */
-      backdrop-filter: blur(12px) saturate(120%);
-      -webkit-backdrop-filter: blur(12px) saturate(120%);
+      background: var(--panel);
+      backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      border-color: rgba(255, 255, 255, 0.3);
+      text-align: center;
+      gap: 14px;
+    }
+
+    .skill-back::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, .045);
+      opacity: .75;
+    }
+
+    body.theme-light .skill-back::before {
+      border: 1px solid rgba(8, 13, 24, .05);
+      opacity: .55;
+    }
+
+    .exp-years-badge {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      /* Align roughly with where stars were */
     }
 
     .exp-label {
