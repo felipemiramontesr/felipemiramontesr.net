@@ -188,6 +188,11 @@ if (grid) {
         card.target = '_blank';
         card.rel = 'noopener';
 
+        // V61 Interaction Data
+        const yearsMap = { 5: '10+', 4: '8+', 3: '6+', 2: '4+', 1: '2+' };
+        const years = yearsMap[skill.rating] || '1+';
+        card.setAttribute('data-years', `${years} Years`);
+
         const iconBox = document.createElement('div');
         iconBox.className = 'skill-ico';
         renderSkillIcon(iconBox, skill);
