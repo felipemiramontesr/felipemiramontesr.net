@@ -69,3 +69,8 @@ if (typeof window !== 'undefined') {
     initCookieBanner();
   }
 }
+
+// Export for Vitest/JEST (Conditional to not break browser)
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports = { initCookieBanner };
+}

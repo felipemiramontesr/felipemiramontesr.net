@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { initCookieBanner } from '../assets/js/cookies.js';
+import { initCookieBanner } from '../assets/js/cookies-core.js';
 import { STORAGE_KEYS } from '../assets/js/modules/constants.js';
 
 describe('Cookie Module', () => {
