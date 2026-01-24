@@ -1,9 +1,25 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { generateStars, toggleMenuState, renderSkillIcon } from '../assets/js/modules/ui.js';
+import { generateStars, toggleMenuState, renderSkillIcon, getExperienceYears } from '../assets/js/modules/ui.js';
 
 describe('UI Module', () => {
     beforeEach(() => {
         document.body.innerHTML = '';
+    });
+
+    describe('getExperienceYears', () => {
+        it('should return correct years string for known ratings', () => {
+            expect(getExperienceYears(5)).toBe('10+');
+            expect(getExperienceYears(4)).toBe('8+');
+            expect(getExperienceYears(3)).toBe('6+');
+            expect(getExperienceYears(2)).toBe('4+');
+            expect(getExperienceYears(1)).toBe('2+');
+        });
+
+        it('should return default 1+ for unknown ratings', () => {
+            expect(getExperienceYears(0)).toBe('1+');
+            expect(getExperienceYears(6)).toBe('1+');
+            expect(getExperienceYears(undefined)).toBe('1+');
+        });
     });
 
     describe('generateStars', () => {

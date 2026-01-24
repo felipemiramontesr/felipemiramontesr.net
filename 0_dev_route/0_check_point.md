@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V75 (Fixed CI Pipeline).
-        - **Nota**: Se detectó una falla en el pipeline de despliegue donde un test unitario (`ui.test.js`) fallaba al buscar una etiqueta `<img>` que ya no existe (reemplazada por `<span>` para el manejo de colores SVG). Se actualizó el test para verificar la nueva estructura, desbloqueando el despliegue automático. Release v75 activo.
+    - **Estado**: ✅ DESPLEGADO V76 (Content Update).
+        - **Nota**: Actualización de contenido estático en la sección "Most Recent Projects". Se abrevió la ubicación del primer proyecto de "Zacatecas, México" a "Zac., Mex." para mantener consistencia visual con el resto de las entradas. Release v76 activo.

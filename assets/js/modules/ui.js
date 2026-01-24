@@ -61,6 +61,16 @@ export function generateStars(rating) {
 }
 
 /**
+ * Converts a star rating (1-5) to an experience years string (e.g., '10+').
+ * @param {number} rating - Proficiency level from 1 to 5.
+ * @returns {string} - The experience string (e.g. '10+', '8+', '2+').
+ */
+export function getExperienceYears(rating) {
+    const yearsMap = { 5: '10+', 4: '8+', 3: '6+', 2: '4+', 1: '2+' };
+    return yearsMap[rating] || '1+';
+}
+
+/**
  * Toggles a menu state in the UI.
  * @param {Object} elements - UI elements as an object.
  * @param {HTMLElement} elements.menu - The menu container.
