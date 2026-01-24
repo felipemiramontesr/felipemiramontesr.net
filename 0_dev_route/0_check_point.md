@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V88 (Loose Security Rescue).
-        - **Nota**: Al confirmar que FileZilla conecta correctamente, se deduce que el servidor acepta certificados autofirmados o menos estrictos que el pipeline rechazaba por defecto. Se configuró `security: loose` en `deploy.yml` para emular este comportamiento permisivo ("Aceptar certificado desconocido") y evitar el timeout por handshake fallido. Release v88 activo.
+    - **Estado**: ⚠️ PAUSADO / PENDIENTE (Session Halt).
+        - **Nota**: El usuario reporta "no se soluciona" y finaliza la sesión por hoy. Probablemente el despliegue V89 no logró conectar a tiempo o el servidor mantiene el bloqueo de IP. El código contiene los fixes visuales (V86) y de configuración (V89), pero no se pueden verificar en producción hasta que se restablezca la conexión FTP. (Las sombra rara sigue apareciendo)Estado: **Código Listo / Despliegue Pendiente**.

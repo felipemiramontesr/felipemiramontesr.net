@@ -41,11 +41,20 @@ const UI_CONFIG = { THEME_LABELS: { LIGHT: 'Light Theme', DARK: 'Dark Theme' } }
 // 2. THEME MODULE (Inline)
 // ==========================
 
+/**
+ * Initializes the theme based on saved preferences.
+ * @param {HTMLElement} body - The document body element.
+ */
 function initTheme(body) {
   const saved = localStorage.getItem(STORAGE_KEYS.THEME);
   if (saved === 'light') body.classList.add('theme-light');
 }
 
+/**
+ * Toggles the application theme and saves the state.
+ * @param {HTMLElement} body - The document body element.
+ * @returns {string} The new theme ('light' or 'dark').
+ */
 function toggleTheme(body) {
   body.classList.toggle('theme-light');
   const isLight = body.classList.contains('theme-light');
@@ -53,6 +62,11 @@ function toggleTheme(body) {
   return isLight ? 'light' : 'dark';
 }
 
+/**
+ * Returns the appropriate label for the theme toggle button.
+ * @param {boolean} isCurrentlyLight - Whether the light theme is active.
+ * @returns {string} The localized label.
+ */
 function getThemeLabel(isCurrentlyLight) {
   return isCurrentlyLight ? UI_CONFIG.THEME_LABELS.DARK : UI_CONFIG.THEME_LABELS.LIGHT;
 }
@@ -61,6 +75,11 @@ function getThemeLabel(isCurrentlyLight) {
 // 3. UI MODULE (Inline)
 // ==========================
 
+/**
+ * Renders a skill icon with fallback logic.
+ * @param {HTMLElement} container - The icon container element.
+ * @param {Object} skill - The skill object.
+ */
 function renderSkillIcon(container, skill) {
   const iconColor = skill.color || 'var(--accent)';
 
@@ -91,6 +110,11 @@ function renderSkillIcon(container, skill) {
   container.appendChild(i);
 }
 
+/**
+ * Generates the star rating HTML for a skill.
+ * @param {number} rating - Proficiency level from 1 to 5.
+ * @returns {HTMLElement} Container with star icons.
+ */
 function generateStars(rating) {
   const starsDiv = document.createElement('div');
   starsDiv.className = 'skill-stars';
@@ -103,6 +127,11 @@ function generateStars(rating) {
   return starsDiv;
 }
 
+/**
+ * Toggles a menu state in the UI.
+ * @param {Object} elements - UI elements (menu, toggle, chevron).
+ * @param {boolean} forceClose - If true, force closes the menu.
+ */
 function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
   const isOpen = !forceClose && !menu.classList.contains('open');
   menu.classList.toggle('open', isOpen);
@@ -274,6 +303,9 @@ if (grid) {
 // 5. COOKIE MODULE (Inline)
 // ==========================
 
+/**
+ * Initializes the cookie banner if consent hasn't been granted.
+ */
 function initCookieBanner() {
   if (localStorage.getItem(STORAGE_KEYS.COOKIES) === 'true') return;
 
