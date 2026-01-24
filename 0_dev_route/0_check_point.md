@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V57 (Critical JS Repair).
-        - **Nota**: Se reparó un error de sintaxis en `main.js` causado por caracteres de escape Unicode que rompían la ejecución del script. El sitio ahora carga correctamente los Skills con sus colores de marca. Sincronización total confirmada.
+    - **Estado**: ✅ DESPLEGADO V58 (Icon Rescue: Twig/Drush).
+        - **Nota**: Se forzó el uso de iconos FontAwesome para Twig y Drush (desactivando SVG) debido a que sus slugs no existían en la CDN, lo que causaba iconos invisibles. Ahora se muestran y tienen color correcto. Sitio 100% funcional.
