@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V81 (Mobile UX Optimization).
-        - **Nota**: Se deshabilitó la animación 3D de volteo de tarjetas en dispositivos móviles y tablets (pantallas < 861px). Esto mejora la experiencia táctil evitando interacciones accidentales y reserva el efecto de hover solo para entornos de escritorio donde el cursor es el mecanismo principal. Release v81 activo.
+    - **Estado**: ✅ DESPLEGADO V82 (Semantic Icon Update).
+        - **Nota**: Se reemplazó el icono genérico de "Certificaciones" (`fa-certificate`) por `fa-scroll`. Este icono representa un diploma enrollado, lo cual es semánticamente más preciso y estéticamente más "ad hoc" para una sección de títulos y credenciales académicas. Release v82 activo.
