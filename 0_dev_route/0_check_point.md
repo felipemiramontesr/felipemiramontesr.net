@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V64 (Center Balance).
-        - **Nota**: Alineación centrada perfecta para todos los elementos de la tarjeta (Icono, Nombre, Estrellas). Corrección visual de "doble borde" (V63) confirmada. UX pulida. Release v64 activo.
+    - **Estado**: ✅ DESPLEGADO V65 (Perfect Alignment).
+        - **Nota**: Se extrajo el icono de enlace del flujo del texto y se posicionó de forma absoluta en la esquina inferior derecha. Esto permitió centrar geométricamente el Nombre y las Estrellas sin desviaciones. El diseño ahora es simétrico y limpio. Release v65 activo.

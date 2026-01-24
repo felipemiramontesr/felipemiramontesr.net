@@ -936,19 +936,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      /* V64 Center */
-      gap: 10px;
+      width: 100%;
+      /* V66 Force Full Width */
       margin-top: auto;
       font-weight: 600;
       letter-spacing: .2px;
-      min-width: 0;
       font-size: var(--fs-small);
+      text-align: center;
+      /* V66 Force Align */
     }
 
     .skill-name span {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      text-align: center;
+      /* V66 Force Align */
+      width: 100%;
+      /* V66 Force Full Width */
     }
 
     .skill-link-ico {
