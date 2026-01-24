@@ -281,7 +281,7 @@ function initCookieBanner() {
   banner.className = 'cookie-banner';
   banner.innerHTML = `
     <div class="cookie-content">
-      Uso cookies para mejorar tu experiencia. Al navegar, aceptas mi <a href="cookies.html" class="cookie-link">política de uso</a>.
+      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi <a href="cookies.html" class="cookie-link">política de uso</a>.
     </div>
     <button class="cookie-btn" id="acceptCookies">
       Entendido

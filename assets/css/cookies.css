@@ -37,7 +37,8 @@ body.theme-light .cookie-banner {
 
 .cookie-content {
     font-size: 14px;
-    color: var(--muted, rgba(8, 13, 24, .70));
+    color: var(--ink, #fff);
+    /* V80 Brighter text */
     line-height: 1.4;
     font-weight: 500;
 }

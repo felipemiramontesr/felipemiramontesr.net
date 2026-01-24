@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V78 (Single Line Banner).
-        - **Nota**: Ajuste de diseño en el banner de cookies. Se liberó la restricción de ancho (`max-width: fit-content`) y se forzó `flex-wrap: nowrap` en escritorio para garantizar que el texto y el botón permanezcan siempre en una sola línea horizontal, mejorando la legibilidad en pantallas grandes. Release v78 activo.
+    - **Estado**: ✅ DESPLEGADO V79 (Content Clarity).
+        - **Nota**: Simplificación del texto del banner de cookies por solicitud del usuario para mayor claridad y concisión. Se actualizó de "Este sitio utiliza..." a "Uso cookies para mejorar tu experiencia...". Release V79 activo.
