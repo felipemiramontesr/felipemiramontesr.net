@@ -33,6 +33,7 @@ jobs:
         timeout: 600000 # 10 minutes
         port: 21
         protocol: ftps
+        security: loose
         server-dir: ./
         exclude: |
           **/.git*

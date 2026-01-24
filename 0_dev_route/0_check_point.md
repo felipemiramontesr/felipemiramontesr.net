@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V86 (Container Artifact Removal).
-        - **Nota**: Se eliminó la regla CSS global `.glass::before`, que aplicaba el "resplandor inexacto" (borde interno) a todas las secciones del sitio (`.section.glass`), no solo a las tarjetas. Esto soluciona definitivamente el problema de la línea/barra horizontal visual que persistía en la parte inferior de los contenedores principales. Limpieza visual total completada. Release v86 activo.
+    - **Estado**: ✅ DESPLEGADO V87 (Secure Protocol Rescue).
+        - **Nota**: Ante la persistencia de fallos de conexión (`ETIMEDOUT`) en el despliegue automático, se actualizó el protocolo de transferencia a **FTPS** (FTP Seguro/TLS) explícitamente en el pipeline. Esto busca mitigar posibles bloqueos de seguridad del servidor hacia conexiones FTP planas o inseguras. Si el fallo persiste, indica un bloqueo de IP temporal que requiere espera. Release v87 activo.
