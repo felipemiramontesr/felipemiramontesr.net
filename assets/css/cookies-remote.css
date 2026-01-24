@@ -62,7 +62,8 @@
 /* BUTTON STYLES (Revert to V114/V116 "God Mode" Glow) */
 .cookie-btn {
     background: var(--accent, #22D3EE);
-    color: #fff;
+    color: var(--bg, #000);
+    /* V119: Contrast Fix - Dark text on Cyan */
     border: none;
     border-radius: 999px;
     padding: 10px 20px;
