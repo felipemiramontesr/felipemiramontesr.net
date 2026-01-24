@@ -257,6 +257,9 @@ if (grid) {
         inner.appendChild(front);
         inner.appendChild(back);
         card.appendChild(inner);
+
+        // Critical: Append to Grid
+        grid.appendChild(card);
       });
       console.log('Skills rendered successfully (Monolith):', SKILLS.length);
     } else {

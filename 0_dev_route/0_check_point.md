@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V66 (Strict Centering).
-        - **Nota**: Se forzó CSS estricto (`width: 100%` + `text-align: center`) en los elementos de texto internos (`.skill-name span`) para eliminar cualquier desviación residual causada por flexbox o overflow. Icono, Texto y Estrellas ahora comparten un eje Y absoluto. Release v66 activo.
+    - **Estado**: ✅ DESPLEGADO V67 (Consistent 3D Flip).
+        - **Nota**: Se unificó el diseño de ambas caras de la tarjeta. El reverso ahora es un clon estructural del frente (mismo material Tech White, Icono y Nombre), reemplazando únicamente las estrellas por el dato de "Años de Experiencia". La transición 3D es completamente coherente y sólida. Release v67 activo.
