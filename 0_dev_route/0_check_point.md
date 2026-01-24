@@ -60,8 +60,8 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: 🏗️ PROTOCOLO L V95 (Back Icon Fix).
-        - **Nota**: Se añadió el icono de enlace externo (`fa-arrow-up-right-from-square`) a la cara trasera ("Back Face") de las tarjetas de habilidades en `main.js`. Este elemento faltaba visualmente al girar la tarjeta. La corrección se aplicó localmente y ya es verificable en el navegador. Deployment pendiente de aprobación final.
+    - **Estado**: 🏗️ PROTOCOLO L V101 (Smart Banner Logic).
+        - **Nota**: Se refinó la lógica de `cookies.js` para detectar el contexto. Si el usuario está en la página `cookies.html`, el texto "política de uso" del banner se renderiza como negrita (`<strong>`) en lugar de enlace (`<a>`). Esto mejora la UX evitando enlaces redundantes a la misma página. En cualquier otra página, el enlace permanece activo. Assets actualizados a V101. Verificación local requerida.
 - **13**: Sesión de Continuidad (2026-01-24) - Verificación & Pulido.
     - **Objetivo**: Confirmar el despliegue exitoso de V90 (Fix visual de sombra + Docs).
     - **Estado Inicial**: Retomando desde V90 (Pending verification). El código local ya tiene la corrección de la sombra (`.glass::before` eliminado).

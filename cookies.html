@@ -7,7 +7,8 @@
     <title>Cookies</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=20260122_v26">
+    <link rel="stylesheet" href="assets/css/style.css?v=v101">
+    <link rel="stylesheet" href="assets/css/cookies.css?v=v101">
     <style>
         /* Specific overrides for text-heavy page */
         .policy-content {
@@ -36,23 +37,57 @@
         .policy-content li {
             margin-bottom: 0.5rem;
         }
+
+        /* V97: Back Button Animation (Horizontal Slide - Discrete) */
+        @keyframes backSlide {
+
+            /* Active Phase (0% - 16.6% = 5 secs) -> 3 gentle bounces */
+            0%,
+            5.5%,
+            11%,
+            16.6% {
+                transform: translateX(0);
+            }
+
+            2.7%,
+            8.3%,
+            13.8% {
+                transform: translateX(-5px);
+            }
+
+            /* Move Left */
+
+            /* Idle Phase (16.7% - 100% = 25 secs) */
+            17%,
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .btn-back-anim {
+            animation: backSlide 30s infinite ease-in-out;
+            text-decoration: none !important;
+            /* V98: Kill underline artifact */
+            border-bottom: 0;
+            /* V98: Double kill */
+        }
     </style>
 </head>
 
 <body>
 
     <!-- Top Navigation -->
-    <div class="top-controls" style="left: 16px; right: auto;">
-        <a href="index.html" class="btn-solid" aria-label="Volver">
+    <!-- Back Button (Left) -->
+    <div class="top-controls" style="left: 18px; right: auto; top: 18px;">
+        <a href="index.html" class="btn-solid btn-back-anim" aria-label="Volver">
             <i class="fa-solid fa-arrow-left"></i>
-            <span>Volver</span>
         </a>
     </div>
 
-    <div class="top-controls">
-        <button class="btn-solid" id="themeToggle" type="button" aria-label="Cambiar tema">
-            <i class="fa-solid fa-circle-half-stroke"></i>
-            <span>Tema</span>
+    <!-- Theme Button (Right) - Matching index.html logic -->
+    <div class="top-controls" style="top: 18px; right: 18px;">
+        <button class="theme-toggle-btn btn-solid" type="button" aria-label="Cambiar tema">
+            <i class="fa-solid fa-sun"></i>
         </button>
     </div>
 
@@ -123,7 +158,9 @@
         </div>
     </main>
 
-    <script src="assets/js/main.js?v=20260122_v26"></script>
+    <!-- V99: Sync Cookie Logic (Disclaimer) - ESM Module -->
+    <script type="module" src="assets/js/cookies.js"></script>
+    <script src="assets/js/main.js?v=v101"></script>
 </body>
 
 </html>

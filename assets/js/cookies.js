@@ -14,11 +14,18 @@ export function initCookieBanner() {
     return;
   }
 
+  // Check if we are already on the policy page
+  const isOnPolicyPage = window.location.pathname.includes('cookies.html');
+
+  const policyLink = isOnPolicyPage
+    ? `<strong class="cookie-link">política de uso</strong>`
+    : `<a href="cookies.html" class="cookie-link">política de uso</a>`;
+
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
   banner.innerHTML = `
     <div class="cookie-content">
-      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi <a href="cookies.html" class="cookie-link">política de uso</a>.
+      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi ${policyLink}.
     </div>
     <button class="cookie-btn" id="acceptCookies">
       Entendido
