@@ -8,30 +8,30 @@
 // ==========================
 
 const SKILLS = [
-  { name: "PHP", url: "https://www.php.net/", si: "php", fallback: "fa-brands fa-php", rating: 5 },
-  { name: "MySQL", url: "https://www.mysql.com/", si: "mysql", fallback: "fa-solid fa-database", rating: 4 },
-  { name: "Node.js", url: "https://nodejs.org/", si: "nodedotjs", fallback: "fa-brands fa-node-js", rating: 3 },
-  { name: "REST", url: "https://restfulapi.net/", si: null, fallback: "fa-solid fa-gears", rating: 4 },
-  { name: "JSON", url: "https://www.json.org/", si: "json", fallback: "fa-solid fa-code", rating: 5 },
-  { name: "YAML", url: "https://yaml.org/", si: "yaml", fallback: "fa-regular fa-file", rating: 4 },
-  { name: "Twig", url: "https://twig.symfony.com/", si: "twig", fallback: "fa-solid fa-code", rating: 5 },
-  { name: "Composer", url: "https://getcomposer.org/", si: "composer", fallback: "fa-solid fa-cube", rating: 4 },
-  { name: "Drush", url: "https://www.drush.org/", si: "drush", fallback: "fa-solid fa-terminal", rating: 4 },
-  { name: "JavaScript", url: "https://developer.mozilla.org/docs/Web/JavaScript", si: "javascript", fallback: "fa-brands fa-js", rating: 4 },
-  { name: "HTML", url: "https://developer.mozilla.com/docs/Web/HTML", si: "html5", fallback: "fa-brands fa-html5", rating: 5 },
-  { name: "CSS", url: "https://developer.mozilla.org/docs/Web/CSS", si: "css3", fallback: "fa-brands fa-css3-alt", rating: 4 },
-  { name: "SASS", url: "https://sass-lang.com/", si: "sass", fallback: "fa-brands fa-sass", rating: 4 },
-  { name: "Chart.js", url: "https://www.chartjs.org/", si: "chartdotjs", fallback: "fa-solid fa-chart-line", rating: 4 },
-  { name: "Linux", url: "https://www.linux.org/", si: "linux", fallback: "fa-brands fa-linux", rating: 4 },
-  { name: "Apache", url: "https://httpd.apache.org/", si: "apache", fallback: "fa-solid fa-server", rating: 4 },
-  { name: "NVM", url: "https://github.com/nvm-sh/nvm", si: null, fallback: "fa-solid fa-screwdriver-wrench", rating: 3 },
-  { name: "Gulp.js", url: "https://gulpjs.com/", si: "gulp", fallback: "fa-solid fa-wand-magic-sparkles", rating: 3 },
-  { name: "Drupal", url: "https://www.drupal.org/", si: "drupal", fallback: "fa-brands fa-drupal", rating: 5 },
-  { name: "Odoo", url: "https://www.odoo.com/", si: "odoo", fallback: "fa-solid fa-briefcase", rating: 4 },
-  { name: "Moodle", url: "https://moodle.org/", si: "moodle", fallback: "fa-solid fa-book-open", rating: 3 },
-  { name: "PrestaShop", url: "https://prestashop.com/", si: "prestashop", fallback: "fa-solid fa-cart-shopping", rating: 3 },
-  { name: "VS Code", url: "https://code.visualstudio.com/", si: "visualstudiocode", fallback: "fa-solid fa-code", rating: 5 },
-  { name: "Trello", url: "https://trello.com/", si: "trello", fallback: "fa-brands fa-trello", rating: 4 }
+  { name: "PHP", url: "https://www.php.net/", si: "php", fallback: "fa-brands fa-php", rating: 5, color: "#777BB4" },
+  { name: "MySQL", url: "https://www.mysql.com/", si: "mysql", fallback: "fa-solid fa-database", rating: 4, color: "#4479A1" },
+  { name: "Node.js", url: "https://nodejs.org/", si: "nodedotjs", fallback: "fa-brands fa-node-js", rating: 3, color: "#339933" },
+  { name: "REST", url: "https://restfulapi.net/", si: null, fallback: "fa-solid fa-gears", rating: 4, color: "#60A5FA" },
+  { name: "JSON", url: "https://www.json.org/", si: "json", fallback: "fa-solid fa-code", rating: 5, color: "#000000" },
+  { name: "YAML", url: "https://yaml.org/", si: "yaml", fallback: "fa-regular fa-file", rating: 4, color: "#CB171E" },
+  { name: "Twig", url: "https://twig.symfony.com/", si: "twig", fallback: "fa-solid fa-code", rating: 5, color: "#999900" },
+  { name: "Composer", url: "https://getcomposer.org/", si: "composer", fallback: "fa-solid fa-cube", rating: 4, color: "#885630" },
+  { name: "Drush", url: "https://www.drush.org/", si: "drush", fallback: "fa-solid fa-terminal", rating: 4, color: "#0077C0" },
+  { name: "JavaScript", url: "https://developer.mozilla.org/docs/Web/JavaScript", si: "javascript", fallback: "fa-brands fa-js", rating: 4, color: "#F7DF1E" },
+  { name: "HTML", url: "https://developer.mozilla.org/docs/Web/HTML", si: "html5", fallback: "fa-brands fa-html5", rating: 5, color: "#E34F26" },
+  { name: "CSS", url: "https://developer.mozilla.org/docs/Web/CSS", si: "css3", fallback: "fa-brands fa-css3-alt", rating: 4, color: "#1572B6" },
+  { name: "SASS", url: "https://sass-lang.com/", si: "sass", fallback: "fa-brands fa-sass", rating: 4, color: "#CC6699" },
+  { name: "Chart.js", url: "https://www.chartjs.org/", si: "chartdotjs", fallback: "fa-solid fa-chart-line", rating: 4, color: "#FF6384" },
+  { name: "Linux", url: "https://www.linux.org/", si: "linux", fallback: "fa-brands fa-linux", rating: 4, color: "#FCC624" },
+  { name: "Apache", url: "https://httpd.apache.org/", si: "apache", fallback: "fa-solid fa-server", rating: 4, color: "#D22128" },
+  { name: "NVM", url: "https://github.com/nvm-sh/nvm", si: null, fallback: "fa-solid fa-screwdriver-wrench", rating: 3, color: "#22D3EE" },
+  { name: "Gulp.js", url: "https://gulpjs.com/", si: "gulp", fallback: "fa-solid fa-wand-magic-sparkles", rating: 3, color: "#CF4647" },
+  { name: "Drupal", url: "https://www.drupal.org/", si: "drupal", fallback: "fa-brands fa-drupal", rating: 5, color: "#0077C0" },
+  { name: "Odoo", url: "https://www.odoo.com/", si: "odoo", fallback: "fa-solid fa-briefcase", rating: 4, color: "#875A7B" },
+  { name: "Moodle", url: "https://moodle.org/", si: "moodle", fallback: "fa-solid fa-book-open", rating: 3, color: "#F98012" },
+  { name: "PrestaShop", url: "https://prestashop.com/", si: "prestashop", fallback: "fa-solid fa-cart-shopping", rating: 3, color: "#DF0067" },
+  { name: "VS Code", url: "https://code.visualstudio.com/", si: "visualstudiocode", fallback: "fa-solid fa-code", rating: 5, color: "#007ACC" },
+  { name: "Trello", url: "https://trello.com/", si: "trello", fallback: "fa-brands fa-trello", rating: 4, color: "#0079BF" }
 ];
 
 const STORAGE_KEYS = { THEME: 'cv_theme', COOKIES: 'cookieAdvice' };
@@ -62,25 +62,32 @@ function getThemeLabel(isCurrentlyLight) {
 // ==========================
 
 function renderSkillIcon(container, skill) {
+  const iconColor = skill.color || 'var(--accent)';
+
   if (skill.si) {
     const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${skill.si}.svg`;
-    const img = document.createElement('img');
-    img.src = iconUrl;
-    img.alt = skill.name;
-    img.className = 'skill-ico-img';
-    img.setAttribute('aria-hidden', 'true');
-    img.onerror = () => {
-      container.innerHTML = '';
-      const i = document.createElement('i');
-      i.className = skill.fallback || "fa-solid fa-code";
-      container.appendChild(i);
-    };
-    container.appendChild(img);
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'skill-ico-img';
+
+    // Use mask to apply specific hex color to the monochromatic SVG
+    iconSpan.style.maskImage = `url(${iconUrl})`;
+    iconSpan.style.webkitMaskImage = `url(${iconUrl})`;
+    iconSpan.style.maskRepeat = 'no-repeat';
+    iconSpan.style.webkitMaskRepeat = 'no-repeat';
+    iconSpan.style.maskSize = 'contain';
+    iconSpan.style.webkitMaskSize = 'contain';
+    iconSpan.style.maskPosition = 'center';
+    iconSpan.style.webkitMaskPosition = 'center';
+    iconSpan.style.backgroundColor = iconColor;
+
+    iconSpan.setAttribute('aria-hidden', 'true');
+    container.appendChild(iconSpan);
     return;
   }
+
   const i = document.createElement('i');
   i.className = skill.fallback || "fa-solid fa-code";
-  i.style.color = 'var(--accent)';
+  i.style.color = iconColor;
   container.appendChild(i);
 }
 
@@ -101,6 +108,7 @@ function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
   menu.classList.toggle('open', isOpen);
   toggle.setAttribute('aria-expanded', isOpen.toString());
   chevron.className = isOpen ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+
   if (isOpen) {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -116,36 +124,35 @@ function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
 // 4. MAIN APP LOGIC
 // ==========================
 
-console.log("App Version: v41 (UI RESTORED)");
-
-// Theme
-// Note: User reverted buttons, so this logic might skip if element is missing, which is fine.
-// Theme (Multi-Button Sync for V46)
+// Version logic (Desktop vs Mobile)
 const themeBtns = document.querySelectorAll('.theme-toggle-btn');
-if (themeBtns.length > 0) {
-  initTheme(document.body);
-
-  const updateAllIcons = () => {
-    const isLight = document.body.classList.contains('theme-light');
-    themeBtns.forEach(btn => {
-      const icon = btn.querySelector('i');
-      if (icon) icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-    });
-  };
+if (themeBtns.length \u003e 0) {
+  const body = document.body;
 
   // Init state
-  updateAllIcons();
+  initTheme(body);
 
-  // Attach events
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      toggleTheme(document.body);
-      updateAllIcons();
-    });
+  const updateAllIcons = () =\u003e {
+    const isLight = body.classList.contains('theme-light');
+  themeBtns.forEach(btn =\u003e {
+    const icon = btn.querySelector('i');
+    if(icon) icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
   });
+};
+
+// Run init sync
+updateAllIcons();
+
+// Attach events to ALL found buttons
+themeBtns.forEach(btn =\u003e {
+  btn.addEventListener('click', () =\u003e {
+    toggleTheme(body);
+      updateAllIcons();
+  });
+});
 }
 
-// Year
+// Year update
 const yearSpan = document.getElementById('year');
 if (yearSpan) yearSpan.textContent = new Date().getFullYear().toString();
 
@@ -155,26 +162,26 @@ const downloadMenu = document.getElementById('downloadMenu');
 const downloadChevron = document.getElementById('downloadChevron');
 const floatingWrap = document.querySelector('.floating-wrap');
 
-if (downloadToggle && downloadMenu && downloadChevron && floatingWrap) {
+if (downloadToggle \u0026\u0026 downloadMenu \u0026\u0026 downloadChevron \u0026\u0026 floatingWrap) {
   const menuElements = { menu: downloadMenu, toggle: downloadToggle, chevron: downloadChevron };
-  downloadToggle.addEventListener('click', (e) => {
-    if (e) e.preventDefault();
+  downloadToggle.addEventListener('click', (e) =\u003e {
+    if(e) e.preventDefault();
     toggleMenuState(menuElements);
   });
-  document.addEventListener('click', (e) => {
-    if (downloadMenu.classList.contains('open') && !floatingWrap.contains(e.target)) {
-      toggleMenuState(menuElements, true);
-    }
-  });
+  document.addEventListener('click', (e) =\u003e {
+    if(downloadMenu.classList.contains('open') \u0026\u0026 !floatingWrap.contains(e.target)) {
+    toggleMenuState(menuElements, true);
+  }
+});
 }
 
 // Skills Rendering (Robust)
 const grid = document.getElementById('skillsGrid');
 if (grid) {
   try {
-    if (typeof SKILLS !== 'undefined' && Array.isArray(SKILLS) && SKILLS.length > 0) {
+    if (typeof SKILLS !== 'undefined' \u0026\u0026 Array.isArray(SKILLS) \u0026\u0026 SKILLS.length \u003e 0) {
       grid.innerHTML = ''; // Clear container to prevent duplicates
-      SKILLS.forEach((skill) => {
+      SKILLS.forEach((skill) =\u003e {
         const card = document.createElement('a');
         card.className = 'skill-card';
         card.href = skill.url;
@@ -190,7 +197,7 @@ if (grid) {
 
         const nameRow = document.createElement('div');
         nameRow.className = 'skill-name';
-        nameRow.innerHTML = `<span>${skill.name}</span><i class="fa-solid fa-arrow-up-right-from-square skill-link-ico"></i>`;
+        nameRow.innerHTML = `\u003cspan\u003e${skill.name}\u003c/span\u003e\u003ci class=\"fa-solid fa-arrow-up-right-from-square skill-link-ico\"\u003e\u003c/i\u003e`;
 
         infoDiv.appendChild(nameRow);
         infoDiv.appendChild(generateStars(skill.rating));
@@ -218,26 +225,26 @@ function initCookieBanner() {
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
   banner.innerHTML = `
-    <div class="cookie-content">
-      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi <a href="cookies.html" class="cookie-link">política de uso</a>.
-    </div>
-    <button class="cookie-btn" id="acceptCookies">
+    \u003cdiv class=\"cookie-content\"\u003e
+      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi \u003ca href=\"cookies.html\" class=\"cookie-link\"\u003epolítica de uso\u003c/a\u003e.
+    \u003c/div\u003e
+    \u003cbutton class=\"cookie-btn\" id=\"acceptCookies\"\u003e
       Entendido
-    </button>
+    \u003c/button\u003e
   `;
 
   document.body.appendChild(banner);
 
   const btn = banner.querySelector('#acceptCookies');
   if (btn) {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', () =\u003e {
       localStorage.setItem(STORAGE_KEYS.COOKIES, 'true');
       banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
       banner.style.opacity = '0';
       banner.style.transform = 'translateY(10px)';
-      setTimeout(() => banner.remove(), 300);
-    });
-  }
+      setTimeout(() =\u003e banner.remove(), 300);
+  });
+}
 }
 
 // Auto-init cookies
