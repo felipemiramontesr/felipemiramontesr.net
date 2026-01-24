@@ -34,6 +34,9 @@
       --ring: rgba(34, 211, 238, .28);
       --ring-2: rgba(96, 165, 250, .22);
 
+      --star-gold: #FFC107;
+      /* Amber 400 - Vivid Gold */
+
       --shadow-soft: 0 14px 44px rgba(0, 0, 0, .24);
       --shadow-card: 0 16px 50px rgba(0, 0, 0, .30);
       --shadow-hover: 0 22px 64px rgba(0, 0, 0, .40);
@@ -894,14 +897,24 @@
       font-size: 13px;
       /* Reduced to fit */
       font-weight: 700;
-      color: #F59E0B;
-      /* Amber 500 - Star Color */
+      color: var(--star-gold);
+      /* V72 Match Stars */
       text-transform: uppercase;
       letter-spacing: 0.3px;
       /* Tighter letter spacing */
       margin-top: 2px;
       /* Halved margin */
       white-space: nowrap;
+    }
+
+    /* V72 Force star color match */
+    .skill-stars i {
+      color: var(--star-gold);
+    }
+
+    .skill-stars i.star-empty {
+      color: var(--stroke);
+      /* Or muted color for empty stars */
     }
 
     .exp-label {

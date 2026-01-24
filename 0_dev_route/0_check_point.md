@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V70 (Compact Spacing & Fit).
-        - **Nota**: Ajuste geométrico del reverso para evitar desbordes y mejorar la distribución. Se redujo el padding interno y el gap vertical, y se refinó la tipografía de "Años" (13px, espaciado ajustado) para que el mensaje "10+ Years" encaje cómodamente sin romper el margen. Estética finalizada. Release v70 activo.
+    - **Estado**: ✅ DESPLEGADO V72 (Synced Star Color).
+        - **Nota**: Sincronización exacta de color. Se definió una variable global `--star-gold` (`#FFC107`) y se aplicó tanto a los iconos de estrellas como al texto de "Años". Garantiza consistencia visual absoluta entre ambas caras de la tarjeta según solicitud del usuario. Release v72 activo.
