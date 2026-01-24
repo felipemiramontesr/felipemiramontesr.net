@@ -1916,7 +1916,15 @@
     @media (max-width: 860px) {
       .mobile-theme-bar {
         display: flex;
-        justify-content: flex-end;
-        padding: 0 0 16px 0;
+        width: 100%;
+        margin-bottom: 12px;
+      }
+
+      /* Transform button into a full-width block/card */
+      .mobile-theme-bar .theme-toggle-btn {
+        width: 100%;
+        border-radius: 18px;
+        /* Match standard glass card radius */
+        justify-content: center;
       }
     }

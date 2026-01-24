@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V45 (Animation Interval Refined).
-        - **Nota**: Ajuste de animación a ciclo 5s/25s (más pausado y premium). UI Icon-Only consolidada. Despliegue exitoso.
+    - **Estado**: ✅ DESPLEGADO V46 (Mobile Static Theme Bar).
+        - **Nota**: Implementación de barra de tema estática exclusiva para móviles (arriba del Hero) para mejorar UX y liberar espacio de pantalla. Sincronización JS multi-botón exitosa. Animación V45 mantenida.
