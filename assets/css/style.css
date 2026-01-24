@@ -1918,6 +1918,8 @@
         display: flex;
         width: 100%;
         margin-bottom: 12px;
+        padding: 0 18px;
+        /* Standard --page-pad alignment */
       }
 
       /* Transform button into a full-width block/card (FORCED) */

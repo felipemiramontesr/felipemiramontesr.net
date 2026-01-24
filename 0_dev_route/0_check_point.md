@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V47 (Full-Width Mobile Bar).
-        - **Nota**: Evolución final de la barra móvil a bloque "Card" de ancho completo (100%), centrado y estilizado. Corrección de icono por defecto (fa-sun) para evitar glitch visual. Consistencia total Desktop/Mobile.
+    - **Estado**: ✅ DESPLEGADO V48 (Force-Width Mobile Fix).
+        - **Nota**: Aplicación de reglas CSS `!important` para garantizar que el botón móvil ocupe el 100% del ancho y esté centrado, superando conflictos de especificidad. UI móvil finalizada.
