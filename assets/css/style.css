@@ -1031,7 +1031,8 @@
       background: var(--panel);
       backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
       -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
+      box-shadow: var(--shadow-card);
+      /* V85 Fix: Pure black shadow, no glow artifact */
       padding: 18px;
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
       overflow: hidden;
@@ -1043,13 +1044,10 @@
     /* .glass-card::before removed in V84 to fix inexact glow artifact */
 
     body.theme-light .glass-card {
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
+      box-shadow: var(--shadow-card);
     }
 
-    body.theme-light .glass-card::before {
-      border: 1px solid rgba(8, 13, 24, .05);
-      opacity: .55;
-    }
+    /* Orphaned theme-light::before removed V85 */
 
     .glass-card:hover {
       transform: translateY(-3px);

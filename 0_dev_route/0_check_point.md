@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V83 (FTP CI Stabilization).
-        - **Nota**: Intento de estabilización del despliegue FTP. Se detectó una falla por conexión/autenticación (15s). Se forzó explícitamente el uso del puerto 21 y se aumentó el tiempo de espera a 10 minutos en la configuración del pipeline (`deploy.yml`) para mitigar bloqueos o lentitud en el servidor remoto. Release v83 activo.
+    - **Estado**: ✅ DESPLEGADO V84 (Artifact Removal).
+        - **Nota**: A solicitud del usuario, se eliminó el "resplandor inexacto" (borde interno brillante) de las tarjetas de cristal (`.glass-card::before`). Esto elimina el artefacto visual que aparecía como una línea blanca desalineada o difusa en la parte superior de las tarjetas, proporcionando un acabado más limpio y plano. Release v84 activo.
