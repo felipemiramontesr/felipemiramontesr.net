@@ -1,63 +1,67 @@
-/* Cookie Banner - Glassmorphism Style */
+/* Cookie Banner - Remote Logic Match (V116) */
+
+/* ANIMATION FROM SNIPPET */
+@keyframes cookieSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* BANNER FROM SNIPPET */
 .cookie-banner {
     position: fixed;
     bottom: 24px;
     left: 24px;
     right: 24px;
     max-width: fit-content;
-    margin: 0 auto;
     z-index: 100;
-
     display: flex;
     flex-wrap: nowrap;
-    /* Ensure single line */
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(calc(var(--glass-blur, 20px) + 10px)) saturate(var(--glass-sat, 150%));
+    box-shadow: var(--shadow-card, 0 16px 50px rgba(15, 23, 42, .12));
+    margin: 0px auto;
     gap: 24px;
-
     padding: 16px 20px;
     border-radius: 20px;
-
-    /* Glass Effect matching style.css */
     border: 1px solid var(--stroke, rgba(15, 23, 42, .12));
     background: var(--panel, rgba(255, 255, 255, .82));
-    backdrop-filter: blur(calc(var(--glass-blur, 20px) + 10px)) saturate(var(--glass-sat, 150%));
-    -webkit-backdrop-filter: blur(calc(var(--glass-blur, 20px) + 10px)) saturate(var(--glass-sat, 150%));
-    box-shadow: var(--shadow-card, 0 16px 50px rgba(15, 23, 42, .12));
+    animation: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s 1 normal both running cookieSlideUp;
 
-    animation: cookieSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    /* CRITICAL: Ensure glow isn't clipped (Implied by need for external shadow) */
+    overflow: visible;
 }
 
-/* Light Mode Overrides (selectable alternative) */
-body.theme-light .cookie-banner {
-    border-color: var(--stroke, rgba(15, 23, 42, .12));
-    background: var(--panel, rgba(255, 255, 255, .82));
-    box-shadow: var(--shadow-card, 0 16px 50px rgba(15, 23, 42, .12));
-}
-
+/* CONTENT STYLES (Preserved from V115) */
 .cookie-content {
     font-size: 14px;
     color: var(--ink, #fff);
-    /* V80 Brighter text */
     line-height: 1.4;
     font-weight: 500;
 }
 
-/* Link Styling */
 .cookie-link {
     text-decoration: none;
-    color: var(--accent, #0891B2);
+    color: var(--accent, #22D3EE);
     font-weight: 700;
     transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .cookie-link:hover {
-    color: var(--accent-2, #2563EB);
+    color: var(--accent-2, #60A5FA);
     text-decoration: none;
 }
 
+/* BUTTON STYLES (Revert to V114/V116 "God Mode" Glow) */
 .cookie-btn {
-    background: var(--accent, #0891B2);
+    background: var(--accent, #22D3EE);
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -67,38 +71,30 @@ body.theme-light .cookie-banner {
     cursor: pointer;
     white-space: nowrap;
     transition: transform 0.15s ease, opacity 0.15s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* V114 God Mode Glow - Matches the "Blue Rectangle" intensity */
+    box-shadow: 0 0 35px 5px rgba(34, 211, 238, 0.7);
 }
 
 .cookie-btn:hover {
     transform: translateY(-1px);
-    opacity: 0.9;
+    opacity: 0.95;
+    box-shadow: 0 0 45px 10px rgba(34, 211, 238, 0.85);
 }
 
 .cookie-btn:active {
     transform: translateY(0);
 }
 
-@keyframes cookieSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* MEDIA QUERY FROM SNIPPET */
 @media (max-width: 600px) {
     .cookie-banner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
         bottom: 16px;
         left: 16px;
         right: 16px;
+        gap: 12px;
     }
 
     .cookie-btn {

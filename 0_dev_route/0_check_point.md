@@ -60,8 +60,8 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: 🏗️ PROTOCOLO L V101 (Smart Banner Logic).
-        - **Nota**: Se refinó la lógica de `cookies.js` para detectar el contexto. Si el usuario está en la página `cookies.html`, el texto "política de uso" del banner se renderiza como negrita (`<strong>`) en lugar de enlace (`<a>`). Esto mejora la UX evitando enlaces redundantes a la misma página. En cualquier otra página, el enlace permanece activo. Assets actualizados a V101. Verificación local requerida.
+    - **Estado**: ✅ DESPLEGADO V118 (Strict Snippet Revert).
+        - **Nota**: El usuario indicó que la versión pulida (V117) "estaba peor" y solicitó volver exactamente al código remoto. Se revirtieron los overrides de contraste. Ahora `cookies-remote.css` usa estrictamente `var(--panel)` y las propiedades del snippet original, junto con el glow "God Mode" (35px) que formaba parte de la versión aceptable. Fiel al código fuente.
 - **13**: Sesión de Continuidad (2026-01-24) - Verificación & Pulido.
     - **Objetivo**: Confirmar el despliegue exitoso de V90 (Fix visual de sombra + Docs).
     - **Estado Inicial**: Retomando desde V90 (Pending verification). El código local ya tiene la corrección de la sombra (`.glass::before` eliminado).
