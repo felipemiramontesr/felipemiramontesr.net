@@ -1040,15 +1040,7 @@
       position: relative;
     }
 
-    .glass-card::before {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: inherit;
-      pointer-events: none;
-      border: 1px solid rgba(255, 255, 255, .045);
-      opacity: .75;
-    }
+    /* .glass-card::before removed in V84 to fix inexact glow artifact */
 
     body.theme-light .glass-card {
       box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
