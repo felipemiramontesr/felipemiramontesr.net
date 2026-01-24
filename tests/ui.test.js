@@ -58,14 +58,16 @@ describe('UI Module', () => {
     });
 
     describe('renderSkillIcon', () => {
-        it('should render an image for simple-icons', () => {
+        it('should render a span with mask-image for simple-icons', () => {
             const container = document.createElement('div');
             const skill = { name: 'PHP', si: 'php' };
 
             renderSkillIcon(container, skill);
-            const img = container.querySelector('img');
-            expect(img).not.toBeNull();
-            expect(img.src).toContain('simple-icons');
+            const span = container.querySelector('.skill-ico-img');
+            expect(span).not.toBeNull();
+            // Check if maskImage style is set (handling jsdom potentially prefixes or standard)
+            const style = span.style.maskImage || span.style.webkitMaskImage;
+            expect(style).toContain('simple-icons');
         });
 
         it('should render font-awesome fallback if no simple-icon slug provided', () => {

@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V73 (Black Icons).
-        - **Nota**: A solicitud del usuario, se actualizó el color hexadecimal de los iconos de "Linux" y "PrestaShop" a negro puro (`#000000`) para mejorar su contraste y fidelidad de marca dentro del grid de habilidades. Release v73 activo.
+    - **Estado**: ✅ DESPLEGADO V74 (Icon Visibility Refining).
+        - **Nota**: Ajustes de contraste en iconos específicos. El icono de JavaScript se oscureció (`#F7DF1E` → `#E5C500`) para mejorar su visibilidad sobre fondo blanco. Linux y PrestaShop ahora son negro puro. El conjunto de iconos tiene ahora un balance visual óptimo. Release v74 activo.
