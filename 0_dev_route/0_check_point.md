@@ -66,3 +66,8 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
     - **Objetivo**: Confirmar el despliegue exitoso de V90 (Fix visual de sombra + Docs).
     - **Estado Inicial**: Retomando desde V90 (Pending verification). El código local ya tiene la corrección de la sombra (`.glass::before` eliminado).
     - **Acción Inmediata**: Verificar estado del despliegue en GitHub Actions y confirmar visualmente en producción.
+- **14**: Cookie Banner Refinement (V118-V119).
+    - **Objetivo**: Réplica visual exacta de referencia "Blue Image" + Glow "God Mode".
+    - **V118**: Strict Remote Clone. Lógica exacta del snippet remoto (`var(--panel)`) + Glow intenso.
+    - **V119**: Contrast Fix. Texto del botón ajustado a `var(--bg)` (Navy #050713) para legibilidad perfecta sobre Cyan.
+    - **Estado**: ✅ DESPLEGADO.
