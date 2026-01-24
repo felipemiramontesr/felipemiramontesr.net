@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V50 (Cache Busting & Final Fix).
-        - **Nota**: Se forzó la actualización de caché (v50) para reflejar los cambios de CSS en producción. La barra móvil ahora tiene márgenes correctos (`18px`) y alineación perfecta. Despliegue confirmado.
+    - **Estado**: ✅ DESPLEGADO V51 (Drawer Aesthetic).
+        - **Nota**: Refinamiento estético final: Borde superior recto ("Drawer Effect") y borde inferior redondeado para conectar visualmente el panel al flujo de la página. UI Móvil Pulida.

@@ -1917,7 +1917,7 @@
       .mobile-theme-bar {
         display: flex;
         width: 100%;
-        margin-bottom: 12px;
+        margin-bottom: 6px;
         padding: 0 18px;
         /* Standard --page-pad alignment */
       }
