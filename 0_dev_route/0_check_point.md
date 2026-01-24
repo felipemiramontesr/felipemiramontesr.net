@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V58 (Icon Rescue: Twig/Drush).
-        - **Nota**: Se forzó el uso de iconos FontAwesome para Twig y Drush (desactivando SVG) debido a que sus slugs no existían en la CDN, lo que causaba iconos invisibles. Ahora se muestran y tienen color correcto. Sitio 100% funcional.
+    - **Estado**: ✅ DESPLEGADO V59 (Light Tech Backgrounds).
+        - **Nota**: Se implementó un fondo claro (`#F1F5F9`) para los contenedores de iconos, mejorando drásticamente el contraste para logos oscuros (JSON, GitHub). Estilo "Sticker" o "Tecla" con efecto de relieve sutil. Release v59 activo.

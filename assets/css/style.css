@@ -973,14 +973,14 @@
     }
 
     .skill-ico svg {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
       display: block;
     }
 
     .skill-ico i,
     .skill-ico img {
-      font-size: 20px;
+      font-size: 28px;
       line-height: 1;
       display: block;
       color: var(--accent);
@@ -989,13 +989,13 @@
 
     /* Filtro removido en V55 para habilitar colores de marca vía mask-image */
     .skill-ico span.skill-ico-img {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
       display: block;
     }
 
     .skill-ico i {
-      font-size: 20px;
+      font-size: 28px;
       line-height: 1;
       display: block;
       transition: transform .3s ease;
