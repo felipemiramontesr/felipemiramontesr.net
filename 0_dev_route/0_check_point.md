@@ -60,5 +60,9 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ⚠️ PAUSADO / PENDIENTE (Session Halt).
-        - **Nota**: El usuario reporta "no se soluciona" y finaliza la sesión por hoy. Probablemente el despliegue V89 no logró conectar a tiempo o el servidor mantiene el bloqueo de IP. El código contiene los fixes visuales (V86) y de configuración (V89), pero no se pueden verificar en producción hasta que se restablezca la conexión FTP. (Las sombra rara sigue apareciendo)Estado: **Código Listo / Despliegue Pendiente**.
+    - **Estado**: ✅ EXPECTANTE V91 (Morning Retry).
+        - **Nota**: Se inicia el intento de despliegue matutino (V91) tras 10 horas de enfriamiento. La configuración se mantiene en `FTPS` + `loose` (Modo FileZilla). Si el error `ETIMEDOUT` persiste, confirmaremos un bloqueo geográfico o de rango IP de GitHub por parte del proveedor, y tendremos que cambiar de estrategia de despliegue.
+- **13**: Sesión de Continuidad (2026-01-24) - Verificación & Pulido.
+    - **Objetivo**: Confirmar el despliegue exitoso de V90 (Fix visual de sombra + Docs).
+    - **Estado Inicial**: Retomando desde V90 (Pending verification). El código local ya tiene la corrección de la sombra (`.glass::before` eliminado).
+    - **Acción Inmediata**: Verificar estado del despliegue en GitHub Actions y confirmar visualmente en producción.
