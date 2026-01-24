@@ -120,20 +120,28 @@ console.log("App Version: v41 (UI RESTORED)");
 
 // Theme
 // Note: User reverted buttons, so this logic might skip if element is missing, which is fine.
-const themeToggleBtn = document.getElementById('themeToggle');
-if (themeToggleBtn) {
+// Theme (Multi-Button Sync for V46)
+const themeBtns = document.querySelectorAll('.theme-toggle-btn');
+if (themeBtns.length > 0) {
   initTheme(document.body);
-  const updateLabel = () => {
-    const icon = themeToggleBtn.querySelector('i');
-    if (icon) {
-      const isLight = document.body.classList.contains('theme-light');
-      icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-    }
+
+  const updateAllIcons = () => {
+    const isLight = document.body.classList.contains('theme-light');
+    themeBtns.forEach(btn => {
+      const icon = btn.querySelector('i');
+      if (icon) icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    });
   };
-  updateLabel();
-  themeToggleBtn.addEventListener('click', () => {
-    toggleTheme(document.body);
-    updateLabel();
+
+  // Init state
+  updateAllIcons();
+
+  // Attach events
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleTheme(document.body);
+      updateAllIcons();
+    });
   });
 }
 

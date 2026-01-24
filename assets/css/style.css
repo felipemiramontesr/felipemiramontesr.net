@@ -1904,3 +1904,19 @@
     .theme-toggle-btn i {
       animation: spin-interval 30s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
+
+    /* =========================
+       MOBILE THEME BAR (V46)
+       ========================= */
+    .mobile-theme-bar {
+      display: none;
+      /* Default hidden on Desktop */
+    }
+
+    @media (max-width: 860px) {
+      .mobile-theme-bar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 0 16px 0;
+      }
+    }
