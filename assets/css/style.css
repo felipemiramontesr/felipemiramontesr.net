@@ -178,20 +178,7 @@
       position: relative;
     }
 
-    .glass::before {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: inherit;
-      pointer-events: none;
-      border: 1px solid rgba(255, 255, 255, .06);
-      opacity: .75;
-    }
-
-    body.theme-light .glass::before {
-      border: 1px solid rgba(8, 13, 24, .06);
-      opacity: .55;
-    }
+    /* .glass::before removed in V86 to fix container glow artifact */
 
     /* ========= BOTÓN THEME ========= */
     /* NOTE: .top-controls base styles moved to desktop media query (min-width: 861px) */

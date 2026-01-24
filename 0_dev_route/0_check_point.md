@@ -60,5 +60,5 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ DESPLEGADO V84 (Artifact Removal).
-        - **Nota**: A solicitud del usuario, se eliminó el "resplandor inexacto" (borde interno brillante) de las tarjetas de cristal (`.glass-card::before`). Esto elimina el artefacto visual que aparecía como una línea blanca desalineada o difusa en la parte superior de las tarjetas, proporcionando un acabado más limpio y plano. Release v84 activo.
+    - **Estado**: ✅ DESPLEGADO V85 (Card Contrast Fix).
+        - **Nota**: Corrección profunda del "resplandor inexacto". Se identificó que la sombra base de las tarjetas (`box-shadow`) tenía un tinte azul pizarra claro (`rgba(15, 23, 42, .10)`) que, sobre el fondo negro profundo del sitio, lucía paradójicamente más brillante que el fondo (efecto "glow"). Se reemplazó por una sombra negra estándar (`rgba(0,0,0, .30)`) y se eliminaron reglas CSS huérfanas, garantizando bordes nítidos y oscuros en todas las tarjetas. Release v85 activo.
