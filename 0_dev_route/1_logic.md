@@ -16,3 +16,9 @@ Este archivo define las reglas estrictas de colaboración entre el Usuario y el 
 - **Actualización de Check Point (CP)**: El archivo `0_check_point.md` se actualizará **únicamente** cuando el Usuario lo solicite de forma textual.
 - **Compromiso de Calidad**: Toda propuesta técnica incluirá una sección de Unit Tests para validar el código nuevo o modificado. Si la tarea es puramente estética o estructural y no requiere tests lógicos, el Asistente lo indicará y explicará el motivo.
 - **Rigidez**: No se aceptan sinónimos para el comando de ejecución; debe ser estrictamente "Go".
+
+## Contexto Actual (V40 Monolith)
+- **Objetivo**: Restaurar renderizado de Skills y Cookies en entorno local (`file://`) eliminando bloqueos CORS.
+- **Estrategia**: Refactor Monolítico (unificar JS en `main.js`, sin módulos).
+- **Estado Local**: Fix aplicado y validado visualmente (Logs limpios, sin duplicados).
+- **Siguiente Paso**: Despliegue a Producción (CD).

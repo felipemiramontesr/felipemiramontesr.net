@@ -1815,3 +1815,22 @@
       /* Update or confirm these align with new structure */
       align-items: center;
     }
+
+    /* =========================
+       THEME CONTROLS (DESKTOP)
+       ========================= */
+    .top-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Hide on mobile/tablet */
+    @media (max-width: 860px) {
+      .top-controls {
+        display: none !important;
+      }
+    }

@@ -116,7 +116,7 @@ function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
 // 4. MAIN APP LOGIC
 // ==========================
 
-console.error("App Version: v40 (MONOLITH FIX)");
+console.log("App Version: v41 (UI RESTORED)");
 
 // Theme
 // Note: User reverted buttons, so this logic might skip if element is missing, which is fine.
@@ -197,4 +197,41 @@ if (grid) {
   } catch (err) {
     console.error('Error rendering skills:', err);
   }
+}
+
+// ==========================
+// 5. COOKIE MODULE (Inline)
+// ==========================
+
+function initCookieBanner() {
+  if (localStorage.getItem(STORAGE_KEYS.COOKIES) === 'true') return;
+
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.innerHTML = `
+    <div class="cookie-content">
+      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas mi <a href="cookies.html" class="cookie-link">política de uso</a>.
+    </div>
+    <button class="cookie-btn" id="acceptCookies">
+      Entendido
+    </button>
+  `;
+
+  document.body.appendChild(banner);
+
+  const btn = banner.querySelector('#acceptCookies');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      localStorage.setItem(STORAGE_KEYS.COOKIES, 'true');
+      banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      banner.style.opacity = '0';
+      banner.style.transform = 'translateY(10px)';
+      setTimeout(() => banner.remove(), 300);
+    });
+  }
+}
+
+// Auto-init cookies
+if (typeof window !== 'undefined') {
+  window.addEventListener('DOMContentLoaded', initCookieBanner);
 }
