@@ -60,8 +60,8 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
         - **Sticky Mobile Bar**: Nuevo elemento de ancho completo (full-width) en la parte superior del `<body>` con `position: sticky`.
         - **JS Unificado**: Refactor de `main.js` para manejar múltiples botones de tema simultáneamente mediante la clase `.theme-toggle-btn`.
         - **Limpieza**: Eliminación de paddings compensatorios excesivos (`padding-top: 60px/80px`) para un layout natural.
-    - **Estado**: ✅ EXPECTANTE V91 (Morning Retry).
-        - **Nota**: Se inicia el intento de despliegue matutino (V91) tras 10 horas de enfriamiento. La configuración se mantiene en `FTPS` + `loose` (Modo FileZilla). Si el error `ETIMEDOUT` persiste, confirmaremos un bloqueo geográfico o de rango IP de GitHub por parte del proveedor, y tendremos que cambiar de estrategia de despliegue.
+    - **Estado**: 🏗️ PROTOCOLO L V93 (Local Fix Clean).
+        - **Nota**: Se activó el "Protocolo L" (Trabajo Local). El usuario reportó persistencia de la "sombra dorada" en V91/V92. Se identificó el borde y la sombra del contenedor `.glass` como la causa raíz. **Acción**: Se eliminaron `border` y `box-shadow` de la clase `.glass` en `style.css` localmente. Esto garantiza un fondo limpio sin líneas. **Instrucción al Usuario**: Abrir `index.html` directamente en el navegador local para confirmar la limpieza visual. Despliegue en pausa hasta verificación local.
 - **13**: Sesión de Continuidad (2026-01-24) - Verificación & Pulido.
     - **Objetivo**: Confirmar el despliegue exitoso de V90 (Fix visual de sombra + Docs).
     - **Estado Inicial**: Retomando desde V90 (Pending verification). El código local ya tiene la corrección de la sombra (`.glass::before` eliminado).

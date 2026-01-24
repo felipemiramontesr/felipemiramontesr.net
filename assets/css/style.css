@@ -170,11 +170,13 @@
 
     /* ====== Cristal premium (capas + borde interno) ====== */
     .glass {
-      border: 1px solid var(--stroke);
+      border: 0;
+      /* V93: Removed to kill golden artifact */
       background: var(--panel);
       backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
       -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-      box-shadow: var(--shadow-card);
+      box-shadow: none;
+      /* V93: Clean look, no weird shadows */
       position: relative;
     }
 
@@ -1759,7 +1761,8 @@
     .skill-stars i {
       font-size: 14px;
       color: #FACC15;
-      /* Gold */ /* CSS End - V92 Force Sync */
+      /* Gold */
+      /* CSS End - V94 Release Candidate */
     }
 
     .skill-stars i.star-empty {
