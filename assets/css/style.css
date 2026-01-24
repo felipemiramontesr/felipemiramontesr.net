@@ -1880,3 +1880,27 @@
         display: none !important;
       }
     }
+
+    /* =========================
+       ANIMATIONS (V44)
+       ========================= */
+    @keyframes spin-interval {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      10% {
+        transform: rotate(360deg);
+      }
+
+      /* Spin for 3s (10% of 30s) */
+      100% {
+        transform: rotate(360deg);
+      }
+
+      /* Pause for 27s */
+    }
+
+    .theme-toggle-btn i {
+      animation: spin-interval 30s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
