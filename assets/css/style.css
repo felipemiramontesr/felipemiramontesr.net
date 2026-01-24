@@ -865,12 +865,14 @@
       transform: rotateY(180deg);
       background: var(--panel);
       backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-      padding: 16px;
+      padding: 12px 8px;
+      /* Reduced vertical & horizontal padding to fit content */
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 14px;
+      gap: 10px;
+      /* Reduced gap from 14px */
     }
 
     .skill-back::before {
@@ -889,15 +891,16 @@
     }
 
     .exp-years-badge {
-      font-size: 14px;
+      font-size: 13px;
+      /* Reduced to fit */
       font-weight: 700;
       color: #475569;
-      /* Slate 600 - High Quality Ink */
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 4px;
+      letter-spacing: 0.3px;
+      /* Tighter letter spacing */
+      margin-top: 2px;
+      /* Halved margin */
       white-space: nowrap;
-      /* Prevent overflow wrap */
     }
 
     .exp-label {
