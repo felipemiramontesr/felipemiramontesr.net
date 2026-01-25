@@ -34,7 +34,9 @@ const SKILLS = [
   { name: "Trello", url: "https://trello.com/", si: "trello", fallback: "fa-brands fa-trello", rating: 4, color: "#0079BF" }
 ];
 
-const STORAGE_KEYS = { THEME: 'cv_theme', COOKIES: 'cookieAdvice' };
+const STORAGE_KEYS_MAIN = { THEME: 'cv_theme', COOKIES: 'cookieAdvice' };
+// V129 Fix: Renamed to avoid collision with cookies-core.js
+
 const UI_CONFIG = { THEME_LABELS: { LIGHT: 'Light Theme', DARK: 'Dark Theme' } };
 
 // ==========================
@@ -46,7 +48,7 @@ const UI_CONFIG = { THEME_LABELS: { LIGHT: 'Light Theme', DARK: 'Dark Theme' } }
  * @param {HTMLElement} body - The document body element.
  */
 function initTheme(body) {
-  const saved = localStorage.getItem(STORAGE_KEYS.THEME);
+  const saved = localStorage.getItem(STORAGE_KEYS_MAIN.THEME);
   if (saved === 'light') body.classList.add('theme-light');
 }
 
@@ -192,8 +194,10 @@ const downloadChevron = document.getElementById('downloadChevron');
 const floatingWrap = document.querySelector('.floating-wrap');
 
 if (downloadToggle && downloadMenu && downloadChevron && floatingWrap) {
+  console.log('Floating Menu Initialized'); // V129 Debug
   const menuElements = { menu: downloadMenu, toggle: downloadToggle, chevron: downloadChevron };
   downloadToggle.addEventListener('click', (e) => {
+    console.log('Download Toggle Clicked'); // V129 Debug
     if (e) e.preventDefault();
     toggleMenuState(menuElements);
   });
@@ -202,6 +206,8 @@ if (downloadToggle && downloadMenu && downloadChevron && floatingWrap) {
       toggleMenuState(menuElements, true);
     }
   });
+} else {
+  console.error('Floating Menu Elements Missing:', { downloadToggle, downloadMenu, floatingWrap }); // V129 Debug
 }
 
 // Skills Rendering (Robust)

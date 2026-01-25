@@ -679,19 +679,7 @@
       text-align: left;
     }
 
-    /* MÓVIL: Centrar Label y Value en el mismo eje */
-    @media (max-width: 640px) {
-      .contact .meta {
-        align-items: center;
-        /* Centra items flex verticalmente (horizontal en este caso) */
-        text-align: center;
-        /* Centra el texto interno */
-      }
 
-      .contact .value {
-        text-align: center;
-      }
-    }
 
     .contact .label {
       font-size: var(--fs-label);
@@ -708,6 +696,51 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+
+    /* MÓVIL: V166 Left Align Mobile Contact Text 
+       Moved here to override global specificity.
+    */
+    @media (max-width: 640px) {
+      .contact-grid {
+        gap: 8px;
+      }
+
+      .contact {
+        /* Grid layout: Optimize for text space */
+        grid-template-columns: 42px 1fr;
+        padding: 10px 10px;
+        min-height: auto;
+      }
+
+      .contact .ico {
+        width: 38px;
+        height: 38px;
+      }
+
+      .contact .ico i {
+        font-size: 17px;
+      }
+
+      .contact .label {
+        display: none;
+      }
+
+      .contact .value {
+        text-align: left;
+        /* V166: Natural alignment for wrapping */
+        width: 100%;
+        font-size: 1rem;
+        /* V165: Readable Standard */
+        font-weight: 700;
+        /* Standard Bold saves space */
+        line-height: 1.15;
+        letter-spacing: -0.4px;
+        /* Tighter tracking */
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-overflow: clip;
+      }
     }
 
     .section-wrap {
@@ -1841,16 +1874,19 @@
       opacity: .55;
     }
 
-    .theme-toggle-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(34, 211, 238, .15);
-      /* Cyan hint */
-      border-color: rgba(34, 211, 238, .4);
-      color: var(--accent-2);
+    /* V167: Increased breakpoint to 1367px for Pro Tablets */
+    @media (min-width: 1367px) {
+      .theme-toggle-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(34, 211, 238, .15);
+        /* Cyan hint */
+        border-color: rgba(34, 211, 238, .4);
+        color: var(--accent-2);
+      }
     }
 
-    /* Hide on mobile/tablet */
-    @media (max-width: 860px) {
+    /* Hide on mobile/tablet (Up to Pro sizes) */
+    @media (max-width: 1366px) {
       .top-controls {
         display: none !important;
       }
@@ -1888,7 +1924,7 @@
       /* Default hidden on Desktop */
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 1366px) {
       .mobile-theme-bar {
         display: flex;
         width: 100%;
@@ -1901,9 +1937,192 @@
       .mobile-theme-bar .theme-toggle-btn {
         width: 100% !important;
         max-width: none !important;
-        border-radius: 0 0 18px 18px !important;
-        /* Drawer effect: Flat top, rounded bottom */
+        border-radius: 0 0 26px 26px !important;
+        /* Drawer effect: Flat top, rounded bottom matches Card XL (26px) */
         justify-content: center !important;
         margin: 0 !important;
+
+        /* V150: Kill Integration Effects on Mobile */
+        transition: none !important;
+        transform: none !important;
+        -webkit-tap-highlight-color: transparent !important;
+        outline: none !important;
+      }
+
+      .mobile-theme-bar .theme-toggle-btn:active,
+      .mobile-theme-bar .theme-toggle-btn:focus,
+      .mobile-theme-bar .theme-toggle-btn:hover {
+        transform: none !important;
+        border-color: var(--stroke) !important;
+        background: var(--panel) !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .12) !important;
+        color: var(--fg) !important;
+        /* Ensure text color doesn't shift */
+      }
+    }
+
+    /* =========================
+       V131: FLOATING DOWNLOAD MENU (Cyan Glow + Elegance)
+       ========================= */
+    .floating-wrap {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .floating-download {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      /* System Match */
+      background: var(--panel) !important;
+      border: 1px solid var(--stroke) !important;
+      border-radius: 999px;
+      backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
+      -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      color: var(--fg);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      text-align: left;
+    }
+
+    .floating-download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(34, 211, 238, 0.25);
+      /* V131: Stronger Cyan Glow */
+      border-color: rgba(34, 211, 238, 0.5);
+      background: var(--panel-2) !important;
+    }
+
+    .floating-download span {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .floating-download small {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pill-ico {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(34, 211, 238, 0.1);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .floating-download:hover .pill-ico {
+      box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+      /* V131: Icon Glow */
+    }
+
+    /* MENU DROPDOWN */
+    .floating-menu {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      right: 0;
+      width: 240px;
+      background: var(--panel) !important;
+      border: 1px solid var(--stroke) !important;
+      border-radius: 18px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
+      -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+      /* State: Closed */
+      opacity: 0;
+      transform: translateY(10px) scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform-origin: bottom right;
+    }
+
+    .floating-menu.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .floating-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--muted);
+      transition: all 0.2s ease;
+      font-weight: 600;
+      font-size: 13px;
+      border: 1px solid transparent;
+      position: relative;
+    }
+
+    .floating-menu a:hover {
+      /* V131: Unified Cyan Hover */
+      background: rgba(34, 211, 238, 0.06);
+      color: var(--accent);
+      /* Cyan Text */
+      border-color: rgba(34, 211, 238, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      /* Subtle lift */
+    }
+
+    .floating-menu .left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .floating-menu .file {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      transition: all 0.2s ease;
+    }
+
+    .floating-menu a:hover .file {
+      background: rgba(34, 211, 238, 0.15);
+      /* Brighter icon bg */
+      box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+      /* Icon Glow */
+    }
+
+    /* V132 Fix: Force Arrow Cyan */
+    .floating-menu a:hover .arrow,
+    .floating-menu a:hover .arrow i {
+      color: var(--accent) !important;
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 860px) {
+      .floating-wrap {
+        display: none !important;
+        /* Hide on mobile as requested usually */
       }
     }

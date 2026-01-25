@@ -26,19 +26,19 @@ function initCookieBanner() {
 
   console.log('[Cookies] V108 (Standard Script) Check. URL:', window.location.href, 'Title:', document.title, 'Detected:', isOnPolicyPage);
 
-  // V109: Grammar fix ('mi' vs 'esta')
+  // V126: English Translation
   const policyLink = isOnPolicyPage
-    ? `esta política de uso`
-    : `mi <a href="cookies.html" class="cookie-link">política de uso</a>`;
+    ? `this privacy policy`
+    : `my <a href="cookies.html" class="cookie-link">privacy policy</a>`;
 
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
   banner.innerHTML = `
     <div class="cookie-content">
-      Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas ${policyLink}.
+      This website uses cookies to enhance your user experience. By continuing to browse, you agree to ${policyLink}.
     </div>
     <button class="cookie-btn" id="acceptCookies">
-      Entendido
+      Got it!
     </button>
   `;
 
