@@ -4,7 +4,7 @@ describe('SEO & Metadata Analytics', () => {
     beforeEach(() => {
         // We simulate the header in the JSDOM
         document.head.innerHTML = `
-      <meta name="description" content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Fullstack Drupal Developer with 12+ years of experience.">
+      <meta name="description" content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Senior Drupal Developer with 12+ years of experience.">
       <meta property="og:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume">
       <script type="application/ld+json" id="ld-json">
       {

@@ -548,14 +548,16 @@
       backdrop-filter: blur(calc(var(--glass-blur) + 4px)) saturate(var(--glass-sat));
       -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 4px)) saturate(var(--glass-sat));
       font-weight: 950;
-      font-size: var(--fs-chip);
+      font-size: var(--fs-body);
       color: var(--ink);
       box-shadow: 0 10px 24px rgba(0, 0, 0, .14);
       transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
       user-select: none;
       max-width: 100%;
       position: relative;
-      /* Optional mild float for chips too? No, keep it clean */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .chip::before {
@@ -706,6 +708,15 @@
         gap: 8px;
       }
 
+      .chip {
+        font-size: 1rem;
+        padding: 8px 12px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.4px;
+        white-space: nowrap;
+      }
+
       .contact {
         /* Grid layout: Optimize for text space */
         grid-template-columns: 42px 1fr;
@@ -728,18 +739,14 @@
 
       .contact .value {
         text-align: left;
-        /* V166: Natural alignment for wrapping */
         width: 100%;
         font-size: 1rem;
-        /* V165: Readable Standard */
         font-weight: 700;
-        /* Standard Bold saves space */
         line-height: 1.15;
         letter-spacing: -0.4px;
-        /* Tighter tracking */
-        white-space: normal;
-        overflow-wrap: anywhere;
-        text-overflow: clip;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
