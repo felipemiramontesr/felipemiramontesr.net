@@ -42,4 +42,9 @@ describe('Style Consistency & Regression', () => {
         expect(chipEllipsis).not.toBeNull();
         expect(contactEllipsis).not.toBeNull();
     });
+
+    it('should enable 2-column contact grid starting at 540px (Protocolo L)', () => {
+        const tabletBreakpoint = cssContent.match(/@media\s*\(min-width:\s*540px\)\s*{\s*\.contact-grid\s*{\s*grid-template-columns:\s*repeat\(2,\s*1fr\)/);
+        expect(tabletBreakpoint).not.toBeNull();
+    });
 });

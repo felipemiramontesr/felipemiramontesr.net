@@ -13,6 +13,7 @@
   --radius-xl: 26px;
   --radius-lg: 18px;
   --radius-md: 14px;
+  --card-max-w: 1280px;
 
   /* Espaciado mobile-first */
   --page-pad: 18px;
@@ -60,6 +61,7 @@
   --fs-body: clamp(14px, 2.8vw, 16px);
   --fs-small: clamp(12px, 2.4vw, 13px);
   --fs-label: clamp(11px, 2.2vw, 12px);
+  --fg: var(--ink);
 }
 
 /* ==========================================================================
@@ -188,27 +190,14 @@ svg {
        5. COMPONENTS (Glassmorphism & Generic)
        ========================================================================== */
 
-/* 
-     * Premium Glassmorphism Logic:
-     * - Uses backdrop-filter for background blurring.
-     * - Uses translucent backgrounds (var(--panel)) for the "frosted" effect.
-     * - Uses saturated filters to enhance colors behind the glass.
-     */
 .glass {
   border: 0;
-  /* V93: Removed to kill golden artifact */
   background: var(--panel);
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
   box-shadow: none;
   position: relative;
 }
-
-/* .glass::before removed in V86 to fix container glow artifact */
-
-/* ==========================================================================
-       6. BUTTONS & CONTROLS
-       ========================================================================== */
 
 /* Theme Toggle & Solid Actions */
 
@@ -252,11 +241,10 @@ svg {
   color: var(--accent);
 }
 
-/* ========= BOTÓN FLOTANTE DESCARGA (DESKTOP) ========= */
+/* Botón flotante descarga (Reset for group positioning) */
 .floating-wrap {
-  position: fixed;
-  bottom: 18px;
-  right: 18px;
+  position: relative;
+  /* Relative to group */
   z-index: 80;
 }
 
@@ -268,24 +256,23 @@ svg {
 }
 
 .floating-download {
-  border-radius: 999px;
-  padding: 14px 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-weight: 950;
-  letter-spacing: .2px;
-  box-shadow: var(--shadow-hover);
-  border: 1px solid rgba(34, 211, 238, .22);
-  background: var(--panel);
-  backdrop-filter: blur(calc(var(--glass-blur) + 6px)) saturate(var(--glass-sat));
-  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 6px)) saturate(var(--glass-sat));
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  color: var(--ink);
-  user-select: none;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 26px;
+  /* Pill logic */
+  background: var(--panel) !important;
+  border: 1px solid var(--stroke) !important;
+  backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  color: var(--fg);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  padding: 0;
   position: relative;
+  text-decoration: none;
 }
 
 .floating-download::before {
@@ -315,119 +302,16 @@ body.theme-light .floating-download::before {
 }
 
 .pill-ico {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--stroke-2);
-  background: var(--panel-2);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, .14);
-  flex: 0 0 auto;
+  font-size: 18px;
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  transition: box-shadow 0.2s ease;
 }
 
 .pill-ico i {
   color: var(--accent);
 }
-
-.floating-download small {
-  display: block;
-  font-weight: 850;
-  opacity: .72;
-  margin-top: 2px;
-  letter-spacing: .3px;
-  font-size: var(--fs-label);
-  color: var(--muted);
-}
-
-.floating-menu {
-  position: absolute;
-  right: 0;
-  bottom: calc(100% + 10px);
-  width: 240px;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--stroke);
-  background: var(--panel);
-  backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-  box-shadow: var(--shadow-hover);
-  transform-origin: 88% 100%;
-  opacity: 0;
-  transform: translateY(8px) scale(.985);
-  pointer-events: none;
-  transition: opacity .18s ease, transform .18s ease;
-}
-
-.floating-menu.open {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.floating-menu a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 14px;
-  text-decoration: none;
-  color: var(--ink);
-  font-weight: 950;
-  border-bottom: 1px solid var(--stroke-2);
-  background: transparent;
-  transition: background .18s ease, transform .18s ease;
-  font-size: var(--fs-small);
-}
-
-.floating-menu a:hover {
-  background: rgba(255, 255, 255, .04);
-  transform: translateX(1px);
-}
-
-body.theme-light .floating-menu a:hover {
-  background: rgba(8, 13, 24, .035);
-}
-
-.floating-menu a:last-child {
-  border-bottom: 0;
-}
-
-.floating-menu .left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-}
-
-.floating-menu .file {
-  width: 34px;
-  height: 34px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--stroke-2);
-  background: var(--panel-2);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
-  flex: 0 0 auto;
-}
-
-.floating-menu .file i {
-  color: var(--accent);
-}
-
-.floating-menu .arrow {
-  opacity: .65;
-}
-
-.floating-menu a:hover .arrow {
-  opacity: 1;
-  color: var(--accent-2);
-}
-
-
 
 /* Layout (mobile-first) */
 header.hero {
@@ -622,6 +506,14 @@ body.theme-light .chip:hover {
   gap: 14px;
 }
 
+/* TABLET/FOLD BREAKOUT (540px+) (Protocolo L) */
+@media (min-width: 540px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
 
 
 .contact {
@@ -678,7 +570,8 @@ body.theme-light .contact::before {
 .contact .ico {
   width: 44px;
   height: 44px;
-  border-radius: 14px;
+  border-radius: 26px;
+  /* Pill logic */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -802,7 +695,8 @@ body.theme-light .contact::before {
 .section-title .badge-ico {
   width: 40px;
   height: 40px;
-  border-radius: 14px;
+  border-radius: 26px;
+  /* Pill logic */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -990,7 +884,8 @@ body.theme-light .skill-back::before {
 .skill-ico {
   width: 46px;
   height: 46px;
-  border-radius: 14px;
+  border-radius: 26px;
+  /* Pill logic */
   display: grid;
   place-items: center;
   background: #F1F5F9;
@@ -1170,7 +1065,8 @@ body.theme-light .glass-card {
 .col-title .mini-ico {
   width: 36px;
   height: 36px;
-  border-radius: 14px;
+  border-radius: 26px;
+  /* Pill logic */
   display: grid;
   place-items: center;
   border: 1px solid var(--stroke);
@@ -1220,7 +1116,8 @@ body.theme-light .col-title .mini-ico::before {
 .pin {
   width: 34px;
   height: 34px;
-  border-radius: 14px;
+  border-radius: 26px;
+  /* Pill logic */
   display: grid;
   place-items: center;
   border: 1px solid var(--stroke-2);
@@ -1314,7 +1211,8 @@ body.theme-light .lang-item::before {
 .lang-item .ico {
   width: 40px;
   height: 40px;
-  border-radius: 14px;
+  border-radius: 26px;
+  /* Pill logic */
   display: grid;
   place-items: center;
   border: 1px solid var(--stroke-2);
@@ -1865,34 +1763,52 @@ footer {
 /* =========================
        THEME CONTROLS (DESKTOP) - V43 PREMIUM
        ========================= */
-.top-controls {
+.desktop-actions-group {
   position: fixed;
-  top: 20px;
+  top: var(--page-pad);
+  /* Protocolo L: Dynamically synchronized with Hero padding */
   right: 20px;
-  z-index: 9999;
-  display: flex;
-  gap: 10px;
+  /* Resilience Fallback */
+  z-index: 10000;
+  display: flex !important;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+@media (max-width: 1024px) {
+  .desktop-actions-group {
+    display: none !important;
+  }
+}
+
+/* Force Reset inner containers */
+.desktop-actions-group .top-controls,
+.desktop-actions-group .floating-wrap {
+  position: static !important;
+  inset: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 1367px) {
+  .desktop-actions-group {
+    right: 50%;
+    transform: translateX(720px);
+    /* Protocolo L: 640px (card half) + 32px (gap) + 48px (button width) = 720px */
+  }
 }
 
 .theme-toggle-btn {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-radius: 14px;
-  cursor: pointer;
-  color: var(--fg);
-  backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease;
-  position: relative;
-  font-size: 18px;
+  width: 48px !important;
+  height: 48px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border-radius: 14px !important;
 }
 
-/* Glow Effect Border */
 .theme-toggle-btn::before {
   content: "";
   position: absolute;
@@ -1923,10 +1839,10 @@ body.theme-light .theme-toggle-btn::before {
   }
 }
 
-/* Hide on mobile/tablet (Up to Pro sizes) */
+/* V168: Accessibility fix - Ensure top-controls remain visible on desktop-sized tablets */
 @media (max-width: 1366px) {
-  .top-controls {
-    display: none !important;
+  .desktop-actions-group .top-controls {
+    display: flex;
   }
 }
 
@@ -1954,6 +1870,32 @@ body.theme-light .theme-toggle-btn::before {
   animation: spin-interval 30s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
+/* Vertical Slide Animation for CV Download (Symmetry with Theme Spin) */
+@keyframes slide-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  /* 5s burst within 30s cycle (16.67% of 30s) */
+  4.17%,
+  12.5% {
+    transform: translateY(-4px);
+  }
+
+  8.33%,
+  16.67% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-download i {
+  animation: slide-vertical 30s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
 /* =========================
        MOBILE THEME BAR (V46)
        ========================= */
@@ -1962,7 +1904,7 @@ body.theme-light .theme-toggle-btn::before {
   /* Default hidden on Desktop */
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
   .mobile-theme-bar {
     display: flex;
     width: 100%;
@@ -2003,42 +1945,35 @@ body.theme-light .theme-toggle-btn::before {
        V131: FLOATING DOWNLOAD MENU (Cyan Glow + Elegance)
        ========================= */
 .floating-wrap {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9999 !important;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: relative;
 }
 
 .floating-download {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
-  /* System Match */
+  width: 48px !important;
+  height: 48px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border-radius: 14px !important;
   background: var(--panel) !important;
   border: 1px solid var(--stroke) !important;
-  border-radius: 999px;
   backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
   -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 12px)) saturate(var(--glass-sat)) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   color: var(--fg);
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-  text-align: left;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease;
+  position: relative;
 }
 
 .floating-download:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(34, 211, 238, 0.25);
-  /* V131: Stronger Cyan Glow */
-  border-color: rgba(34, 211, 238, 0.5);
-  background: var(--panel-2) !important;
+  box-shadow: 0 15px 35px rgba(34, 211, 238, .15);
+  border-color: rgba(34, 211, 238, .4);
+  color: var(--accent-2);
 }
 
 .floating-download span {
@@ -2056,14 +1991,12 @@ body.theme-light .theme-toggle-btn::before {
 }
 
 .pill-ico {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(34, 211, 238, 0.1);
-  display: grid;
-  place-items: center;
+  font-size: 18px;
+  /* Standard icon size */
   color: var(--accent);
   transition: box-shadow 0.2s ease;
+  display: grid;
+  place-items: center;
 }
 
 .floating-download:hover .pill-ico {
@@ -2074,9 +2007,13 @@ body.theme-light .theme-toggle-btn::before {
 /* MENU DROPDOWN */
 .floating-menu {
   position: absolute;
-  bottom: calc(100% + 12px);
-  right: 0;
-  width: 240px;
+  top: calc(100% + 12px);
+  /* Open downwards to avoid clipping at top */
+  left: 0 !important;
+  /* Protocolo L: Grow into empty margin */
+  right: auto !important;
+  width: 80px;
+  /* Compact symmetrical width */
   background: var(--panel) !important;
   border: 1px solid var(--stroke) !important;
   border-radius: 18px;
@@ -2090,10 +2027,11 @@ body.theme-light .theme-toggle-btn::before {
 
   /* State: Closed */
   opacity: 0;
-  transform: translateY(10px) scale(0.95);
+  transform: translateY(-10px) scale(0.95);
+  /* Animate from top */
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-  transform-origin: bottom right;
+  transform-origin: top right;
 }
 
 .floating-menu.open {
@@ -2109,52 +2047,28 @@ body.theme-light .theme-toggle-btn::before {
   padding: 12px;
   border-radius: 12px;
   text-decoration: none;
-  color: var(--muted);
+  color: var(--accent);
   transition: all 0.2s ease;
-  font-weight: 600;
-  font-size: 13px;
+  font-size: 18px;
+  /* Homologated icon size */
   border: 1px solid transparent;
-  position: relative;
 }
 
 .floating-menu a:hover {
-  /* V131: Unified Cyan Hover */
-  background: rgba(34, 211, 238, 0.06);
-  color: var(--accent);
-  /* Cyan Text */
+  background: rgba(34, 211, 238, 0.1);
   border-color: rgba(34, 211, 238, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  /* Subtle lift */
+  transform: translateY(-1px);
 }
 
-.floating-menu .left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.floating-menu .file {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  display: grid;
-  place-items: center;
-  color: var(--accent);
-  transition: all 0.2s ease;
-}
-
-.floating-menu a:hover .file {
-  background: rgba(34, 211, 238, 0.15);
-  /* Brighter icon bg */
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
-  /* Icon Glow */
-}
-
-/* V132 Fix: Force Arrow Cyan */
-.floating-menu a:hover .arrow,
-.floating-menu a:hover .arrow i {
+.floating-menu a .arrow {
+  font-size: 14px;
+  /* Slightly smaller for the directional hint */
+  opacity: 1 !important;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   color: var(--accent) !important;
+}
+
+.floating-menu a:hover .arrow {
   transform: translateX(3px);
 }
 

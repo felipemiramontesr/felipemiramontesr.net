@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   web-deploy:
@@ -17,14 +20,19 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
+        cache: 'npm'
 
     - name: 📦 Install dependencies
       run: npm install
+
+    - name: ✨ Run linting
+      run: npm run lint
 
     - name: ✅ Run unit tests
       run: npm test
 
     - name: 📂 Sync files to FTP
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}

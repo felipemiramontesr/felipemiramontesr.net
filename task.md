@@ -13,6 +13,11 @@
   - [x] Implement v3 (Cache-Bust & Stacking Context) <!-- id: 11 -->
   - [x] Verify fixed scroll behavior <!-- id: 9 -->
 
+- [x] CI/CD Optimization (L)
+    - [x] Analyze current workflow and design improvements
+    - [x] Update `deploy.yml` with linting, cache, and PR triggers
+    - [x] Verify workflow logic (Ready for GitHub Actions)
+
 - [ ] Theme Button Fix (V31 Recovery & Final Deployment)
   - [ ] update deploy.yml to root (./)
   - [ ] bump versions to V31

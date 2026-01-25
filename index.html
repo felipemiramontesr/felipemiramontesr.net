@@ -9,9 +9,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Senior Drupal Developer with 12+ years of experience.">
+    content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Senior Fullstack Drupal Developer with 12+ years of experience.">
   <meta name="keywords"
-    content="Felipe Miramontes, Senior Delivery Manager, Drupal Developer, Cybersecurity, IT Leadership, CV, Resume">
+    content="Felipe Miramontes, Senior Delivery Manager, Fullstack Drupal Developer, Cybersecurity, IT Leadership, CV, Resume">
   <meta name="author" content="Felipe de Jesús Miramontes Romero">
 
   <!-- Open Graph / Facebook -->
@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://www.felipemiramontesr.net/">
   <meta property="og:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume">
   <meta property="og:description"
-    content="Senior Delivery Manager & Senior Drupal Developer. 12+ years of experience in IT and Leadership.">
+    content="Senior Delivery Manager & Senior Fullstack Drupal Developer. 12+ years of experience in IT and Leadership.">
   <meta property="og:image" content="https://www.felipemiramontesr.net/assets/img/Picture.jpg">
 
   <!-- Twitter -->
@@ -27,7 +27,7 @@
   <meta property="twitter:url" content="https://www.felipemiramontesr.net/">
   <meta property="twitter:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume">
   <meta property="twitter:description"
-    content="Senior Delivery Manager & Senior Drupal Developer. 12+ years of experience in IT and Leadership.">
+    content="Senior Delivery Manager & Senior Fullstack Drupal Developer. 12+ years of experience in IT and Leadership.">
   <meta property="twitter:image" content="https://www.felipemiramontesr.net/assets/img/Picture.jpg">
 
   <title>B. Eng. Felipe de Jesús Miramontes Romero | Portfolio & CV</title>
@@ -56,8 +56,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   </noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=v132">
-  <link rel="stylesheet" href="assets/css/cookies-remote.css?v=v132">
+  <link rel="stylesheet" href="assets/css/style.css?v=v141">
+  <link rel="stylesheet" href="assets/css/cookies-remote.css?v=v141">
 
   <!-- JSON-LD Structured Data (Senior SEO) -->
   <script type="application/ld+json">
@@ -65,7 +65,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Felipe de Jesús Miramontes Romero",
-    "jobTitle": "Senior Delivery Manager & Senior Drupal Developer",
+    "jobTitle": "Senior Delivery Manager & Senior Fullstack Drupal Developer",
     "url": "https://www.felipemiramontesr.net/",
     "sameAs": [
       "https://www.linkedin.com/in/felipemiramontesr/",
@@ -81,46 +81,40 @@
 
 <body>
 
-  <div class="top-controls">
-    <button class="theme-toggle-btn btn-solid" id="themeToggle" type="button" aria-label="Cambiar tema">
-      <i class="fa-solid fa-sun"></i>
-    </button>
-  </div>
+  <!-- ==========================================================================
+       DESKTOP ACTION CONTROLS (Floating)
+       ========================================================================== -->
+  <div class="desktop-actions-group">
+    <!-- Theme Toggle Pill -->
+    <div class="top-controls">
+      <button class="theme-toggle-btn btn-solid" id="themeToggle" type="button" aria-label="Cambiar tema">
+        <i class="fa-solid fa-sun"></i>
+      </button>
+    </div>
 
+    <!-- Download CV Pill (Icon-only Redesign) -->
+    <div class="floating-wrap">
+      <button class="floating-download" id="downloadToggle" type="button" aria-haspopup="true" aria-expanded="false"
+        aria-label="Download CV">
+        <span class="pill-ico"><i class="fa-solid fa-file-arrow-down"></i></span>
+      </button>
 
-  <!-- HERO -->
-
-  <!-- Botón flotante Descarga (solo escritorio) -->
-  <div class="floating-wrap">
-    <button class="floating-download floatPulse" id="downloadToggle" type="button" aria-haspopup="true"
-      aria-expanded="false">
-      <span class="pill-ico"><i class="fa-solid fa-download"></i></span>
-      <span>
-        Download CV
-        <small>PDF / DOCX</small>
-      </span>
-      <i class="fa-solid fa-chevron-up u-opacity-70" id="downloadChevron"></i>
-    </button>
-
-    <div class="floating-menu" id="downloadMenu" role="menu" aria-label="Download options">
-      <a href="assets/docs/ECV_Felipe_Miramontes_Romero.pdf" download="ECV_Felipe_Miramontes_Romero.pdf"
-        role="menuitem">
-        <span class="left">
-          <span class="file"><i class="fa-solid fa-file-pdf"></i></span>
-          <span>Download PDF</span>
-        </span>
-        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
-      </a>
-      <a href="assets/docs/ECV_Felipe_Miramontes_Romero.docx" download="ECV_Felipe_Miramontes_Romero.docx"
-        role="menuitem">
-        <span class="left">
-          <span class="file"><i class="fa-solid fa-file-word"></i></span>
-          <span>Download DOCX</span>
-        </span>
-        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
-      </a>
+      <div class="floating-menu" id="downloadMenu" role="menu" aria-label="Download options">
+        <a href="assets/docs/ECV_Felipe_Miramontes_Romero.pdf" download="ECV_Felipe_Miramontes_Romero.pdf"
+          role="menuitem" aria-label="Download PDF">
+          <i class="fa-solid fa-file-pdf"></i>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+        <a href="assets/docs/ECV_Felipe_Miramontes_Romero.docx" download="ECV_Felipe_Miramontes_Romero.docx"
+          role="menuitem" aria-label="Download DOCX">
+          <i class="fa-solid fa-file-word"></i>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+      </div>
     </div>
   </div>
+
+
 
   <!-- THEME TOGGLE (MOBILE STATIC) -->
   <div class="mobile-theme-bar">
@@ -149,7 +143,7 @@
               <div class="chips">
                 <span class="chip"><i class="fa-solid fa-star"></i> Chief Operations Officer</span>
                 <span class="chip"><i class="fa-solid fa-diagram-project"></i> Senior Delivery Manager</span>
-                <span class="chip"><i class="fa-brands fa-drupal"></i> Senior Drupal Developer</span>
+                <span class="chip"><i class="fa-brands fa-drupal"></i> Senior Fullstack Drupal Developer</span>
               </div>
             </div>
 
@@ -634,8 +628,10 @@
 
 
 
-  <script src="assets/js/cookies-core.js?v=v132"></script>
-  <script src="assets/js/main.js?v=v132"></script>
+
+
+  <script src="assets/js/cookies-core.js?v=v135"></script>
+  <script src="assets/js/main.js?v=v135"></script>
 
 
 </body>

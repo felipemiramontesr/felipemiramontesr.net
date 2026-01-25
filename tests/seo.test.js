@@ -4,13 +4,15 @@ describe('SEO & Metadata Analytics', () => {
     beforeEach(() => {
         // We simulate the header in the JSDOM
         document.head.innerHTML = `
-      <meta name="description" content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Senior Drupal Developer with 12+ years of experience.">
+      <meta name="description" content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Senior Fullstack Drupal Developer with 12+ years of experience.">
+      <meta name="keywords" content="Felipe Miramontes, Senior Delivery Manager, Fullstack Drupal Developer, Cybersecurity, IT Leadership, CV, Resume">
       <meta property="og:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume">
       <script type="application/ld+json" id="ld-json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Felipe de Jesús Miramontes Romero"
+        "name": "Felipe de Jesús Miramontes Romero",
+        "jobTitle": "Senior Delivery Manager & Senior Fullstack Drupal Developer"
       }
       </script>
     `;

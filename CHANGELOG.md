@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [V134] - 2026-01-25
+### Changed
+- Standardized professional title to "Senior Fullstack Drupal Developer" site-wide (Meta keywords, JSON-LD, Chips, and SEO tests).
+
 ## [V133] - 2026-01-25
 ### Added
 - `tests/styles.test.js`: Suite of regression tests for CSS consistency.

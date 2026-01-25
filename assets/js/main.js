@@ -42,7 +42,7 @@ const SKILLS = [
 const STORAGE_KEYS_MAIN = { THEME: 'cv_theme', COOKIES: 'cookieAdvice' };
 // V129 Fix: Renamed to avoid collision with cookies-core.js
 
-const UI_CONFIG = { THEME_LABELS: { LIGHT: 'Light Theme', DARK: 'Dark Theme' } };
+// const UI_CONFIG = { THEME_LABELS: { LIGHT: 'Light Theme', DARK: 'Dark Theme' } };
 
 // ==========================
 // 2. THEME MODULE (Inline)
@@ -65,18 +65,13 @@ function initTheme(body) {
 function toggleTheme(body) {
   body.classList.toggle('theme-light');
   const isLight = body.classList.contains('theme-light');
-  localStorage.setItem(STORAGE_KEYS.THEME, isLight ? 'light' : 'dark');
+  localStorage.setItem(STORAGE_KEYS_MAIN.THEME, isLight ? 'light' : 'dark');
   return isLight ? 'light' : 'dark';
 }
 
-/**
- * Returns the appropriate label for the theme toggle button.
- * @param {boolean} isCurrentlyLight - Whether the light theme is active.
- * @returns {string} The localized label.
- */
-function getThemeLabel(isCurrentlyLight) {
-  return isCurrentlyLight ? UI_CONFIG.THEME_LABELS.DARK : UI_CONFIG.THEME_LABELS.LIGHT;
-}
+// function getThemeLabel(isCurrentlyLight) {
+//   return isCurrentlyLight ? UI_CONFIG.THEME_LABELS.DARK : UI_CONFIG.THEME_LABELS.LIGHT;
+// }
 
 // ==========================
 // 3. UI MODULE (Inline)
@@ -198,12 +193,11 @@ if (yearSpan) yearSpan.textContent = new Date().getFullYear().toString();
 // Floating Menu
 const downloadToggle = document.getElementById('downloadToggle');
 const downloadMenu = document.getElementById('downloadMenu');
-const downloadChevron = document.getElementById('downloadChevron');
 const floatingWrap = document.querySelector('.floating-wrap');
 
-if (downloadToggle && downloadMenu && downloadChevron && floatingWrap) {
+if (downloadToggle && downloadMenu && floatingWrap) {
   console.log('Floating Menu Initialized'); // V129 Debug
-  const menuElements = { menu: downloadMenu, toggle: downloadToggle, chevron: downloadChevron };
+  const menuElements = { menu: downloadMenu, toggle: downloadToggle };
   downloadToggle.addEventListener('click', (e) => {
     console.log('Download Toggle Clicked'); // V129 Debug
     if (e) e.preventDefault();

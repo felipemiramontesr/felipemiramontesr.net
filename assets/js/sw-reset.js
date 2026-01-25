@@ -10,6 +10,6 @@ try {
             // Silenciamos errores internos
         });
     }
-} catch (e) {
+} catch {
     // Silencio total en protocolos no compatibles (file://)
 }
