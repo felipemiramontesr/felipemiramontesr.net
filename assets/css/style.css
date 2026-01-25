@@ -176,7 +176,6 @@
       backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
       -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
       box-shadow: none;
-      /* V93: Clean look, no weird shadows */
       position: relative;
     }
 
@@ -610,11 +609,7 @@
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
       min-height: 74px;
 
-      /* STRICT ALIGNMENT FINAL FIX: 
-         1. Grid with fixed icon column (48px)
-         2. No minmax, no centering properties on the grid itself.
-         3. Text column fills 1fr.
-      */
+      /* STRICT ALIGNMENT FINAL FIX */
       display: grid;
       grid-template-columns: 48px 1fr;
       align-items: center;
@@ -700,9 +695,7 @@
       white-space: nowrap;
     }
 
-    /* MÓVIL: V166 Left Align Mobile Contact Text 
-       Moved here to override global specificity.
-    */
+    /* MÓVIL: Left Align Mobile Contact Text */
     @media (max-width: 640px) {
       .contact-grid {
         gap: 8px;
@@ -1061,7 +1054,6 @@
       backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
       -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
       box-shadow: var(--shadow-card);
-      /* V85 Fix: Pure black shadow, no glow artifact */
       padding: 18px;
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
       overflow: hidden;
