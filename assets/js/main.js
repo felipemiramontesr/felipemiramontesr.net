@@ -1,6 +1,11 @@
 /**
  * @fileoverview Main entry point for the application.
- * Monolithic version for robust local/offline execution (No ES Modules).
+ * 
+ * ARCHITECTURE NOTE:
+ * This file acts as a monolithic fallback for environments that do not support 
+ * ES Modules (such as direct execution via the file:// protocol in some browsers).
+ * It mirrors the logic found in assets/js/modules/ to ensure 100% functionality 
+ * in offline or restricted local contexts.
  */
 
 // ==========================
@@ -163,6 +168,9 @@ if (themeBtns.length > 0) {
   // Init state
   initTheme(body);
 
+  /**
+   * Syncs all theme toggle icons based on the current body theme.
+   */
   const updateAllIcons = () => {
     const isLight = body.classList.contains('theme-light');
     themeBtns.forEach(btn => {
@@ -217,7 +225,8 @@ if (grid) {
     if (typeof SKILLS !== 'undefined' && Array.isArray(SKILLS) && SKILLS.length > 0) {
       grid.innerHTML = ''; // Clear container to prevent duplicates
       SKILLS.forEach((skill) => {
-        const card = document.createElement('div'); // Changed to div container
+        /** @type {HTMLDivElement} */
+        const card = document.createElement('div');
         card.className = 'skill-card';
 
         // V62 Interaction Data
