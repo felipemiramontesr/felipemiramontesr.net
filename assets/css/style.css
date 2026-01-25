@@ -248,8 +248,8 @@ svg {
   z-index: 80;
 }
 
-/* Ocultar botón de descarga por debajo de 1150px para evitar solapamiento con cookies */
-@media (max-width: 1150px) {
+/* Ocultar botón de descarga por debajo de 1510px para evitar solapamiento con cookies */
+@media (max-width: 1510px) {
   .floating-wrap {
     display: none !important;
   }
@@ -1777,7 +1777,7 @@ footer {
   pointer-events: auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1510px) {
   .desktop-actions-group {
     display: none !important;
   }
@@ -1904,13 +1904,16 @@ body.theme-light .theme-toggle-btn::before {
   /* Default hidden on Desktop */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1510px) {
   .mobile-theme-bar {
     display: flex;
+    padding: 0 var(--page-pad);
+  }
+
+  .mobile-theme-bar-inner {
     width: 100%;
-    margin-bottom: -4px !important;
-    padding: 0 18px;
-    /* Standard --page-pad alignment */
+    max-width: var(--card-max-w);
+    margin: 0 auto -4px auto;
   }
 
   /* Transform button into a full-width block/card (FORCED) */
