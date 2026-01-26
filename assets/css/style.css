@@ -195,6 +195,7 @@ svg {
   }
 
   @keyframes floaty {
+
     0%,
     100% {
       transform: translateY(0);
@@ -267,6 +268,45 @@ svg {
   color: var(--accent);
 }
 
+/* Desktop Actions (Fixed Top-Right) */
+.desktop-actions-group {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  z-index: 100;
+  /* Removed pointer-events: none to avoid click issues on children */
+}
+
+/* Enable pointer events on children */
+.desktop-actions-group>* {
+  /* Removed pointer-events: auto; */
+}
+
+/* Hide on mobile/tablet */
+@media (max-width: 1024px) {
+  .desktop-actions-group {
+    display: none !important;
+  }
+}
+
+/* Mobile Theme Bar */
+.mobile-theme-bar {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 90;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile-theme-bar {
+    display: block;
+  }
+}
+
 /* Botón flotante descarga (Reset for group positioning) */
 .floating-wrap {
   position: relative;
@@ -337,6 +377,71 @@ body.theme-light .floating-download::before {
 
 .pill-ico i {
   color: var(--accent);
+}
+
+/* Floating Menu (Dropdown) - Recovered Definition */
+.floating-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  width: 250px;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.96);
+  transform-origin: top right;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.floating-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.floating-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  transition: background 0.15s ease;
+}
+
+.floating-menu a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.floating-menu a i:first-child {
+  color: var(--accent);
+  font-size: 1.1em;
+  width: 20px;
+  text-align: center;
+}
+
+.floating-menu a .arrow {
+  margin-left: auto;
+  opacity: 0.4;
+  font-size: 0.8em;
+  transition: transform 0.2s ease;
+}
+
+.floating-menu a:hover .arrow {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 /* Layout (mobile-first) */
@@ -1364,6 +1469,7 @@ footer {
        13. RESPONSIVE QUERIES (Desktop & Tablet)
        ========================================================================== */
 @media (min-width: 861px) {
+
   /* Desktop: botón theme flotante arriba-derecha */
   .top-controls {
     position: fixed;
@@ -1529,6 +1635,7 @@ footer {
 }
 
 @media print {
+
   /* =========================
      BASE DOCUMENTO
      ========================= */

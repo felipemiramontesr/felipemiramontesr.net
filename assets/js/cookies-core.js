@@ -1,19 +1,14 @@
-// ==========================================
-// V108: Module -> Standard Script Conversion
-// (Required for local file:// testing)
-// ==========================================
+/**
+ * @fileoverview Core logic for the cookie consent banner.
+ * (ES Module Version)
+ */
 
-// Inline Constant (formerly imported)
-const STORAGE_KEYS = {
-  THEME: 'cv_theme',
-  COOKIES: 'cookieAdvice',
-};
+import { STORAGE_KEYS } from './modules/constants.js';
 
 /**
  * Initializes the cookie banner if consent hasn't been granted.
- * @returns {void}
  */
-function initCookieBanner() {
+export function initCookieBanner() {
   if (localStorage.getItem(STORAGE_KEYS.COOKIES) === 'true') {
     return;
   }
@@ -24,14 +19,7 @@ function initCookieBanner() {
 
   const isOnPolicyPage = urlCheck || titleCheck;
 
-  console.log(
-    '[Cookies] V108 (Standard Script) Check. URL:',
-    window.location.href,
-    'Title:',
-    document.title,
-    'Detected:',
-    isOnPolicyPage
-  );
+  console.log('[Cookies] Check. Page:', isOnPolicyPage);
 
   // V126: English Translation
   const policyLink = isOnPolicyPage
@@ -65,19 +53,4 @@ function initCookieBanner() {
       }, 300);
     });
   }
-}
-
-// Auto-initialize logic
-if (typeof window !== 'undefined') {
-  if (document.readyState === 'loading') {
-    window.addEventListener('DOMContentLoaded', initCookieBanner);
-  } else {
-    // DOM already ready
-    initCookieBanner();
-  }
-}
-
-// Export for Vitest/JEST (Conditional to not break browser)
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = { initCookieBanner };
 }

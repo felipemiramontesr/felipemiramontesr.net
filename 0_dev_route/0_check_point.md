@@ -85,3 +85,14 @@ Este archivo funciona como un punto de guardado sistemático del proyecto. Su pr
   - **V118**: Strict Remote Clone. Lógica exacta del snippet remoto (`var(--panel)`) + Glow intenso.
   - **V119**: Contrast Fix. Texto del botón ajustado a `var(--bg)` (Navy #050713) para legibilidad perfecta sobre Cyan.
   - **Estado**: ✅ DESPLEGADO.
+- **17**: Architecture Modernization (Vite + DRY) Pending Fix.
+  - **Meta**: Migración masiva a Vite (Build minificado) y ES Modules.
+  - **Logros**:
+    - Build System: `npm run build` genera `dist/` optimizado (7kB JS vs Monolito).
+    - CSS: Recuperados estilos perdidos (`.desktop-actions-group`, `.floating-menu`).
+    - Assets: PDFs movidos a `public/` para integridad del build.
+  - **Estado Actual**:
+    - Tema: ✅ Funciona (Lógica restaurada).
+    - Menú: ✅ Abre/Cierra (CSS restaurado).
+    - Descargas: ❌ Clics no responden en Preview (Investigación pendiente: Event Bubbling vs Browser Security).
+    - Deploy: Pausado hasta resolver descargas.

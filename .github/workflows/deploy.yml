@@ -40,6 +40,9 @@ jobs:
       - name: 🧪 Run E2E Tests
         run: npm run test:e2e
 
+      - name: 🏗️ Build Production
+        run: npm run build
+
       - name: 📂 Sync files to FTP
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -48,18 +51,9 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           log-level: verbose
-          timeout: 600000 # 10 minutes
+          timeout: 600000
           port: 21
           protocol: ftps
           security: loose
+          local-dir: ./dist/
           server-dir: ./
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/private.felipemiramontesr.net/**
-            **/0_dev_route/**
-            **/tests/**
-            **/node_modules/**
-            **/package.json
-            **/package-lock.json
-            **/vitest.config.js
