@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [V169] - 2026-01-25
+### Added
+- **Visual E2E Tests**: Implemented Playwright testing suite for visual regression (transparency/color checks).
+- **Watermark**: Added massive "Massive Bold" years indicator behind skills.
+- **Cookies Page**: Replicated floating pills layout (Protocolo L).
+
+### Changed
+- **Skills Redesign**:
+  - Dark Mode: "Sticker" aesthetic (Flat 1px border, no shadow, no glow).
+  - Light Mode: High contrast text and darker empty stars (0.65 opacity).
+  - Icon: Simplified 1px border with White Background (#F1F5F9) in Dark Mode.
+- **Cookies Banner**:
+  - Refactored CSS to use unified variables (Removed `!important` hacks).
+  - Tuned Light Mode transparency to 0.35 (Ice Glass).
+  - Forced "Got it!" button text to Black in Light Mode.
+- **Refactor**: Consolidated Light/Dark logic in `style.css`.
+
+### Fixed
+- Restored glassmorphism effect on Cookie Banner for Light Theme.
+
 ## [V134] - 2026-01-25
 ### Changed
 - Standardized professional title to "Senior Fullstack Drupal Developer" site-wide (Meta keywords, JSON-LD, Chips, and SEO tests).

@@ -31,6 +31,12 @@ jobs:
     - name: ✅ Run unit tests
       run: npm test
 
+    - name: 🎭 Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: 🧪 Run E2E Tests
+      run: npm run test:e2e
+
     - name: 📂 Sync files to FTP
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5

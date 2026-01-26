@@ -62,6 +62,13 @@
   --fs-small: clamp(12px, 2.4vw, 13px);
   --fs-label: clamp(11px, 2.2vw, 12px);
   --fg: var(--ink);
+
+  /* Cookie Refactor Defaults (Dark) */
+  --cookie-bg: var(--panel);
+  --cookie-blur: 20px;
+  --cookie-border: var(--stroke);
+  --cookie-shadow: var(--shadow-card);
+  --cookie-btn-text: var(--bg);
 }
 
 /* ==========================================================================
@@ -89,7 +96,16 @@ body.theme-light {
   --shadow-soft: 0 14px 44px rgba(15, 23, 42, .10);
   --shadow-card: 0 16px 50px rgba(15, 23, 42, .12);
   --shadow-hover: 0 22px 64px rgba(15, 23, 42, .16);
+
+  /* Cookie Refactor Tokens (v169) */
+  --cookie-bg: rgba(255, 255, 255, 0.35);
+  --cookie-blur: 25px;
+  --cookie-border: rgba(0, 0, 0, 0.08);
+  --cookie-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --cookie-btn-text: #000000;
 }
+
+
 
 /* ==========================================================================
        3. GLOBAL RESET & BASE STYLES
@@ -729,7 +745,7 @@ body.theme-light .badge-ico::before {
 
 
 /* ==========================================================================
-       7. SKILLS SECTION (3D Glass Flip)
+       7. SKILLS SECTION (Static Glass Card - No Animation)
        ========================================================================== */
 .skills-grid {
   display: grid;
@@ -737,125 +753,117 @@ body.theme-light .badge-ico::before {
   gap: 16px;
 }
 
-.skill-card {
-  /* Scene Container */
-  background: transparent;
-  perspective: 1000px;
-  min-height: 120px;
-  cursor: pointer;
-}
-
-.skill-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-/* V81: Desktop Only Flip */
+/* Responsive Grid for Desktop */
 @media (min-width: 861px) {
-  .skill-card:hover .skill-inner {
-    transform: rotateY(180deg);
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 }
 
-/* Common Face Styles */
-.skill-front,
-.skill-back {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+.skill-card {
+  position: relative;
+  background: var(--panel);
+  /* Keep panel color but remove heavy glass effects if desired, but user said 'sin sombras o efectos' */
+  border: 1px solid var(--stroke-2);
+  /* Simple flat border (Sticker) */
   border-radius: 18px;
-  border: 1px solid var(--stroke);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
-  overflow: hidden;
-  text-decoration: none;
-}
-
-/* --- FRONT FACE (Tech White) --- */
-/* --- FRONT FACE (Tech White) --- */
-.skill-front {
-  background: var(--panel);
-  backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-  padding: 16px;
+  padding: 24px 16px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* V64 Center */
   text-align: center;
-  /* V64 Center */
   gap: 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  min-height: 180px;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: none;
+  /* NO Shadow (Sticker) */
+  backdrop-filter: none;
+  /* Remove glass blur for cleaner sticker look? Or keep blink? User said 'sin efectos'. Let's remove blur for raw sticker. */
+  -webkit-backdrop-filter: none;
 }
 
-.skill-front::before {
+/* Remove the 'glow' border inside for dark mode */
+.skill-card::before {
+  display: none;
+}
+
+body.theme-light .skill-card {
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
+  /* Restore shadow for light mode? User specified 'dark theme'. Let's keep light mode as is or simplify too? Usually distinct. */
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Restore glow for light mode if needed, or remove globally? Let's restore for light mode specifically if it was integral */
+body.theme-light .skill-card::before {
+  display: block;
   content: "";
   position: absolute;
   inset: 1px;
   border-radius: inherit;
   pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, .045);
-  opacity: .75;
-}
-
-body.theme-light .skill-front {
-  box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
-}
-
-body.theme-light .skill-front::before {
   border: 1px solid rgba(8, 13, 24, .05);
   opacity: .55;
 }
 
-/* --- BACK FACE (Same Material as Front) --- */
-.skill-back {
-  transform: rotateY(180deg);
-  background: var(--panel);
-  backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
-  padding: 12px 8px;
-  /* Reduced vertical & horizontal padding to fit content */
+.skill-card:hover {
+  transform: translateY(-4px);
+  /* Lift only */
+  border-color: rgba(34, 211, 238, .5);
+  /* Stronger sticker border on hover */
+  box-shadow: none;
+  /* No shadow on hover for sticker */
+}
+
+/* Info Container */
+.skill-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 10px;
-  /* Reduced gap from 14px */
+  gap: 6px;
+  width: 100%;
+  z-index: 2;
 }
 
-.skill-back::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, .045);
-  opacity: .75;
-}
-
-body.theme-light .skill-back::before {
-  border: 1px solid rgba(8, 13, 24, .05);
-  opacity: .55;
-}
-
-.exp-years-badge {
-  font-size: 13px;
-  /* Reduced to fit */
+/* Name Styles */
+.skill-name {
   font-weight: 700;
-  color: var(--star-gold);
-  /* V72 Match Stars */
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  /* Tighter letter spacing */
-  margin-top: 2px;
-  /* Halved margin */
-  white-space: nowrap;
+  font-size: var(--fs-body);
+  color: var(--fg);
+  margin-bottom: 2px;
 }
 
-/* V72 Force star color match */
+body.theme-light .skill-name {
+  color: #0F172A;
+  /* Dark Slate for visibility on white */
+}
+
+/* Watermark Years (Ghost) */
+.skill-watermark {
+  position: absolute;
+  bottom: -2px;
+  right: -10px;
+  font-size: 6rem;
+  font-weight: 950;
+  line-height: 0.8;
+  color: var(--fg);
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+}
+
+body.theme-light .skill-watermark {
+  color: #000000;
+  opacity: 0.07;
+  /* Subtle dark watermark for light mode */
+}
+
+/* Star Styles */
 .skill-stars i {
   color: var(--star-gold);
 }
@@ -865,103 +873,73 @@ body.theme-light .skill-back::before {
   /* Or muted color for empty stars */
 }
 
-.exp-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--muted);
-  font-weight: 700;
-  margin-bottom: 4px;
+body.theme-light .skill-stars i.star-empty {
+  color: rgba(0, 0, 0, 0.65);
+  /* Darker empty stars for Light Mode */
 }
 
-.exp-years {
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--accent);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Icon Box */
 .skill-ico {
-  width: 46px;
-  height: 46px;
-  border-radius: 26px;
-  /* Pill logic */
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
   display: grid;
   place-items: center;
   background: #F1F5F9;
-  /* Slate 100 - Tech White */
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Tech White (High Contrast) */
+  border: 1px solid var(--stroke-2);
+  /* Simple 1px border */
+  box-shadow: none;
+  /* Removed glow/shadow */
   flex: 0 0 auto;
+  z-index: 2;
+  position: relative;
 }
 
 .skill-ico svg {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   display: block;
 }
 
 .skill-ico i,
 .skill-ico img {
-  font-size: 28px;
+  font-size: 34px;
   line-height: 1;
   display: block;
   color: var(--accent);
   transition: transform .3s ease;
 }
 
-/* Filtro removido en V55 para habilitar colores de marca vía mask-image */
 .skill-ico span.skill-ico-img {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   display: block;
 }
 
-.skill-ico i {
-  font-size: 28px;
-  line-height: 1;
-  display: block;
-  transition: transform .3s ease;
+body.theme-light .skill-ico {
+  background: rgba(0, 0, 0, 0.07);
+  /* Ghost Dark (Matches Watermark) */
+  border-color: rgba(0, 0, 0, 0.1);
+  /* Softer border for light mode */
 }
 
-.skill-name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  /* V66 Force Full Width */
-  margin-top: auto;
-  font-weight: 600;
-  letter-spacing: .2px;
-  font-size: var(--fs-small);
-  text-align: center;
-  /* V66 Force Align */
-}
-
-.skill-name span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: center;
-  /* V66 Force Align */
-  width: 100%;
-  /* V66 Force Full Width */
-}
-
+/* Link Icon (Top Right) */
 .skill-link-ico {
-  opacity: .4;
-  font-size: 12px;
-  transition: opacity .18s ease, transform .18s ease, color .18s ease;
   position: absolute;
-  bottom: 12px;
+  top: 12px;
   right: 12px;
+  font-size: 14px;
+  opacity: 0.4;
   color: var(--muted);
+  transition: all 0.2s ease;
+  z-index: 3;
 }
 
 .skill-card:hover .skill-link-ico {
-  opacity: .95;
-  transform: translateX(1px) translateY(-1px);
-  color: var(--accent-2);
+  opacity: 1;
+  color: var(--accent);
+  transform: translate(2px, -2px);
 }
 
 /* ==========================================================================

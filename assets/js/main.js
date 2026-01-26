@@ -219,89 +219,54 @@ if (grid) {
     if (typeof SKILLS !== 'undefined' && Array.isArray(SKILLS) && SKILLS.length > 0) {
       grid.innerHTML = ''; // Clear container to prevent duplicates
       SKILLS.forEach((skill) => {
-        /** @type {HTMLDivElement} */
-        const card = document.createElement('div');
+        /** @type {HTMLAnchorElement} */
+        const card = document.createElement('a');
         card.className = 'skill-card';
+        card.href = skill.url;
+        card.target = '_blank';
+        card.rel = 'noopener';
 
         // V62 Interaction Data
         const yearsMap = { 5: '10+', 4: '8+', 3: '6+', 2: '4+', 1: '2+' };
         const years = yearsMap[skill.rating] || '1+';
 
-        // 3D Wrapper
-        const inner = document.createElement('div');
-        inner.className = 'skill-inner';
-
-        // --- FRONT FACE (Original Content) ---
-        const front = document.createElement('a');
-        front.className = 'skill-front';
-        front.href = skill.url;
-        front.target = '_blank';
-        front.rel = 'noopener';
-
+        // 1. Icon Box
         const iconBox = document.createElement('div');
         iconBox.className = 'skill-ico';
         renderSkillIcon(iconBox, skill);
 
+        // 2. Info Container
         const infoDiv = document.createElement('div');
         infoDiv.className = 'skill-info';
 
+        // 2.1 Name
         const nameRow = document.createElement('div');
         nameRow.className = 'skill-name';
         nameRow.innerHTML = `<span>${skill.name}</span>`;
 
+        // 2.2 Stars
+        const stars = generateStars(skill.rating);
+
+        // Assemble Info (No old badge)
+        infoDiv.appendChild(nameRow);
+        infoDiv.appendChild(stars);
+
+        // 3. Watermark Years (Background Element)
+        const watermark = document.createElement('div');
+        watermark.className = 'skill-watermark';
+        watermark.textContent = years; // Just "10+", "8+" etc.
+
+        // 4. Link Icon (Moved to Top Right via CSS)
         const linkIcon = document.createElement('i');
         linkIcon.className = 'fa-solid fa-arrow-up-right-from-square skill-link-ico';
 
-        infoDiv.appendChild(nameRow);
-        infoDiv.appendChild(generateStars(skill.rating));
+        // Assemble Card
+        card.appendChild(watermark); // Background layer
+        card.appendChild(iconBox);
+        card.appendChild(infoDiv);
+        card.appendChild(linkIcon);
 
-        front.appendChild(iconBox);
-        front.appendChild(infoDiv);
-        front.appendChild(linkIcon); // V65: Absolute positioning target
-
-        // --- BACK FACE (Mirrored Content with Years) ---
-        const back = document.createElement('a');
-        back.className = 'skill-back';
-        back.href = skill.url;
-        back.target = '_blank';
-        back.rel = 'noopener';
-
-        // 1. Clone Icon
-        const backIconBox = document.createElement('div');
-        backIconBox.className = 'skill-ico';
-        renderSkillIcon(backIconBox, skill); // Reuse render logic
-
-        // 2. Clone Info Container
-        const backInfoDiv = document.createElement('div');
-        backInfoDiv.className = 'skill-info';
-
-        // 3. Clone Name (Text Only)
-        const backNameRow = document.createElement('div');
-        backNameRow.className = 'skill-name';
-        backNameRow.innerHTML = `<span>${skill.name}</span>`;
-
-        // 4. Create Years Element (Replacing Stars)
-        const yearsDiv = document.createElement('div');
-        yearsDiv.className = 'exp-years-badge';
-        yearsDiv.textContent = `${years} Years`;
-
-        backInfoDiv.appendChild(backNameRow);
-        backInfoDiv.appendChild(yearsDiv);
-
-        // 5. Link Icon for Back (V95 Fix)
-        const backLinkIcon = document.createElement('i');
-        backLinkIcon.className = 'fa-solid fa-arrow-up-right-from-square skill-link-ico';
-
-        back.appendChild(backIconBox);
-        back.appendChild(backInfoDiv);
-        back.appendChild(backLinkIcon);
-
-        // Assemble 3D Object
-        inner.appendChild(front);
-        inner.appendChild(back);
-        card.appendChild(inner);
-
-        // Critical: Append to Grid
+        // Append to Grid
         grid.appendChild(card);
       });
       console.log('Skills rendered successfully (Monolith):', SKILLS.length);

@@ -25,14 +25,14 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(calc(var(--glass-blur, 20px) + 10px)) saturate(var(--glass-sat, 150%));
-    box-shadow: var(--shadow-card, 0 16px 50px rgba(15, 23, 42, .12));
+    backdrop-filter: blur(calc(var(--cookie-blur, 20px) + 10px)) saturate(var(--glass-sat, 150%));
+    box-shadow: var(--cookie-shadow, 0 16px 50px rgba(15, 23, 42, .12));
     margin: 0px auto;
     gap: 24px;
     padding: 16px 20px;
     border-radius: 20px;
-    border: 1px solid var(--stroke, rgba(15, 23, 42, .12));
-    background: var(--panel, rgba(255, 255, 255, .82));
+    border: 1px solid var(--cookie-border, rgba(15, 23, 42, .12));
+    background: var(--cookie-bg, rgba(255, 255, 255, .82));
     animation: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s 1 normal both running cookieSlideUp;
 
     /* CRITICAL: Ensure glow isn't clipped (Implied by need for external shadow) */
@@ -62,7 +62,7 @@
 /* BUTTON STYLES (Revert to V114/V116 "God Mode" Glow) */
 .cookie-btn {
     background: var(--accent, #22D3EE);
-    color: var(--bg, #000);
+    color: var(--cookie-btn-text, #000);
     /* V119: Contrast Fix - Dark text on Cyan */
     border: none;
     border-radius: 999px;
