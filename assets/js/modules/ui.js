@@ -110,7 +110,7 @@ export function renderSkills() {
 
   container.innerHTML = ''; // Clear existing content
 
-  SKILLS.forEach(skill => {
+  SKILLS.forEach((skill) => {
     const card = document.createElement('div');
     card.className = 'skill-card glass';
     // card.style.borderTop = `3px solid ${skill.color}`; // REMOVED: User requested flat 1px border only
@@ -177,15 +177,18 @@ export function renderSkills() {
  * Initializes Scroll Reveal interactions.
  */
 export function initScrollReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.1 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 }
 
 /**

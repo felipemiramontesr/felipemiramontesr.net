@@ -195,7 +195,6 @@ svg {
   }
 
   @keyframes floaty {
-
     0%,
     100% {
       transform: translateY(0);
@@ -281,7 +280,7 @@ svg {
 }
 
 /* Enable pointer events on children */
-.desktop-actions-group>* {
+.desktop-actions-group > * {
   /* Removed pointer-events: auto; */
 }
 
@@ -1482,7 +1481,6 @@ footer {
        13. RESPONSIVE QUERIES (Desktop & Tablet)
        ========================================================================== */
 @media (min-width: 861px) {
-
   /* Desktop: botón theme flotante arriba-derecha */
   .top-controls {
     position: fixed;
@@ -1648,7 +1646,6 @@ footer {
 }
 
 @media print {
-
   /* =========================
      BASE DOCUMENTO
      ========================= */

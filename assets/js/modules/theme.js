@@ -21,7 +21,7 @@ export function initTheme(body) {
 
   // Attach listeners to ALL toggle buttons (Desktop + Mobile)
   const btns = document.querySelectorAll('.theme-toggle-btn');
-  btns.forEach(btn => {
+  btns.forEach((btn) => {
     btn.addEventListener('click', () => {
       toggleTheme(body);
     });
@@ -50,7 +50,7 @@ export function toggleTheme(body) {
  */
 function updateIcons(isLight) {
   const btns = document.querySelectorAll('.theme-toggle-btn i');
-  btns.forEach(icon => {
+  btns.forEach((icon) => {
     if (isLight) {
       icon.classList.replace('fa-sun', 'fa-moon');
     } else {
@@ -59,8 +59,11 @@ function updateIcons(isLight) {
   });
 
   const btnElements = document.querySelectorAll('.theme-toggle-btn');
-  btnElements.forEach(btn => {
-    btn.setAttribute('aria-label', isLight ? UI_CONFIG.THEME_LABELS.DARK : UI_CONFIG.THEME_LABELS.LIGHT);
+  btnElements.forEach((btn) => {
+    btn.setAttribute(
+      'aria-label',
+      isLight ? UI_CONFIG.THEME_LABELS.DARK : UI_CONFIG.THEME_LABELS.LIGHT
+    );
   });
 }
 
