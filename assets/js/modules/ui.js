@@ -10,35 +10,35 @@
  * @returns {void}
  */
 export function renderSkillIcon(container, skill) {
-    const iconColor = skill.color || 'var(--accent)';
+  const iconColor = skill.color || 'var(--accent)';
 
-    if (skill.si) {
-        const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${skill.si}.svg`;
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'skill-ico-img';
+  if (skill.si) {
+    const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${skill.si}.svg`;
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'skill-ico-img';
 
-        // Use mask to apply specific hex color to the monochromatic SVG
-        iconSpan.style.maskImage = `url(${iconUrl})`;
-        iconSpan.style.webkitMaskImage = `url(${iconUrl})`;
-        iconSpan.style.maskRepeat = 'no-repeat';
-        iconSpan.style.webkitMaskRepeat = 'no-repeat';
-        iconSpan.style.maskSize = 'contain';
-        iconSpan.style.webkitMaskSize = 'contain';
-        iconSpan.style.maskPosition = 'center';
-        iconSpan.style.webkitMaskPosition = 'center';
-        iconSpan.style.backgroundColor = iconColor;
+    // Use mask to apply specific hex color to the monochromatic SVG
+    iconSpan.style.maskImage = `url(${iconUrl})`;
+    iconSpan.style.webkitMaskImage = `url(${iconUrl})`;
+    iconSpan.style.maskRepeat = 'no-repeat';
+    iconSpan.style.webkitMaskRepeat = 'no-repeat';
+    iconSpan.style.maskSize = 'contain';
+    iconSpan.style.webkitMaskSize = 'contain';
+    iconSpan.style.maskPosition = 'center';
+    iconSpan.style.webkitMaskPosition = 'center';
+    iconSpan.style.backgroundColor = iconColor;
 
-        iconSpan.setAttribute('aria-hidden', 'true');
+    iconSpan.setAttribute('aria-hidden', 'true');
 
-        // Fallback icon logic if needed
-        container.appendChild(iconSpan);
-        return;
-    }
+    // Fallback icon logic if needed
+    container.appendChild(iconSpan);
+    return;
+  }
 
-    const i = document.createElement('i');
-    i.className = skill.fallback || "fa-solid fa-code";
-    i.style.color = iconColor;
-    container.appendChild(i);
+  const i = document.createElement('i');
+  i.className = skill.fallback || 'fa-solid fa-code';
+  i.style.color = iconColor;
+  container.appendChild(i);
 }
 
 /**
@@ -47,17 +47,17 @@ export function renderSkillIcon(container, skill) {
  * @returns {HTMLElement} Container with star icons.
  */
 export function generateStars(rating) {
-    const starsDiv = document.createElement('div');
-    starsDiv.className = 'skill-stars';
-    for (let i = 1; i <= 5; i++) {
-        const star = document.createElement('i');
-        star.className = 'fa-solid fa-star';
-        if (i > rating) {
-            star.classList.add('star-empty');
-        }
-        starsDiv.appendChild(star);
+  const starsDiv = document.createElement('div');
+  starsDiv.className = 'skill-stars';
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement('i');
+    star.className = 'fa-solid fa-star';
+    if (i > rating) {
+      star.classList.add('star-empty');
     }
-    return starsDiv;
+    starsDiv.appendChild(star);
+  }
+  return starsDiv;
 }
 
 /**
@@ -66,8 +66,8 @@ export function generateStars(rating) {
  * @returns {string} - The experience string (e.g. '10+', '8+', '2+').
  */
 export function getExperienceYears(rating) {
-    const yearsMap = { 5: '10+', 4: '8+', 3: '6+', 2: '4+', 1: '2+' };
-    return yearsMap[rating] || '1+';
+  const yearsMap = { 5: '10+', 4: '8+', 3: '6+', 2: '4+', 1: '2+' };
+  return yearsMap[rating] || '1+';
 }
 
 /**
@@ -80,23 +80,23 @@ export function getExperienceYears(rating) {
  * @returns {void}
  */
 export function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
-    const isOpen = !forceClose && !menu.classList.contains('open');
+  const isOpen = !forceClose && !menu.classList.contains('open');
 
-    menu.classList.toggle('open', isOpen);
-    toggle.setAttribute('aria-expanded', isOpen.toString());
-    chevron.className = isOpen ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+  menu.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-expanded', isOpen.toString());
+  chevron.className = isOpen ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
 
-    if (isOpen) {
-        /**
-         * Closes menu on Escape key.
-         * @param {KeyboardEvent} e 
-         */
-        const handleEscape = (e) => {
-            if (e.key === 'Escape') {
-                toggleMenuState({ menu, toggle, chevron }, true);
-                window.removeEventListener('keydown', handleEscape);
-            }
-        };
-        window.addEventListener('keydown', handleEscape);
-    }
+  if (isOpen) {
+    /**
+     * Closes menu on Escape key.
+     * @param {KeyboardEvent} e
+     */
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        toggleMenuState({ menu, toggle, chevron }, true);
+        window.removeEventListener('keydown', handleEscape);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+  }
 }

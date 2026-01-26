@@ -14,9 +14,9 @@
   - [x] Verify fixed scroll behavior <!-- id: 9 -->
 
 - [x] CI/CD Optimization (L)
-    - [x] Analyze current workflow and design improvements
-    - [x] Update `deploy.yml` with linting, cache, and PR triggers
-    - [x] Verify workflow logic (Ready for GitHub Actions)
+  - [x] Analyze current workflow and design improvements
+  - [x] Update `deploy.yml` with linting, cache, and PR triggers
+  - [x] Verify workflow logic (Ready for GitHub Actions)
 
 - [x] Theme Button Fix (V31 Recovery & Final Deployment)
   - [x] update deploy.yml to root (./)

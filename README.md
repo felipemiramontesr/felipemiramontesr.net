@@ -11,7 +11,7 @@ graph TD
     A[index.html / cv.html] --> B{Execution Environment}
     B -- "Web Server / HTTP" --> C[ES Modules Logic]
     B -- "Local / file://" --> D[Monolithic Logic]
-    
+
     subgraph "Logic Layer"
         C --> C1[assets/js/modules/*.js]
         D --> D1[assets/js/main.js]
@@ -39,20 +39,24 @@ graph TD
 ## 🧪 Development
 
 ### Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### Run Tests
+
 ```bash
 npm test
 ```
 
 ### Linting & Formatting
+
 ```bash
 npm run lint
 npm run format
 ```
 
 ## 📄 License
+
 © 2026 Felipe de Jesús Miramontes Romero. All rights reserved.

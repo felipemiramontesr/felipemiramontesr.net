@@ -3,41 +3,41 @@ import { initTheme, toggleTheme, getThemeLabel } from '../assets/js/modules/them
 import { STORAGE_KEYS, UI_CONFIG } from '../assets/js/modules/constants.js';
 
 describe('Theme Module', () => {
-    let body;
+  let body;
 
-    beforeEach(() => {
-        // Mocking localStorage
-        vi.stubGlobal('localStorage', {
-            getItem: vi.fn(),
-            setItem: vi.fn(),
-        });
-
-        body = {
-            classList: {
-                add: vi.fn(),
-                toggle: vi.fn(),
-                contains: vi.fn(),
-            }
-        };
+  beforeEach(() => {
+    // Mocking localStorage
+    vi.stubGlobal('localStorage', {
+      getItem: vi.fn(),
+      setItem: vi.fn(),
     });
 
-    it('should initialize theme from localStorage', () => {
-        localStorage.getItem.mockReturnValue('light');
-        initTheme(body);
-        expect(body.classList.add).toHaveBeenCalledWith('theme-light');
-    });
+    body = {
+      classList: {
+        add: vi.fn(),
+        toggle: vi.fn(),
+        contains: vi.fn(),
+      },
+    };
+  });
 
-    it('should toggle theme and save to localStorage', () => {
-        body.classList.contains.mockReturnValue(true);
-        const theme = toggleTheme(body);
+  it('should initialize theme from localStorage', () => {
+    localStorage.getItem.mockReturnValue('light');
+    initTheme(body);
+    expect(body.classList.add).toHaveBeenCalledWith('theme-light');
+  });
 
-        expect(body.classList.toggle).toHaveBeenCalledWith('theme-light');
-        expect(localStorage.setItem).toHaveBeenCalledWith(STORAGE_KEYS.THEME, 'light');
-        expect(theme).toBe('light');
-    });
+  it('should toggle theme and save to localStorage', () => {
+    body.classList.contains.mockReturnValue(true);
+    const theme = toggleTheme(body);
 
-    it('should return correct theme labels', () => {
-        expect(getThemeLabel(true)).toBe(UI_CONFIG.THEME_LABELS.DARK);
-        expect(getThemeLabel(false)).toBe(UI_CONFIG.THEME_LABELS.LIGHT);
-    });
+    expect(body.classList.toggle).toHaveBeenCalledWith('theme-light');
+    expect(localStorage.setItem).toHaveBeenCalledWith(STORAGE_KEYS.THEME, 'light');
+    expect(theme).toBe('light');
+  });
+
+  it('should return correct theme labels', () => {
+    expect(getThemeLabel(true)).toBe(UI_CONFIG.THEME_LABELS.DARK);
+    expect(getThemeLabel(false)).toBe(UI_CONFIG.THEME_LABELS.LIGHT);
+  });
 });

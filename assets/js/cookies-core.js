@@ -6,7 +6,7 @@
 // Inline Constant (formerly imported)
 const STORAGE_KEYS = {
   THEME: 'cv_theme',
-  COOKIES: 'cookieAdvice'
+  COOKIES: 'cookieAdvice',
 };
 
 /**
@@ -24,7 +24,14 @@ function initCookieBanner() {
 
   const isOnPolicyPage = urlCheck || titleCheck;
 
-  console.log('[Cookies] V108 (Standard Script) Check. URL:', window.location.href, 'Title:', document.title, 'Detected:', isOnPolicyPage);
+  console.log(
+    '[Cookies] V108 (Standard Script) Check. URL:',
+    window.location.href,
+    'Title:',
+    document.title,
+    'Detected:',
+    isOnPolicyPage
+  );
 
   // V126: English Translation
   const policyLink = isOnPolicyPage

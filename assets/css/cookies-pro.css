@@ -1,85 +1,88 @@
 /* Cookie Banner - Glassmorphism Style */
 .cookie-banner {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
-    max-width: fit-content;
-    margin: 0 auto;
-    z-index: 100;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  max-width: fit-content;
+  margin: 0 auto;
+  z-index: 100;
 
-    display: flex;
-    /* Ensure glow isn't clipped */
-    overflow: visible;
+  display: flex;
+  /* Ensure glow isn't clipped */
+  overflow: visible;
 
-    /* V115: High Contrast Dark Glass (to see the pill shape) */
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(34, 211, 238, 0.15);
-    /* Subtle Cyan Border */
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+  /* V115: High Contrast Dark Glass (to see the pill shape) */
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  /* Subtle Cyan Border */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    /* Stronger drop shadow for separation */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  /* Stronger drop shadow for separation */
 
-    animation: cookieSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: cookieSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 /* ... (omitted) ... */
 
 .cookie-btn {
-    background: var(--accent, #22D3EE);
-    /* High Viz Cyan */
-    color: #0F172A;
-    /* Dark Text on Bright Button */
-    border: none;
-    border-radius: 999px;
-    padding: 12px 28px;
-    /* Slightly larger like reference */
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+  background: var(--accent, #22d3ee);
+  /* High Viz Cyan */
+  color: #0f172a;
+  /* Dark Text on Bright Button */
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  /* Slightly larger like reference */
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    box-shadow 0.15s ease;
 
-    /* V115: Clean Pro Glow (Focused) */
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+  /* V115: Clean Pro Glow (Focused) */
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
 }
 
 .cookie-btn:hover {
-    transform: translateY(-1px);
-    opacity: 1;
-    /* Brighter but clean on hover */
-    box-shadow: 0 0 30px rgba(34, 211, 238, 0.8);
+  transform: translateY(-1px);
+  opacity: 1;
+  /* Brighter but clean on hover */
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.8);
 }
 
 .cookie-btn:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 @keyframes cookieSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 600px) {
-    .cookie-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        bottom: 16px;
-        left: 16px;
-        right: 16px;
-    }
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
 
-    .cookie-btn {
-        align-self: flex-end;
-    }
+  .cookie-btn {
+    align-self: flex-end;
+  }
 }
