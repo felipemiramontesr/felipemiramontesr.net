@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev": "vite"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.0",
@@ -19,6 +20,7 @@
     "eslint": "^9.17.0",
     "jsdom": "^25.0.1",
     "prettier": "^3.4.2",
+    "vite": "^5.4.21",
     "vitest": "^2.1.8"
   }
 }

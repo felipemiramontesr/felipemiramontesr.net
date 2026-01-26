@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Render Skills Grid
   // Check if element exists before rendering (exists on index, not always cookies)
-  if (document.getElementById('skills-grid')) {
+  if (document.getElementById('skillsGrid')) {
     renderSkills();
   }
 

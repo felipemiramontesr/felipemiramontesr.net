@@ -34,7 +34,6 @@ export function initTheme(body) {
  * @returns {string} The current theme ('light' or 'dark').
  */
 export function toggleTheme(body) {
-  console.log('[DEBUG] toggleTheme CALLED');
   body.classList.toggle('theme-light');
   const isLight = body.classList.contains('theme-light');
   const theme = isLight ? 'light' : 'dark';

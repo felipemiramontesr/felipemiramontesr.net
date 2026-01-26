@@ -1,19 +1,3 @@
-/**
- * @fileoverview Application constants and configuration data.
- * This module centralizes all data-driven configurations to follow the DRY principle.
- */
-
-/**
- * Technical skills data with icons and proficiency levels.
- * @typedef {Object} Skill
- * @property {string} name - Name of the technology.
- * @property {string} url - Official or reference URL.
- * @property {string|null} si - Simple Icons slug.
- * @property {string} fallback - FontAwesome class for fallback.
- * @property {number} rating - Proficiency rating from 1 to 5.
- * @property {string} color - Brand color hex code.
- */
-
 /** @type {Skill[]} */
 export const SKILLS = [
   {
@@ -67,7 +51,7 @@ export const SKILLS = [
   {
     name: 'Twig',
     url: 'https://twig.symfony.com/',
-    si: 'twig',
+    si: null,
     fallback: 'fa-solid fa-code',
     rating: 5,
     color: '#999900',
@@ -83,7 +67,7 @@ export const SKILLS = [
   {
     name: 'Drush',
     url: 'https://www.drush.org/',
-    si: 'drush',
+    si: null,
     fallback: 'fa-solid fa-terminal',
     rating: 4,
     color: '#0077C0',
@@ -134,7 +118,7 @@ export const SKILLS = [
     si: 'linux',
     fallback: 'fa-brands fa-linux',
     rating: 4,
-    color: '#FCC624',
+    color: '#000000',
   },
   {
     name: 'Apache',
@@ -190,7 +174,7 @@ export const SKILLS = [
     si: 'prestashop',
     fallback: 'fa-solid fa-cart-shopping',
     rating: 3,
-    color: '#DF0067',
+    color: '#000000',
   },
   {
     name: 'VS Code',

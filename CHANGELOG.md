@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [V170] - 2026-01-26
+
+### Fixed
+
+- **Skill Icons**: Replaced broken/incorrect Twig and Drush icons with official localized SVGs.
+- **Skill Cards**: Restored "Sticker" aesthetic (1px flat border, Cyan hover) strictly stripping all extra effects.
+- **Regression**: Fixed `skills-grid` ID mismatch preventing the section from rendering.
+
 ## [V169] - 2026-01-25
 
 ### Added

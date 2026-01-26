@@ -400,6 +400,9 @@ body.theme-light .floating-download::before {
   transform: translateY(-8px) scale(0.96);
   transform-origin: top right;
   transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* FORCE VISIBILITY LAYER */
+  z-index: 10000 !important;
+  pointer-events: auto !important;
 }
 
 .floating-menu.active {
@@ -419,6 +422,10 @@ body.theme-light .floating-download::before {
   font-weight: 700;
   font-size: var(--fs-small);
   transition: background 0.15s ease;
+  /* FORCE CLICKABLE */
+  pointer-events: auto !important;
+  z-index: 10001 !important;
+  position: relative;
 }
 
 .floating-menu a:hover {
@@ -914,6 +921,12 @@ body.theme-light .skill-card {
   border-color: rgba(0, 0, 0, 0.06);
 }
 
+body.theme-light .skill-card:hover {
+  border-color: #22d3ee;
+  /* Force Vibrant Cyan */
+  box-shadow: none;
+}
+
 /* Restore glow for light mode if needed, or remove globally? Let's restore for light mode specifically if it was integral */
 body.theme-light .skill-card::before {
   display: block;
@@ -929,7 +942,7 @@ body.theme-light .skill-card::before {
 .skill-card:hover {
   transform: translateY(-4px);
   /* Lift only */
-  border-color: rgba(34, 211, 238, 0.5);
+  border-color: var(--accent);
   /* Stronger sticker border on hover */
   box-shadow: none;
   /* No shadow on hover for sticker */

@@ -2,19 +2,13 @@ import { test, expect } from '@playwright/test';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Helper to get absolute file URL
-const getFileUrl = (filename) => {
-  const absPath = path.resolve(process.cwd(), filename);
-  return 'file:///' + absPath.replace(/\\/g, '/');
-};
-
 test.describe('Visual Style Checks', () => {
   test('Cookies Page: Light Mode Visuals', async ({ page }) => {
     // Set Viewport to Desktop (to see desktop controls)
     await page.setViewportSize({ width: 1600, height: 900 });
 
     // Go to Cookies Page
-    await page.goto(getFileUrl('cookies.html'));
+    await page.goto('/cookies.html');
 
     // Toggle to Light Mode (Default is Dark)
     // We assume the button exists. Just click it.

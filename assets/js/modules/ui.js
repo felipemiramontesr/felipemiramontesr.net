@@ -15,7 +15,7 @@ export function renderSkillIcon(container, skill) {
   const iconColor = skill.color || 'var(--accent)';
 
   if (skill.si) {
-    const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${skill.si}.svg`;
+    const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/${skill.si}.svg`;
     const iconSpan = document.createElement('span');
     iconSpan.className = 'skill-ico-img';
 
@@ -31,8 +31,6 @@ export function renderSkillIcon(container, skill) {
     iconSpan.style.backgroundColor = iconColor;
 
     iconSpan.setAttribute('aria-hidden', 'true');
-
-    // Fallback icon logic if needed
     container.appendChild(iconSpan);
     return;
   }
@@ -107,7 +105,7 @@ export function toggleMenuState({ menu, toggle, chevron }, forceClose = false) {
  * High-level function to render the entire skills grid.
  */
 export function renderSkills() {
-  const container = document.getElementById('skills-grid');
+  const container = document.getElementById('skillsGrid');
   if (!container) return;
 
   container.innerHTML = ''; // Clear existing content
@@ -115,11 +113,23 @@ export function renderSkills() {
   SKILLS.forEach(skill => {
     const card = document.createElement('div');
     card.className = 'skill-card glass';
-    card.style.borderTop = `3px solid ${skill.color}`;
+    // card.style.borderTop = `3px solid ${skill.color}`; // REMOVED: User requested flat 1px border only
+
+    // Link Icon (Top Right)
+    if (skill.url) {
+      const link = document.createElement('a');
+      link.href = skill.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.className = 'skill-link-ico';
+      link.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+      link.setAttribute('aria-label', `Visit ${skill.name} website`);
+      card.appendChild(link);
+    }
 
     // Icon Container
     const iconDiv = document.createElement('div');
-    iconDiv.className = 'skill-icon';
+    iconDiv.className = 'skill-ico';
     iconDiv.style.color = skill.color;
     renderSkillIcon(iconDiv, skill);
     // Background watermark effect logic could go here if needed
@@ -129,8 +139,11 @@ export function renderSkills() {
     const infoDiv = document.createElement('div');
     infoDiv.className = 'skill-info';
 
-    const title = document.createElement('h3');
-    title.textContent = skill.name;
+    const title = document.createElement('div');
+    title.className = 'skill-name';
+    const titleSpan = document.createElement('span');
+    titleSpan.textContent = skill.name;
+    title.appendChild(titleSpan);
 
     const stars = generateStars(skill.rating);
 
