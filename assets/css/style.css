@@ -1792,7 +1792,7 @@ footer {
   margin: 0 !important;
 }
 
-@media (min-width: 1367px) {
+@media (min-width: 1511px) {
   .desktop-actions-group {
     right: 50%;
     transform: translateX(720px);
@@ -2079,5 +2079,18 @@ body.theme-light .theme-toggle-btn::before {
   .floating-wrap {
     display: none !important;
     /* Hide on mobile as requested usually */
+  }
+}
+
+/* =========================
+   COOKIES PAGE SPECIFIC OVERRIDES (Protocolo L)
+   ========================= */
+@media (min-width: 1511px) {
+  .cookies-page .desktop-actions-group {
+    top: 40px !important;
+    /* Match .policy-main padding-top (line 88 in cookies.html) */
+    right: 50%;
+    transform: translateX(720px);
+    /* Explicitly set Outside position for Cookies Page */
   }
 }

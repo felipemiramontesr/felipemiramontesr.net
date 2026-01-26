@@ -7,8 +7,8 @@
     <title>Cookie Policy</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=v132">
-    <link rel="stylesheet" href="assets/css/cookies-remote.css?v=v132">
+    <link rel="stylesheet" href="assets/css/style.css?v=v146">
+    <link rel="stylesheet" href="assets/css/cookies-remote.css?v=v146">
     <style>
         /* Specific overrides for text-heavy page */
         .policy-content {
@@ -83,7 +83,7 @@
             padding-right: var(--page-pad);
         }
 
-        @media (min-width: 1367px) {
+        @media (min-width: 1511px) {
             .policy-main {
                 padding-top: 40px;
                 /* V155: Reduced to 50% of original 80px */
@@ -153,7 +153,7 @@
         }
 
         /* V122: Mobile Center Header */
-        @media (max-width: 1366px) {
+        @media (max-width: 1510px) {
 
             .policy-content h1,
             .policy-content .policy-date {
@@ -195,7 +195,7 @@
         }
 
         /* V139: Mobile Drawer Styles (Protected) */
-        @media (max-width: 1366px) {
+        @media (max-width: 1510px) {
             /* ... (Mobile resets follow) ... */
 
             .split-tab-pill {
@@ -252,10 +252,7 @@
 
             /* Keyframes moved to global scope (V152) */
 
-            /* V146: Specific Animations */
-            .tab-part i {
-                /* Default reset */
-            }
+            /* V146: Specific Animations for tab icons */
 
             /* Left Arrow: Slide Left */
             .tab-part:first-child i {
@@ -367,19 +364,18 @@
     </style>
 </head>
 
-<body>
+<body class="cookies-page">
 
-    <!-- Top Navigation -->
-    <!-- Back Button (Left) -->
-    <div class="top-controls" style="left: 18px; right: auto; top: 18px;">
-        <!-- V153: Style Twin (Mimic) but Independent Logic -->
-        <a href="index.html" class="glass-btn-mimic desktop-back-arrow" aria-label="Back">
+    <!-- ==========================================================================
+         DESKTOP ACTION CONTROLS (Floating - Protocolo L)
+         ========================================================================== -->
+    <div class="desktop-actions-group">
+        <!-- Back to Home (Top) -->
+        <a href="index.html" class="glass-btn-mimic desktop-back-arrow" aria-label="Back to home">
             <i class="fa-solid fa-arrow-left"></i>
         </a>
-    </div>
 
-    <!-- Theme Button (Right) - Matching index.html logic -->
-    <div class="top-controls" style="top: 18px; right: 18px;">
+        <!-- Theme Toggle (Bottom) -->
         <button class="theme-toggle-btn btn-solid" type="button" aria-label="Toggle theme">
             <i class="fa-solid fa-sun"></i>
         </button>
@@ -387,15 +383,17 @@
 
     <!-- Mobile Theme Bar (Sticky) - Match index.html -->
     <div class="mobile-theme-bar">
-        <!-- V135: Split Tab for Mobile -->
-        <div class="split-tab-pill">
-            <a href="index.html" class="tab-part left" aria-label="Go Back">
-                <i class="fa-solid fa-arrow-left"></i>
-            </a>
-            <div class="tab-sep"></div>
-            <button id="drawerThemeBtn" class="tab-part right" aria-label="Toggle theme">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+        <div class="mobile-theme-bar-inner">
+            <!-- V135: Split Tab for Mobile -->
+            <div class="split-tab-pill">
+                <a href="index.html" class="tab-part left" aria-label="Go Back">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="tab-sep"></div>
+                <button id="drawerThemeBtn" class="tab-part right" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -516,8 +514,8 @@
     </main>
 
     <!-- V108: Standard Script (Local file:// support) -->
-    <script src="assets/js/cookies-core.js?v=v132"></script>
-    <script src="assets/js/main.js?v=v132"></script>
+    <script src="assets/js/cookies-core.js?v=v146"></script>
+    <script src="assets/js/main.js?v=v146"></script>
 </body>
 
 </html>
