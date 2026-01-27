@@ -4,41 +4,54 @@
   Description: Main landing page with hero, skills, and projects sections.
 -->
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Senior Fullstack Drupal Developer with 12+ years of experience."
+    />
+    <meta
+      name="keywords"
+      content="Felipe Miramontes, Senior Delivery Manager, Fullstack Drupal Developer, Cybersecurity, IT Leadership, CV, Resume"
+    />
+    <meta name="author" content="Felipe de Jesús Miramontes Romero" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Official website of B. Eng. Felipe de Jesús Miramontes Romero. Senior Delivery Manager and Senior Fullstack Drupal Developer with 12+ years of experience." />
-  <meta name="keywords"
-    content="Felipe Miramontes, Senior Delivery Manager, Fullstack Drupal Developer, Cybersecurity, IT Leadership, CV, Resume" />
-  <meta name="author" content="Felipe de Jesús Miramontes Romero" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.felipemiramontesr.net/" />
+    <meta property="og:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume" />
+    <meta
+      property="og:description"
+      content="Senior Delivery Manager & Senior Fullstack Drupal Developer. 12+ years of experience in IT and Leadership."
+    />
+    <meta property="og:image" content="https://www.felipemiramontesr.net/assets/img/Picture.jpg" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.felipemiramontesr.net/" />
-  <meta property="og:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume" />
-  <meta property="og:description"
-    content="Senior Delivery Manager & Senior Fullstack Drupal Developer. 12+ years of experience in IT and Leadership." />
-  <meta property="og:image" content="https://www.felipemiramontesr.net/assets/img/Picture.jpg" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.felipemiramontesr.net/" />
+    <meta property="twitter:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume" />
+    <meta
+      property="twitter:description"
+      content="Senior Delivery Manager & Senior Fullstack Drupal Developer. 12+ years of experience in IT and Leadership."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.felipemiramontesr.net/assets/img/Picture.jpg"
+    />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://www.felipemiramontesr.net/" />
-  <meta property="twitter:title" content="B. Eng. Felipe de Jesús Miramontes Romero - Resume" />
-  <meta property="twitter:description"
-    content="Senior Delivery Manager & Senior Fullstack Drupal Developer. 12+ years of experience in IT and Leadership." />
-  <meta property="twitter:image" content="https://www.felipemiramontesr.net/assets/img/Picture.jpg" />
+    <title>B. Eng. Felipe de Jesús Miramontes Romero | Portfolio & CV</title>
 
-  <title>B. Eng. Felipe de Jesús Miramontes Romero | Portfolio & CV</title>
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-  <!-- Performance Hints -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-
-  <!-- Favicon (SVG tech badge: navy + cyan) -->
-  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,
+    <!-- Favicon (SVG tech badge: navy + cyan) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href='data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
       <rect width="64" height="64" rx="14" fill="%23060B16"/>
       <path d="M32 10l16 9v18l-16 9-16-9V19l16-9z" fill="none" stroke="%2322D3EE" stroke-width="3.5" stroke-linejoin="round"/>
@@ -46,19 +59,30 @@
       <circle cx="20" cy="26" r="2.3" fill="%2322D3EE"/>
       <circle cx="44" cy="38" r="2.3" fill="%2322D3EE"/>
       <circle cx="26" cy="36" r="2.3" fill="%2322D3EE"/>
-    </svg>' />
+    </svg>'
+    />
 
-  <!-- Bootstrap + Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" media="print"
-    onload="this.media = 'all'" />
-  <noscript>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
-  </noscript>
+    <!-- Bootstrap + Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        rel="stylesheet"
+      />
+    </noscript>
 
 
-  <!-- JSON-LD Structured Data (Senior SEO) -->
-  <script type="application/ld+json">
+    <!-- JSON-LD Structured Data (Senior SEO) -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -73,612 +97,674 @@
         "description": "Expert in IT leadership, cybersecurity, and full-stack development with over 12 years of experience."
       }
     </script>
+    <script type="module" crossorigin src="/assets/main-BXa-u1st.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BDB0NPf7.css">
+  </head>
 
-
-  <script type="module" crossorigin src="/assets/main-DwAzmfwq.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-BDB0NPf7.css">
-</head>
-
-<body>
-  <!-- ==========================================================================
+  <body>
+    <!-- ==========================================================================
        DESKTOP ACTION CONTROLS (Floating)
        ========================================================================== -->
-  <div class="desktop-actions-group">
-    <!-- Theme Toggle Pill -->
-    <div class="top-controls">
-      <button class="theme-toggle-btn btn-solid" id="themeToggle" type="button" aria-label="Cambiar tema">
-        <i class="fa-solid fa-sun"></i>
-      </button>
-    </div>
+    <div class="desktop-actions-group">
+      <!-- Theme Toggle Pill -->
+      <div class="top-controls">
+        <button
+          class="theme-toggle-btn btn-solid"
+          id="themeToggle"
+          type="button"
+          aria-label="Cambiar tema"
+        >
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
 
-    <!-- Download CV Pill (Icon-only Redesign) -->
-    <div class="floating-wrap">
-      <button class="floating-download" id="downloadToggle" type="button" aria-haspopup="true" aria-expanded="false"
-        aria-label="Download CV">
-        <span class="pill-ico"><i class="fa-solid fa-file-arrow-down"></i></span>
-      </button>
+      <!-- Download CV Pill (Icon-only Redesign) -->
+      <div class="floating-wrap">
+        <button
+          class="floating-download"
+          id="downloadToggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-label="Download CV"
+        >
+          <span class="pill-ico"><i class="fa-solid fa-file-arrow-down"></i></span>
+        </button>
 
-      <div class="floating-menu" id="downloadMenu" role="menu" aria-label="Download options">
-        <a href="/assets/docs/ECV_Felipe_Miramontes_Romero.pdf" download="ECV_Felipe_Miramontes_Romero.pdf"
-          target="_blank" role="menuitem" aria-label="Download PDF">
-          <i class="fa-solid fa-file-pdf"></i>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/assets/docs/ECV_Felipe_Miramontes_Romero.docx" download="ECV_Felipe_Miramontes_Romero.docx"
-          role="menuitem" aria-label="Download DOCX">
-          <i class="fa-solid fa-file-word"></i>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
+        <div class="floating-menu" id="downloadMenu" role="menu" aria-label="Download options">
+          <a
+            href="/assets/docs/ECV_Felipe_Miramontes_Romero.pdf"
+            download="ECV_Felipe_Miramontes_Romero.pdf"
+            target="_blank"
+            role="menuitem"
+            aria-label="Download PDF"
+          >
+            <i class="fa-solid fa-file-pdf"></i>
+            <i class="fa-solid fa-arrow-right arrow"></i>
+          </a>
+          <a
+            href="/assets/docs/ECV_Felipe_Miramontes_Romero.docx"
+            download="ECV_Felipe_Miramontes_Romero.docx"
+            role="menuitem"
+            aria-label="Download DOCX"
+          >
+            <i class="fa-solid fa-file-word"></i>
+            <i class="fa-solid fa-arrow-right arrow"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- THEME TOGGLE (MOBILE STATIC) -->
-  <div class="mobile-theme-bar">
-    <div class="mobile-theme-bar-inner">
-      <button class="theme-toggle-btn btn-solid" type="button" aria-label="Toggle theme">
-        <i class="fa-solid fa-sun"></i>
-      </button>
-    </div>
-  </div>
-
-
-  <!-- ==========================================================================
-       HERO SECTION (Identity & Contact Info)
-       ========================================================================== -->
-  <header class="hero">
-    <div class="frame glass reveal" id="heroFrame">
-      <div class="frame-inner">
-        <div class="business-card">
-          <div class="photo" title="Profile picture">
-            <img src="/assets/Picture-OpNgF8iG.jpg" alt="Felipe de Jesús Miramontes Romero" loading="eager" width="280"
-              height="280" />
-          </div>
-
-          <div class="hero-side-wrapper">
-            <div class="info">
-              <h1>
-                <span class="fname">B. Eng. Felipe de Jesús</span>
-                <span class="lname">Miramontes Romero</span>
-              </h1>
-              <p class="subtitle">12+ years in IT, cybersecurity and delivery leadership</p>
-
-              <div class="chips">
-                <span class="chip"><i class="fa-solid fa-star"></i> Chief Operations Officer</span>
-                <span class="chip"><i class="fa-solid fa-diagram-project"></i> Senior Delivery Manager</span>
-                <span class="chip"><i class="fa-brands fa-drupal"></i> Senior Fullstack Drupal Developer</span>
-              </div>
-            </div>
-
-            <div class="contact-grid">
-              <a href="tel:+5214481117977" class="contact">
-                <div class="ico"><i class="fa-solid fa-phone"></i></div>
-                <div class="meta">
-                  <div class="label">Teléfono</div>
-                  <div class="value">+52 (448) 111 7977</div>
-                </div>
-              </a>
-
-              <a href="https://www.felipemiramontesr.net" target="_blank" rel="noopener" class="contact">
-                <div class="ico"><i class="fa-solid fa-globe"></i></div>
-                <div class="meta">
-                  <div class="label">Sitio Web</div>
-                  <div class="value">felipemiramontesr.net</div>
-                </div>
-              </a>
-
-              <a href="mailto:felipemiramontesr@gmail.com" class="contact">
-                <div class="ico"><i class="fa-solid fa-envelope"></i></div>
-                <div class="meta">
-                  <div class="label">Email</div>
-                  <div class="value">info@felipemiramontesr.net</div>
-                </div>
-              </a>
-
-              <a href="https://github.com/felipemiramontesr" target="_blank" rel="noopener" class="contact">
-                <div class="ico"><i class="fa-brands fa-github"></i></div>
-                <div class="meta">
-                  <div class="label">GitHub</div>
-                  <div class="value">github.com/felipemiramontesr</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /business-card -->
+    <!-- THEME TOGGLE (MOBILE STATIC) -->
+    <div class="mobile-theme-bar">
+      <div class="mobile-theme-bar-inner">
+        <button class="theme-toggle-btn btn-solid" type="button" aria-label="Toggle theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
       </div>
-      <!-- /frame-inner -->
     </div>
-    <!-- /frame -->
-  </header>
-
-  <!-- ==========================================================================
-       MAIN CONTENT AREAS
-       ========================================================================== -->
-  <main>
-    <div class="section-wrap">
-      <!-- 1. SKILLS -->
-      <section class="section glass reveal" id="skills">
-        <div class="section-inner">
-          <h2 class="section-title">
-            <span class="badge-ico"><i class="fa-solid fa-code"></i></span>
-            Technical Skills
-          </h2>
-          <div class="skills-grid" id="skillsGrid"></div>
-        </div>
-      </section>
-
-      <!-- 2. MOST RECENT PROJECTS -->
-      <section class="section glass reveal" id="projects">
-        <div class="section-inner">
-          <h2 class="section-title">
-            <span class="badge-ico"><i class="fa-solid fa-hourglass-start"></i></span>
-            Most Recent Projects
-          </h2>
-
-          <div class="cards-grid-2">
-            <!-- New 2025 -->
-            <div class="glass-card">
-              <h6>
-                <i class="fa-solid fa-1 u-accent u-mr-10"></i>Cybersecurity & Digital Risk
-                Consulting Practice
-              </h6>
-              <p>
-                <i class="fa-solid fa-user-tie u-accent u-mr-8"></i>Independent Cybersecurity
-                Consultant
-              </p>
-              <div class="dates">
-                <i class="fa-solid fa-location-dot"></i> Zac., Mex. | July 2025 – December 2025
-              </div>
-              <ul>
-                <li>Delivered premium risk mapping and incident analysis reports.</li>
-                <li>Executed digital forensics and post-incident advisory protocols.</li>
-                <li>Designed and deployed a specialized Cybersecurity Training Program.</li>
-                <li>Implemented AI-assisted workflows for executive decision-making support.</li>
-              </ul>
-            </div>
-
-            <!-- 1 -->
-            <div class="glass-card">
-              <h6>
-                <i class="fa-solid fa-2 u-accent u-mr-10"></i>SASISOPA - Odoo Implementation
-              </h6>
-              <p>
-                <i class="fa-solid fa-user-tie u-accent u-mr-8"></i>Chief Operations Officer (COO)
-              </p>
-              <div class="dates">
-                <i class="fa-solid fa-location-dot"></i> OSEZAC | Zac., Mex. | 7/24 – 7/25
-              </div>
-              <ul>
-                <li>Embed the hybrid SASISOPA methodology into Odoo.</li>
-                <li>Customize Odoo modules to align with real-time SCRUM-driven updates.</li>
-                <li>
-                  Achieved full digital traceability of processes, cutting audit preparation time
-                  from 6 months to 1 month.
-                </li>
-                <li>Executive ERP Training Program Lead.</li>
-                <li>Report directly to the CEO.</li>
-              </ul>
-            </div>
-
-            <!-- 2 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-3 u-accent u-mr-10"></i>SASISOPA – SCRUM Adaptation</h6>
-              <p>
-                <i class="fa-solid fa-user-tie u-accent u-mr-8"></i>Chief Operations Officer (COO)
-              </p>
-              <div class="dates">
-                <i class="fa-solid fa-location-dot"></i> OSEZAC | Zac., Mex. | 7/23 – 7/24
-              </div>
-              <ul>
-                <li>
-                  Design a hybrid SASISOPA methodology combining regulatory frameworks with Agile
-                  SCRUM.
-                </li>
-                <li>Led cross-functional teams (19 employees).</li>
-                <li>Pioneer agile documentation and training workflows.</li>
-                <li>Executive Hybrid Methodology Training Program Lead.</li>
-                <li>Report directly to the CEO.</li>
-              </ul>
-            </div>
-
-            <!-- 3 -->
-            <div class="glass-card">
-              <h6>
-                <i class="fa-solid fa-4 u-accent u-mr-10"></i>Public Information MS Deployment
-              </h6>
-              <p>
-                <i class="fa-solid fa-layer-group u-accent u-mr-8"></i>Implementation and
-                Deployment Manager
-              </p>
-              <div class="dates">
-                <i class="fa-solid fa-location-dot"></i> Santa María de la Paz, Zac. 3/22 – 9/22
-              </div>
-              <ul>
-                <li>Environment Setup and Infrastructure Deployment.</li>
-                <li>Data Migration and System Integration.</li>
-                <li>User Training and Change Management.</li>
-                <li>Testing, Go-Live, and Post-Launch Support.</li>
-                <li>Led cross-functional teams (23 employees).</li>
-                <li>Report directly to the Municipality President.</li>
-              </ul>
-            </div>
-
-            <!-- 4 -->
-            <div class="glass-card">
-              <h6>
-                <i class="fa-solid fa-5 u-accent u-mr-10"></i>Public Information MS Development
-              </h6>
-              <p>
-                <i class="fa-solid fa-shield-halved u-accent u-mr-8"></i>Senior Drupal Software
-                Developer
-              </p>
-              <div class="dates">
-                <i class="fa-solid fa-location-dot"></i> Santa María de la Paz, Zac. 9/21 – 3/22
-              </div>
-              <ul>
-                <li>System Architecture and Design</li>
-                <li>Custom Module and Theme Development</li>
-                <li>Security Implementation and Regulatory Compliance.</li>
-                <li>Multi-user Content Management and Workflows</li>
-                <li>Performance Optimization and Accessibility</li>
-                <li>Led cross-functional teams (3 employees).</li>
-              </ul>
-            </div>
-
-            <!-- 5 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-6 u-accent u-mr-10"></i>Drupal Module and Theming</h6>
-              <p><i class="fa-solid fa-code-branch u-accent u-mr-8"></i>Freelancer</p>
-              <div class="dates">
-                <i class="fa-solid fa-location-dot"></i> Zac., Mex. | 9/15 – 9/21
-              </div>
-              <ul>
-                <li>
-                  <strong>Module:</strong> Charts, to allow users to add various charts with
-                  responsive design and cross-browser compatibility.
-                </li>
-                <li>
-                  <strong>Module:</strong> Up Counts: enable users to publish any kind of Count Up
-                  using a specific type of content.
-                </li>
-                <li>
-                  <strong>Module:</strong> Vehicle Fleet, allows users to manage their own fleet
-                  of vehicles with real-time updates.
-                </li>
-                <li><strong>Themes:</strong> Several developed themes available on GitHub.</li>
-              </ul>
-            </div>
-
-            <!-- 6 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-7 u-accent u-mr-10"></i>Cybersecurity</h6>
-              <p><i class="fa-solid fa-flask u-accent u-mr-8"></i>Research Intern</p>
-              <div class="dates">
-                <i class="fa-solid fa-location-dot"></i> U. Carlos III, Madrid, Spain. 3/15 - 7/15
-              </div>
-              <ul>
-                <li>Secure Software Development Methodologies Researcher.</li>
-                <li>Software Developer; Python, Drupal, JavaScript, SASS, HTML.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. PROFESSIONAL LOGBOOK (AWARDS + WORK EXPERIENCE) -->
-      <section class="section glass reveal" id="logbook">
-        <div class="section-inner">
-          <h2 class="section-title">
-            <span class="badge-ico"><i class="fa-solid fa-award"></i></span>
-            Awards and Recognitions
-          </h2>
-
-          <div class="cards-grid-2 u-mb-24">
-            <!-- Award 1 -->
-            <div class="glass-card">
-              <h6>IZAI Recognition</h6>
-              <p>
-                Best proactive transparency practices via PIMS (Drupal, Trello, ISO 9001/2015).
-              </p>
-              <div class="u-mt-8">
-                <a href="https://izai.org.mx/2022/07/14/reconoce-izai-a-seis-mejores-practicas-de-transparencia-proactiva/"
-                  target="_blank" rel="noopener" class="u-accent u-mr-8 u-fw-600"><i class="fa-solid fa-link"></i>
-                  Post</a>
-                <a href="https://www.youtube.com/watch?v=z1IYG7mdkuM" target="_blank" rel="noopener"
-                  class="u-accent u-fw-600"><i class="fa-brands fa-youtube"></i> Video</a>
-              </div>
-            </div>
-
-            <!-- Award 2 -->
-            <div class="glass-card">
-              <h6>Startup Weekend Champion</h6>
-              <p>
-                Best Entrepreneur and Innovator Award: Super Fan (Drupal, JS, SCSS, PHP, Linux,
-                Apache, MySQL).
-              </p>
-              <div class="u-mt-8">
-                <a href="https://novador.blogspot.com/2014/09/startup-weekend-tres-los-ojos-de-los.html" target="_blank"
-                  rel="noopener" class="u-accent u-mr-8 u-fw-600"><i class="fa-solid fa-link"></i> Post</a>
-                <a href="https://novador.blogspot.com/2014/09/startup-weekend-tres-los-ojos-de-los.html" target="_blank"
-                  rel="noopener" class="u-accent u-fw-600"><i class="fa-solid fa-newspaper"></i> Coverage</a>
-              </div>
-            </div>
-
-            <!-- Award 3 -->
-            <div class="glass-card">
-              <h6>PNPC-CONACyT Scholar</h6>
-              <p>Master of Software Engineering (MIS), CIMAT.</p>
-            </div>
-
-            <!-- Award 4 -->
-            <div class="glass-card">
-              <h6>Outstanding CENEVAL Testimony</h6>
-              <p>Engineering in Information and Communication Technologies (ITIC), ITESM.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. WORK EXPERIENCE -->
-      <section class="section glass reveal" id="experience">
-        <div class="section-inner">
-          <h2 class="section-title">
-            <span class="badge-ico"><i class="fa-solid fa-briefcase"></i></span>
-            Work Experience
-          </h2>
-
-          <div class="cards-grid-2">
-            <!-- 1 (New 2025) -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-1 u-accent u-mr-10"></i>Cybersecurity</h6>
-              <p>Independent / Private Practice</p>
-              <div class="dates">
-                <i class="fa-solid fa-calendar-days"></i> July 2025 – PRESENT
-              </div>
-              <ul>
-                <li>
-                  Provided digital risk and forensic advisory services for corporate clients.
-                </li>
-                <li>Designed comprehensive digital safety protocols for high-risk profiles.</li>
-                <li>Conducted vulnerability assessments and incident response planning.</li>
-              </ul>
-            </div>
-
-            <!-- 2 -->
-            <div class="glass-card">
-              <h6>
-                <i class="fa-solid fa-2 u-accent u-mr-10"></i>Chief Operations Officer (COO)
-              </h6>
-              <p>OSEZAC</p>
-              <div class="dates"><i class="fa-solid fa-calendar-days"></i> 7/23 - 7/25</div>
-              <ul>
-                <li>SASISOPA Odoo Implementation.</li>
-                <li>SASISOPA - SCRUM Adaptation</li>
-              </ul>
-            </div>
-
-            <!-- 3 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-3 u-accent u-mr-10"></i>Municipal Public Servant</h6>
-              <p>Santa María de la Paz, Zac., Mex.</p>
-              <div class="dates"><i class="fa-solid fa-calendar-days"></i> 9/21 - 11/22</div>
-              <ul>
-                <li>Director of Public Works and Services.</li>
-                <li>Software Development Leader: Drupal, JavaScript, SCSS, HTML, Trello.</li>
-              </ul>
-            </div>
-
-            <!-- 4 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-4 u-accent u-mr-10"></i>Freelancer</h6>
-              <p>Zac., Mex.</p>
-              <div class="dates"><i class="fa-solid fa-calendar-days"></i> 9/15 - 9/21</div>
-              <ul>
-                <li>Software Developer: Drupal, JavaScript, SCSS, HTML, Trello.</li>
-              </ul>
-            </div>
-
-            <!-- 5 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-5 u-accent u-mr-10"></i>Research Intern</h6>
-              <p>U. Carlos III, Madrid, Spain.</p>
-              <div class="dates"><i class="fa-solid fa-calendar-days"></i> 3/15 - 7/15</div>
-              <ul>
-                <li>Secure Software Development Methodologies Researcher.</li>
-                <li>Software Developer: Python, Drupal, JavaScript, SCSS, HTML.</li>
-              </ul>
-            </div>
-
-            <!-- 6 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-6 u-accent u-mr-10"></i>Social Service</h6>
-              <p>Guanajuato Social Security Institute.</p>
-              <div class="dates"><i class="fa-solid fa-calendar-days"></i> 9/14 - 3/15</div>
-              <ul>
-                <li>Software Tester. Coverity, C#.</li>
-              </ul>
-            </div>
-
-            <!-- 7 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-7 u-accent u-mr-10"></i>Freelancer</h6>
-              <p>Zac., Mex.</p>
-              <div class="dates"><i class="fa-solid fa-calendar-days"></i> 6/12 - 6/14</div>
-              <ul>
-                <li>Software Developer: Drupal, JavaScript, SCSS, HTML.</li>
-              </ul>
-            </div>
-
-            <!-- 8 -->
-            <div class="glass-card">
-              <h6><i class="fa-solid fa-8 u-accent u-mr-10"></i>Software Developer</h6>
-              <p>Luna Stucco LLC, Atlanta, Georgia, US.</p>
-              <div class="dates"><i class="fa-solid fa-calendar-days"></i> 1/12 - 6/12</div>
-              <ul>
-                <li>Software Developer: Drupal, JavaScript, SCSS, HTML.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. EDUCATION & CERTIFICATIONS -->
-      <section class="section glass reveal" id="education">
-        <div class="section-inner">
-          <h2 class="section-title">
-            <span class="badge-ico"><i class="fa-solid fa-graduation-cap"></i></span>
-            Education & Certifications
-          </h2>
-
-          <div class="two-col">
-            <div>
-              <div class="col-title">
-                <span class="mini-ico"><i class="fa-solid fa-school"></i></span>
-                Education
-              </div>
-
-              <div class="stack">
-                <!-- Edu 1 -->
-                <div class="glass-card">
-                  <h6>Master Studies in Software Engineering</h6>
-                  <p>
-                    <i class="fa-solid fa-building-columns u-accent u-mr-6"></i> Mathematics
-                    Research Center A.C. (CIMAT)
-                  </p>
-                  <div class="dates">
-                    <i class="fa-solid fa-location-dot"></i> Zac., Mex. | 8/14 – 8/16
-                  </div>
-                </div>
-
-                <!-- Edu 2 -->
-                <div class="glass-card">
-                  <h6>Engineering in ICT</h6>
-                  <p><i class="fa-solid fa-building-columns u-accent u-mr-6"></i> ITESM</p>
-                  <div class="dates">
-                    <i class="fa-solid fa-location-dot"></i> Zac., Mex. | 8/05 – 6/11
-                  </div>
-                </div>
-
-                <!-- Edu 3 -->
-                <div class="glass-card">
-                  <h6>Technical Degree in Computing</h6>
-                  <p>
-                    <i class="fa-solid fa-building-columns u-accent u-mr-6"></i> Colegio de
-                    Bachilleres del Estado de Zacatecas
-                  </p>
-                  <div class="dates">
-                    <i class="fa-solid fa-location-dot"></i> Santa María de la Paz, Mex. | 8/02 –
-                    6/05
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="col-title">
-                <span class="mini-ico"><i class="fa-solid fa-scroll"></i></span>
-                Certifications
-              </div>
-
-              <div class="stack">
-                <!-- Cert 1 -->
-                <div class="glass-card">
-                  <h6>Certified Digital Forensics Examiner</h6>
-                  <p>Certificate ID: 26318-171-018-6231</p>
-                  <div class="dates">
-                    <i class="fa-solid fa-calendar-days"></i> 5/15 | Zac., Mex.
-                  </div>
-                </div>
-
-                <!-- Cert 2 -->
-                <div class="glass-card">
-                  <h6>Certified Professional Ethical Hacker</h6>
-                  <p>Certificate ID: 26318-171-018-6238</p>
-                  <div class="dates">
-                    <i class="fa-solid fa-calendar-days"></i> 12/14 | Zac., Mex.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. LANGUAGES (+ OTHER INFO) -->
-      <section class="section glass reveal" id="languages">
-        <div class="section-inner">
-          <h2 class="section-title">
-            <span class="badge-ico"><i class="fa-solid fa-language"></i></span>
-            Languages
-          </h2>
-
-          <div class="lang-list">
-            <div class="lang-item">
-              <div class="ico"><i class="fa-solid fa-globe"></i></div>
-              <div>
-                <h6>English</h6>
-                <p>Upper-Intermediate (CEFR B2 | IELTS 6.0)</p>
-              </div>
-            </div>
-
-            <div class="lang-item">
-              <div class="ico"><i class="fa-solid fa-flag"></i></div>
-              <div>
-                <h6>Spanish</h6>
-                <p>Native Speaker</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. DOWNLOAD -->
-      <section class="section glass reveal" id="download">
-        <div class="section-inner">
-          <h2 class="section-title">
-            <span class="badge-ico"><i class="fa-solid fa-download"></i></span>
-            Download CV
-          </h2>
-
-          <div class="download-grid">
-            <a class="download" href="assets/docs/ECV_Felipe_Miramontes_Romero.pdf"
-              download="ECV_Felipe_Miramontes_Romero.pdf">
-              <div class="left">
-                <div class="file-ico"><i class="fa-solid fa-file-pdf"></i></div>
-                <div class="text">
-                  <strong>CV – English (PDF)</strong>
-                  <span>Professional Format</span>
-                </div>
-              </div>
-              <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
-
-            <a class="download" href="assets/docs/ECV_Felipe_Miramontes_Romero.docx"
-              download="ECV_Felipe_Miramontes_Romero.docx">
-              <div class="left">
-                <div class="file-ico"><i class="fa-solid fa-file-word"></i></div>
-                <div class="text">
-                  <strong>CV – English (DOCX)</strong>
-                  <span>Editable Format</span>
-                </div>
-              </div>
-              <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- /section-wrap -->
 
     <!-- ==========================================================================
+       HERO SECTION (Identity & Contact Info)
+       ========================================================================== -->
+    <header class="hero">
+      <div class="frame glass reveal" id="heroFrame">
+        <div class="frame-inner">
+          <div class="business-card">
+            <div class="photo" title="Profile picture">
+              <img
+                src="/assets/Picture-OpNgF8iG.jpg"
+                alt="Felipe de Jesús Miramontes Romero"
+                loading="eager"
+                width="280"
+                height="280"
+              />
+            </div>
+
+            <div class="hero-side-wrapper">
+              <div class="info">
+                <h1>
+                  <span class="fname">B. Eng. Felipe de Jesús</span>
+                  <span class="lname">Miramontes Romero</span>
+                </h1>
+                <p class="subtitle">12+ years in IT, cybersecurity and delivery leadership</p>
+
+                <div class="chips">
+                  <span class="chip"
+                    ><i class="fa-solid fa-star"></i> Chief Operations Officer</span
+                  >
+                  <span class="chip"
+                    ><i class="fa-solid fa-diagram-project"></i> Senior Delivery Manager</span
+                  >
+                  <span class="chip"
+                    ><i class="fa-brands fa-drupal"></i> Senior Fullstack Drupal Developer</span
+                  >
+                </div>
+              </div>
+
+              <div class="contact-grid">
+                <a href="tel:+5214481117977" class="contact">
+                  <div class="ico"><i class="fa-solid fa-phone"></i></div>
+                  <div class="meta">
+                    <div class="label">Teléfono</div>
+                    <div class="value">+52 (448) 111 7977</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.felipemiramontesr.net"
+                  target="_blank"
+                  rel="noopener"
+                  class="contact"
+                >
+                  <div class="ico"><i class="fa-solid fa-globe"></i></div>
+                  <div class="meta">
+                    <div class="label">Sitio Web</div>
+                    <div class="value">felipemiramontesr.net</div>
+                  </div>
+                </a>
+
+                <a href="mailto:felipemiramontesr@gmail.com" class="contact">
+                  <div class="ico"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="meta">
+                    <div class="label">Email</div>
+                    <div class="value">info@felipemiramontesr.net</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/felipemiramontesr"
+                  target="_blank"
+                  rel="noopener"
+                  class="contact"
+                >
+                  <div class="ico"><i class="fa-brands fa-github"></i></div>
+                  <div class="meta">
+                    <div class="label">GitHub</div>
+                    <div class="value">github.com/felipemiramontesr</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /business-card -->
+        </div>
+        <!-- /frame-inner -->
+      </div>
+      <!-- /frame -->
+    </header>
+
+    <!-- ==========================================================================
+       MAIN CONTENT AREAS
+       ========================================================================== -->
+    <main>
+      <div class="section-wrap">
+        <!-- 1. SKILLS -->
+        <section class="section glass reveal" id="skills">
+          <div class="section-inner">
+            <h2 class="section-title">
+              <span class="badge-ico"><i class="fa-solid fa-code"></i></span>
+              Technical Skills
+            </h2>
+            <div class="skills-grid" id="skillsGrid"></div>
+          </div>
+        </section>
+
+        <!-- 2. MOST RECENT PROJECTS -->
+        <section class="section glass reveal" id="projects">
+          <div class="section-inner">
+            <h2 class="section-title">
+              <span class="badge-ico"><i class="fa-solid fa-hourglass-start"></i></span>
+              Most Recent Projects
+            </h2>
+
+            <div class="cards-grid-2">
+              <!-- New 2025 -->
+              <div class="glass-card">
+                <h6>
+                  <i class="fa-solid fa-1 u-accent u-mr-10"></i>Cybersecurity & Digital Risk
+                  Consulting Practice
+                </h6>
+                <p>
+                  <i class="fa-solid fa-user-tie u-accent u-mr-8"></i>Independent Cybersecurity
+                  Consultant
+                </p>
+                <div class="dates">
+                  <i class="fa-solid fa-location-dot"></i> Zac., Mex. | July 2025 – December 2025
+                </div>
+                <ul>
+                  <li>Delivered premium risk mapping and incident analysis reports.</li>
+                  <li>Executed digital forensics and post-incident advisory protocols.</li>
+                  <li>Designed and deployed a specialized Cybersecurity Training Program.</li>
+                  <li>Implemented AI-assisted workflows for executive decision-making support.</li>
+                </ul>
+              </div>
+
+              <!-- 1 -->
+              <div class="glass-card">
+                <h6>
+                  <i class="fa-solid fa-2 u-accent u-mr-10"></i>SASISOPA - Odoo Implementation
+                </h6>
+                <p>
+                  <i class="fa-solid fa-user-tie u-accent u-mr-8"></i>Chief Operations Officer (COO)
+                </p>
+                <div class="dates">
+                  <i class="fa-solid fa-location-dot"></i> OSEZAC | Zac., Mex. | 7/24 – 7/25
+                </div>
+                <ul>
+                  <li>Embed the hybrid SASISOPA methodology into Odoo.</li>
+                  <li>Customize Odoo modules to align with real-time SCRUM-driven updates.</li>
+                  <li>
+                    Achieved full digital traceability of processes, cutting audit preparation time
+                    from 6 months to 1 month.
+                  </li>
+                  <li>Executive ERP Training Program Lead.</li>
+                  <li>Report directly to the CEO.</li>
+                </ul>
+              </div>
+
+              <!-- 2 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-3 u-accent u-mr-10"></i>SASISOPA – SCRUM Adaptation</h6>
+                <p>
+                  <i class="fa-solid fa-user-tie u-accent u-mr-8"></i>Chief Operations Officer (COO)
+                </p>
+                <div class="dates">
+                  <i class="fa-solid fa-location-dot"></i> OSEZAC | Zac., Mex. | 7/23 – 7/24
+                </div>
+                <ul>
+                  <li>
+                    Design a hybrid SASISOPA methodology combining regulatory frameworks with Agile
+                    SCRUM.
+                  </li>
+                  <li>Led cross-functional teams (19 employees).</li>
+                  <li>Pioneer agile documentation and training workflows.</li>
+                  <li>Executive Hybrid Methodology Training Program Lead.</li>
+                  <li>Report directly to the CEO.</li>
+                </ul>
+              </div>
+
+              <!-- 3 -->
+              <div class="glass-card">
+                <h6>
+                  <i class="fa-solid fa-4 u-accent u-mr-10"></i>Public Information MS Deployment
+                </h6>
+                <p>
+                  <i class="fa-solid fa-layer-group u-accent u-mr-8"></i>Implementation and
+                  Deployment Manager
+                </p>
+                <div class="dates">
+                  <i class="fa-solid fa-location-dot"></i> Santa María de la Paz, Zac. 3/22 – 9/22
+                </div>
+                <ul>
+                  <li>Environment Setup and Infrastructure Deployment.</li>
+                  <li>Data Migration and System Integration.</li>
+                  <li>User Training and Change Management.</li>
+                  <li>Testing, Go-Live, and Post-Launch Support.</li>
+                  <li>Led cross-functional teams (23 employees).</li>
+                  <li>Report directly to the Municipality President.</li>
+                </ul>
+              </div>
+
+              <!-- 4 -->
+              <div class="glass-card">
+                <h6>
+                  <i class="fa-solid fa-5 u-accent u-mr-10"></i>Public Information MS Development
+                </h6>
+                <p>
+                  <i class="fa-solid fa-shield-halved u-accent u-mr-8"></i>Senior Drupal Software
+                  Developer
+                </p>
+                <div class="dates">
+                  <i class="fa-solid fa-location-dot"></i> Santa María de la Paz, Zac. 9/21 – 3/22
+                </div>
+                <ul>
+                  <li>System Architecture and Design</li>
+                  <li>Custom Module and Theme Development</li>
+                  <li>Security Implementation and Regulatory Compliance.</li>
+                  <li>Multi-user Content Management and Workflows</li>
+                  <li>Performance Optimization and Accessibility</li>
+                  <li>Led cross-functional teams (3 employees).</li>
+                </ul>
+              </div>
+
+              <!-- 5 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-6 u-accent u-mr-10"></i>Drupal Module and Theming</h6>
+                <p><i class="fa-solid fa-code-branch u-accent u-mr-8"></i>Freelancer</p>
+                <div class="dates">
+                  <i class="fa-solid fa-location-dot"></i> Zac., Mex. | 9/15 – 9/21
+                </div>
+                <ul>
+                  <li>
+                    <strong>Module:</strong> Charts, to allow users to add various charts with
+                    responsive design and cross-browser compatibility.
+                  </li>
+                  <li>
+                    <strong>Module:</strong> Up Counts: enable users to publish any kind of Count Up
+                    using a specific type of content.
+                  </li>
+                  <li>
+                    <strong>Module:</strong> Vehicle Fleet, allows users to manage their own fleet
+                    of vehicles with real-time updates.
+                  </li>
+                  <li><strong>Themes:</strong> Several developed themes available on GitHub.</li>
+                </ul>
+              </div>
+
+              <!-- 6 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-7 u-accent u-mr-10"></i>Cybersecurity</h6>
+                <p><i class="fa-solid fa-flask u-accent u-mr-8"></i>Research Intern</p>
+                <div class="dates">
+                  <i class="fa-solid fa-location-dot"></i> U. Carlos III, Madrid, Spain. 3/15 - 7/15
+                </div>
+                <ul>
+                  <li>Secure Software Development Methodologies Researcher.</li>
+                  <li>Software Developer; Python, Drupal, JavaScript, SASS, HTML.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. PROFESSIONAL LOGBOOK (AWARDS + WORK EXPERIENCE) -->
+        <section class="section glass reveal" id="logbook">
+          <div class="section-inner">
+            <h2 class="section-title">
+              <span class="badge-ico"><i class="fa-solid fa-award"></i></span>
+              Awards and Recognitions
+            </h2>
+
+            <div class="cards-grid-2 u-mb-24">
+              <!-- Award 1 -->
+              <div class="glass-card">
+                <h6>IZAI Recognition</h6>
+                <p>
+                  Best proactive transparency practices via PIMS (Drupal, Trello, ISO 9001/2015).
+                </p>
+                <div class="u-mt-8">
+                  <a
+                    href="https://izai.org.mx/2022/07/14/reconoce-izai-a-seis-mejores-practicas-de-transparencia-proactiva/"
+                    target="_blank"
+                    rel="noopener"
+                    class="u-accent u-mr-8 u-fw-600"
+                    ><i class="fa-solid fa-link"></i> Post</a
+                  >
+                  <a
+                    href="https://www.youtube.com/watch?v=z1IYG7mdkuM"
+                    target="_blank"
+                    rel="noopener"
+                    class="u-accent u-fw-600"
+                    ><i class="fa-brands fa-youtube"></i> Video</a
+                  >
+                </div>
+              </div>
+
+              <!-- Award 2 -->
+              <div class="glass-card">
+                <h6>Startup Weekend Champion</h6>
+                <p>
+                  Best Entrepreneur and Innovator Award: Super Fan (Drupal, JS, SCSS, PHP, Linux,
+                  Apache, MySQL).
+                </p>
+                <div class="u-mt-8">
+                  <a
+                    href="https://novador.blogspot.com/2014/09/startup-weekend-tres-los-ojos-de-los.html"
+                    target="_blank"
+                    rel="noopener"
+                    class="u-accent u-mr-8 u-fw-600"
+                    ><i class="fa-solid fa-link"></i> Post</a
+                  >
+                  <a
+                    href="https://novador.blogspot.com/2014/09/startup-weekend-tres-los-ojos-de-los.html"
+                    target="_blank"
+                    rel="noopener"
+                    class="u-accent u-fw-600"
+                    ><i class="fa-solid fa-newspaper"></i> Coverage</a
+                  >
+                </div>
+              </div>
+
+              <!-- Award 3 -->
+              <div class="glass-card">
+                <h6>PNPC-CONACyT Scholar</h6>
+                <p>Master of Software Engineering (MIS), CIMAT.</p>
+              </div>
+
+              <!-- Award 4 -->
+              <div class="glass-card">
+                <h6>Outstanding CENEVAL Testimony</h6>
+                <p>Engineering in Information and Communication Technologies (ITIC), ITESM.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. WORK EXPERIENCE -->
+        <section class="section glass reveal" id="experience">
+          <div class="section-inner">
+            <h2 class="section-title">
+              <span class="badge-ico"><i class="fa-solid fa-briefcase"></i></span>
+              Work Experience
+            </h2>
+
+            <div class="cards-grid-2">
+              <!-- 1 (New 2025) -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-1 u-accent u-mr-10"></i>Cybersecurity</h6>
+                <p>Independent / Private Practice</p>
+                <div class="dates">
+                  <i class="fa-solid fa-calendar-days"></i> July 2025 – PRESENT
+                </div>
+                <ul>
+                  <li>
+                    Provided digital risk and forensic advisory services for corporate clients.
+                  </li>
+                  <li>Designed comprehensive digital safety protocols for high-risk profiles.</li>
+                  <li>Conducted vulnerability assessments and incident response planning.</li>
+                </ul>
+              </div>
+
+              <!-- 2 -->
+              <div class="glass-card">
+                <h6>
+                  <i class="fa-solid fa-2 u-accent u-mr-10"></i>Chief Operations Officer (COO)
+                </h6>
+                <p>OSEZAC</p>
+                <div class="dates"><i class="fa-solid fa-calendar-days"></i> 7/23 - 7/25</div>
+                <ul>
+                  <li>SASISOPA Odoo Implementation.</li>
+                  <li>SASISOPA - SCRUM Adaptation</li>
+                </ul>
+              </div>
+
+              <!-- 3 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-3 u-accent u-mr-10"></i>Municipal Public Servant</h6>
+                <p>Santa María de la Paz, Zac., Mex.</p>
+                <div class="dates"><i class="fa-solid fa-calendar-days"></i> 9/21 - 11/22</div>
+                <ul>
+                  <li>Director of Public Works and Services.</li>
+                  <li>Software Development Leader: Drupal, JavaScript, SCSS, HTML, Trello.</li>
+                </ul>
+              </div>
+
+              <!-- 4 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-4 u-accent u-mr-10"></i>Freelancer</h6>
+                <p>Zac., Mex.</p>
+                <div class="dates"><i class="fa-solid fa-calendar-days"></i> 9/15 - 9/21</div>
+                <ul>
+                  <li>Software Developer: Drupal, JavaScript, SCSS, HTML, Trello.</li>
+                </ul>
+              </div>
+
+              <!-- 5 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-5 u-accent u-mr-10"></i>Research Intern</h6>
+                <p>U. Carlos III, Madrid, Spain.</p>
+                <div class="dates"><i class="fa-solid fa-calendar-days"></i> 3/15 - 7/15</div>
+                <ul>
+                  <li>Secure Software Development Methodologies Researcher.</li>
+                  <li>Software Developer: Python, Drupal, JavaScript, SCSS, HTML.</li>
+                </ul>
+              </div>
+
+              <!-- 6 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-6 u-accent u-mr-10"></i>Social Service</h6>
+                <p>Guanajuato Social Security Institute.</p>
+                <div class="dates"><i class="fa-solid fa-calendar-days"></i> 9/14 - 3/15</div>
+                <ul>
+                  <li>Software Tester. Coverity, C#.</li>
+                </ul>
+              </div>
+
+              <!-- 7 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-7 u-accent u-mr-10"></i>Freelancer</h6>
+                <p>Zac., Mex.</p>
+                <div class="dates"><i class="fa-solid fa-calendar-days"></i> 6/12 - 6/14</div>
+                <ul>
+                  <li>Software Developer: Drupal, JavaScript, SCSS, HTML.</li>
+                </ul>
+              </div>
+
+              <!-- 8 -->
+              <div class="glass-card">
+                <h6><i class="fa-solid fa-8 u-accent u-mr-10"></i>Software Developer</h6>
+                <p>Luna Stucco LLC, Atlanta, Georgia, US.</p>
+                <div class="dates"><i class="fa-solid fa-calendar-days"></i> 1/12 - 6/12</div>
+                <ul>
+                  <li>Software Developer: Drupal, JavaScript, SCSS, HTML.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. EDUCATION & CERTIFICATIONS -->
+        <section class="section glass reveal" id="education">
+          <div class="section-inner">
+            <h2 class="section-title">
+              <span class="badge-ico"><i class="fa-solid fa-graduation-cap"></i></span>
+              Education & Certifications
+            </h2>
+
+            <div class="two-col">
+              <div>
+                <div class="col-title">
+                  <span class="mini-ico"><i class="fa-solid fa-school"></i></span>
+                  Education
+                </div>
+
+                <div class="stack">
+                  <!-- Edu 1 -->
+                  <div class="glass-card">
+                    <h6>Master Studies in Software Engineering</h6>
+                    <p>
+                      <i class="fa-solid fa-building-columns u-accent u-mr-6"></i> Mathematics
+                      Research Center A.C. (CIMAT)
+                    </p>
+                    <div class="dates">
+                      <i class="fa-solid fa-location-dot"></i> Zac., Mex. | 8/14 – 8/16
+                    </div>
+                  </div>
+
+                  <!-- Edu 2 -->
+                  <div class="glass-card">
+                    <h6>Engineering in ICT</h6>
+                    <p><i class="fa-solid fa-building-columns u-accent u-mr-6"></i> ITESM</p>
+                    <div class="dates">
+                      <i class="fa-solid fa-location-dot"></i> Zac., Mex. | 8/05 – 6/11
+                    </div>
+                  </div>
+
+                  <!-- Edu 3 -->
+                  <div class="glass-card">
+                    <h6>Technical Degree in Computing</h6>
+                    <p>
+                      <i class="fa-solid fa-building-columns u-accent u-mr-6"></i> Colegio de
+                      Bachilleres del Estado de Zacatecas
+                    </p>
+                    <div class="dates">
+                      <i class="fa-solid fa-location-dot"></i> Santa María de la Paz, Mex. | 8/02 –
+                      6/05
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="col-title">
+                  <span class="mini-ico"><i class="fa-solid fa-scroll"></i></span>
+                  Certifications
+                </div>
+
+                <div class="stack">
+                  <!-- Cert 1 -->
+                  <div class="glass-card">
+                    <h6>Certified Digital Forensics Examiner</h6>
+                    <p>Certificate ID: 26318-171-018-6231</p>
+                    <div class="dates">
+                      <i class="fa-solid fa-calendar-days"></i> 5/15 | Zac., Mex.
+                    </div>
+                  </div>
+
+                  <!-- Cert 2 -->
+                  <div class="glass-card">
+                    <h6>Certified Professional Ethical Hacker</h6>
+                    <p>Certificate ID: 26318-171-018-6238</p>
+                    <div class="dates">
+                      <i class="fa-solid fa-calendar-days"></i> 12/14 | Zac., Mex.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. LANGUAGES (+ OTHER INFO) -->
+        <section class="section glass reveal" id="languages">
+          <div class="section-inner">
+            <h2 class="section-title">
+              <span class="badge-ico"><i class="fa-solid fa-language"></i></span>
+              Languages
+            </h2>
+
+            <div class="lang-list">
+              <div class="lang-item">
+                <div class="ico"><i class="fa-solid fa-globe"></i></div>
+                <div>
+                  <h6>English</h6>
+                  <p>Upper-Intermediate (CEFR B2 | IELTS 6.0)</p>
+                </div>
+              </div>
+
+              <div class="lang-item">
+                <div class="ico"><i class="fa-solid fa-flag"></i></div>
+                <div>
+                  <h6>Spanish</h6>
+                  <p>Native Speaker</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. DOWNLOAD -->
+        <section class="section glass reveal" id="download">
+          <div class="section-inner">
+            <h2 class="section-title">
+              <span class="badge-ico"><i class="fa-solid fa-download"></i></span>
+              Download CV
+            </h2>
+
+            <div class="download-grid">
+              <a
+                class="download"
+                href="assets/docs/ECV_Felipe_Miramontes_Romero.pdf"
+                download="ECV_Felipe_Miramontes_Romero.pdf"
+              >
+                <div class="left">
+                  <div class="file-ico"><i class="fa-solid fa-file-pdf"></i></div>
+                  <div class="text">
+                    <strong>CV – English (PDF)</strong>
+                    <span>Professional Format</span>
+                  </div>
+                </div>
+                <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              </a>
+
+              <a
+                class="download"
+                href="assets/docs/ECV_Felipe_Miramontes_Romero.docx"
+                download="ECV_Felipe_Miramontes_Romero.docx"
+              >
+                <div class="left">
+                  <div class="file-ico"><i class="fa-solid fa-file-word"></i></div>
+                  <div class="text">
+                    <strong>CV – English (DOCX)</strong>
+                    <span>Editable Format</span>
+                  </div>
+                </div>
+                <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- /section-wrap -->
+
+      <!-- ==========================================================================
          FOOTER (Copyright & Scripts)
          ========================================================================== -->
-    <footer>
-      © <span id="year"></span> From strategy to delivery — secure, scalable, and reliable.
-    </footer>
-  </main>
+      <footer>
+        © <span id="year"></span> From strategy to delivery — secure, scalable, and reliable.
+      </footer>
+    </main>
 
-</body>
-
+  </body>
 </html>

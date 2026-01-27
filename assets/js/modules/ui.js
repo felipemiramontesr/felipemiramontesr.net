@@ -14,8 +14,26 @@ import { SKILLS } from './constants.js';
 export function renderSkillIcon(container, skill) {
   const iconColor = skill.color || 'var(--accent)';
 
-  if (skill.si) {
-    const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/${skill.si}.svg`;
+  if (skill.si || skill.localIcon) {
+    // If unmasked (e.g. VS Code original logo), render as standard image to preserve colors
+    if (skill.unmasked && skill.localIcon) {
+      const img = document.createElement('img');
+      img.src = skill.localIcon;
+      img.alt = skill.name;
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'contain';
+      img.style.objectFit = 'contain';
+      container.appendChild(img);
+      return;
+    }
+
+    let iconUrl;
+    if (skill.localIcon) {
+      iconUrl = skill.localIcon;
+    } else {
+      iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/${skill.si}.svg`;
+    }
     const iconSpan = document.createElement('span');
     iconSpan.className = 'skill-ico-img';
 
