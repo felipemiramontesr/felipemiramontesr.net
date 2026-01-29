@@ -195,6 +195,7 @@ svg {
   }
 
   @keyframes floaty {
+
     0%,
     100% {
       transform: translateY(0);
@@ -280,7 +281,7 @@ svg {
 }
 
 /* Enable pointer events on children */
-.desktop-actions-group > * {
+.desktop-actions-group>* {
   /* Removed pointer-events: auto; */
 }
 
@@ -832,37 +833,23 @@ body.theme-light .contact::before {
 }
 
 .section-title .badge-ico {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  /* Pill logic */
-  display: flex;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--stroke);
-  background: var(--panel);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  flex: 0 0 auto;
-  position: relative;
-}
-
-.badge-ico::before {
-  content: '';
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.045);
-  opacity: 0.75;
-}
-
-body.theme-light .badge-ico::before {
-  border: 1px solid rgba(8, 13, 24, 0.05);
-  opacity: 0.55;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .section-title .badge-ico i {
+  font-size: 1.5rem;
   color: var(--accent);
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* ==========================================================================
@@ -1481,6 +1468,7 @@ footer {
        13. RESPONSIVE QUERIES (Desktop & Tablet)
        ========================================================================== */
 @media (min-width: 861px) {
+
   /* Desktop: botón theme flotante arriba-derecha */
   .top-controls {
     position: fixed;
@@ -1647,6 +1635,7 @@ footer {
 }
 
 @media print {
+
   /* =========================
      BASE DOCUMENTO
      ========================= */
