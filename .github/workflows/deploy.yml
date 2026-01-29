@@ -55,6 +55,6 @@ jobs:
           port: 21
           protocol: ftps
           security: loose
-          stateful: false
+
           local-dir: ./dist/
           server-dir: ./

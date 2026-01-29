@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [V171] - 2026-01-29
+
+### Changed
+
+- **Skill Icons**:
+  - Replaced SASS, Chart.js, Drupal, Odoo, and Apache external icons with local optimized SVGs.
+  - Applied aggressive "zoom" (viewBox trimming) to all updated icons for better visibility.
+- **Moodle**: Verified 30% padding adjustment.
+
 ## [V170] - 2026-01-26
 
 ### Fixed
