@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [V174] - 2026-01-29
+
+### Changed
+
+- **Visual Fixes**:
+  - **Gulp.js**: Squarified the icon container to prevent overflow.
+  - **PHP**: Removed persistent white background layer.
+  - Re-processed batch to ensure cleanliness.
+
 ## [V173] - 2026-01-29
 
 ### Changed
