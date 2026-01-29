@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [V172] - 2026-01-29
+
+### Changed
+
+- **Icon Homogenization**: Migrated ALL remaining skills (PHP, Node.js, YAML, HTML, CSS, Gulp.js, Trello) to local SVGs.
+- **System**: Logic is now uniform; no external icon dependencies for skills.
+
 ## [V171] - 2026-01-29
 
 ### Changed
