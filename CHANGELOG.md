@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [V173] - 2026-01-29
+
+### Changed
+
+- **Icon Harmonization**:
+  - Removed unwanted white backgrounds (especially from PHP).
+  - Applied uniform 30% padding to ALL skills to equalize visual scale.
+  - Re-processed all 21 icons ensuring fully consistent "zoom" level.
+
 ## [V172] - 2026-01-29
 
 ### Changed
