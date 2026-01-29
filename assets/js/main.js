@@ -7,24 +7,28 @@
  */
 
 import { initTheme } from './modules/theme.js';
-import { renderSkills, initScrollReveal, initDownloadMenu } from './modules/ui.js';
+import {
+  renderSkills,
+  initScrollReveal,
+  initDownloadMenu,
+  initSkillsToggle,
+} from './modules/ui.js';
 import { initCookieBanner } from './cookies-core.js';
 import './sw-reset.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('[DEBUG] DOMContentLoaded Fired');
   // 1. Initialize Theme (Dark/Light)
   try {
     initTheme(document.body);
-    console.log('[DEBUG] Theme Initialized');
   } catch (e) {
-    console.error('[DEBUG] Theme Init Failed:', e);
+    console.error('Theme Init Failed:', e);
   }
 
   // 2. Render Skills Grid
   // Check if element exists before rendering (exists on index, not always cookies)
   if (document.getElementById('skillsGrid')) {
     renderSkills();
+    initSkillsToggle();
   }
 
   // 3. Initialize UI Interactions (Scroll Reveal, Download Menu)
@@ -35,6 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Initialize Cookie Banner
   initCookieBanner();
-
-  console.log('App initialized (Modules Mode)');
 });

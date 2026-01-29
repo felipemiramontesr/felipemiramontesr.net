@@ -832,9 +832,9 @@ body.theme-light .contact::before {
 }
 
 .section-title .badge-ico {
-  width: 40px;
-  height: 40px;
-  border-radius: 26px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
   /* Pill logic */
   display: flex;
   align-items: center;
@@ -1494,6 +1494,7 @@ footer {
   :root {
     --page-pad: 34px;
     --section-pad: 34px;
+    --section-gap: 34px;
   }
 
   .frame-inner {
@@ -2014,6 +2015,13 @@ body.theme-light .theme-toggle-btn::before {
   .mobile-theme-bar {
     display: flex;
     padding: 0 var(--page-pad);
+    position: relative;
+    /* Override absolute */
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-bottom: 0px;
+    /* Gap will be provided by hero padding-top (18px) */
   }
 
   .mobile-theme-bar-inner {
@@ -2207,4 +2215,55 @@ body.theme-light .theme-toggle-btn::before {
     transform: translateX(720px);
     /* Explicitly set Outside position for Cookies Page */
   }
+}
+
+/* ==========================================================================
+       14. COLLAPSIBLE SKILLS (New in V189)
+       ========================================================================== */
+.toggle-trigger {
+  cursor: pointer;
+  justify-content: space-between;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  /* Force above potential overlaps */
+  flex-wrap: nowrap;
+  /* Prevent wrapping that displaces the arrow */
+}
+
+.toggle-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.toggle-trigger .chevron {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  color: var(--muted);
+}
+
+.toggle-trigger[aria-expanded='true'] .chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.skills-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+  padding: 0;
+  /* Reset padding to avoid jump */
+}
+
+.skills-content.open {
+  grid-template-rows: 1fr;
+}
+
+.skills-content-inner {
+  overflow: hidden;
+  min-height: 0;
+  /* Important for grid transition */
 }
