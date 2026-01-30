@@ -2253,4 +2253,8 @@ body.theme-light .theme-toggle-btn::before {
   overflow: hidden;
   min-height: 0;
   /* Important for grid transition */
+  padding: 15px;
+  /* Bleed area for hover shadows/lift */
+  margin: -15px;
+  /* Offset padding to keep alignment */
 }
