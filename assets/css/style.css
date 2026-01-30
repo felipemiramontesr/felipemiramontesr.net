@@ -2249,12 +2249,16 @@ body.theme-light .theme-toggle-btn::before {
   grid-template-rows: 1fr;
 }
 
+#skills.section {
+  overflow: visible !important;
+}
+
 .skills-content-inner {
   overflow: hidden;
   min-height: 0;
   /* Important for grid transition */
-  padding: 15px;
-  /* Bleed area for hover shadows/lift */
-  margin: -15px;
+  padding: 24px;
+  /* Expanded bleed area for hover shadows/lift */
+  margin: -24px;
   /* Offset padding to keep alignment */
 }
