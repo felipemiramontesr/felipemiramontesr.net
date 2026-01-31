@@ -198,48 +198,60 @@ export function initScrollReveal() {
   const reveals = document.querySelectorAll('.reveal');
   if (!reveals.length) return;
 
+  const revealElement = (el) => {
+    if (!el.classList.contains('active')) {
+      el.classList.add('active');
+    }
+  };
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+          revealElement(entry.target);
           observer.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0, // Instant trigger
-      rootMargin: '0px 0px 300px 0px', // Trigger 300px before
+      threshold: 0,
+      rootMargin: '0px 0px 400px 0px', // Pre-reveal 400px before entry
     }
   );
 
-  // 1. Start observing
   reveals.forEach((el) => observer.observe(el));
 
-  // 2. Immediate manual scan for elements already in or near view
-  const instantScan = () => {
-    const viewHeight = window.innerHeight;
+  // 1. Instant check for elements already in or near view (800px context)
+  const manualScan = () => {
+    const triggerBottom = window.innerHeight + 800;
     reveals.forEach((el) => {
       if (!el.classList.contains('active')) {
         const rect = el.getBoundingClientRect();
-        // If element is within 500px of top viewport context, reveal it immediately
-        if (rect.top < viewHeight + 500) {
-          el.classList.add('active');
+        if (rect.top < triggerBottom) {
+          revealElement(el);
           observer.unobserve(el);
         }
       }
     });
   };
-  instantScan();
 
-  // 3. Global Safety Fallback (Ensure nothing is lost after loading stabilizes)
-  setTimeout(() => {
-    reveals.forEach((el) => {
-      if (!el.classList.contains('active')) {
-        el.classList.add('active');
-      }
-    });
-  }, 3000);
+  // Immediate run
+  manualScan();
+
+  // 2. Continuous audit during scroll for maximum reliability
+  let scrollTimeout;
+  window.addEventListener(
+    'scroll',
+    () => {
+      manualScan();
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(manualScan, 150);
+    },
+    { passive: true }
+  );
+
+  // 3. Fail-safe faster fallback
+  setTimeout(manualScan, 1000);
 }
 
 /**
