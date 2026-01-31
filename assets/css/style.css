@@ -279,11 +279,6 @@ svg {
   /* Removed pointer-events: none to avoid click issues on children */
 }
 
-/* Enable pointer events on children */
-.desktop-actions-group > * {
-  /* Removed pointer-events: auto; */
-}
-
 /* Hide on mobile/tablet */
 @media (max-width: 1024px) {
   .desktop-actions-group {
@@ -2242,23 +2237,32 @@ body.theme-light .theme-toggle-btn::before {
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.4s ease-out;
   padding: 0;
-  /* Reset padding to avoid jump */
+  overflow: hidden;
+  /* Hide when closed/transitioning */
 }
 
 .skills-content.open {
   grid-template-rows: 1fr;
+  overflow: visible;
+  /* Allow hover bleed when open */
 }
 
 #skills.section {
   overflow: visible !important;
+  transition: all 0.4s ease;
+  border: 1px solid var(--stroke) !important;
+  /* Base standard border */
+  box-shadow: none !important;
+}
+
+#skills.section:not(.expanded) {
+  border: 1.5px solid var(--accent) !important;
+  /* Collapsed state accent */
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15) !important;
 }
 
 .skills-content-inner {
-  overflow: hidden;
   min-height: 0;
   /* Important for grid transition */
-  padding: 24px;
-  /* Expanded bleed area for hover shadows/lift */
-  margin: -24px;
-  /* Offset padding to keep alignment */
+  overflow: visible;
 }

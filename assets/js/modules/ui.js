@@ -272,14 +272,18 @@ export function initMobileMenu() {
  * Initializes the collapsible skills section.
  */
 export function initSkillsToggle() {
+  const section = document.getElementById('skills');
   const toggle = document.getElementById('skillsToggle');
   const content = document.getElementById('skillsContent');
 
-  if (!toggle || !content) return;
+  if (!section || !toggle || !content) return;
 
   toggle.addEventListener('click', () => {
     const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', !isExpanded);
-    content.classList.toggle('open', !isExpanded);
+    const nextState = !isExpanded;
+
+    toggle.setAttribute('aria-expanded', nextState.toString());
+    content.classList.toggle('open', nextState);
+    section.classList.toggle('expanded', nextState);
   });
 }
