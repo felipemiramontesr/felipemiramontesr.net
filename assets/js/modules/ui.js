@@ -195,22 +195,51 @@ export function renderSkills() {
  * Initializes Scroll Reveal interactions.
  */
 export function initScrollReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          observer.unobserve(entry.target); // Performant: stop watching once active
+          observer.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.01,
-      rootMargin: '0px 0px 250px 0px', // Aggressive: trigger 250px before entering viewport
+      threshold: 0, // Instant trigger
+      rootMargin: '0px 0px 300px 0px', // Trigger 300px before
     }
   );
 
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  // 1. Start observing
+  reveals.forEach((el) => observer.observe(el));
+
+  // 2. Immediate manual scan for elements already in or near view
+  const instantScan = () => {
+    const viewHeight = window.innerHeight;
+    reveals.forEach((el) => {
+      if (!el.classList.contains('active')) {
+        const rect = el.getBoundingClientRect();
+        // If element is within 500px of top viewport context, reveal it immediately
+        if (rect.top < viewHeight + 500) {
+          el.classList.add('active');
+          observer.unobserve(el);
+        }
+      }
+    });
+  };
+  instantScan();
+
+  // 3. Global Safety Fallback (Ensure nothing is lost after loading stabilizes)
+  setTimeout(() => {
+    reveals.forEach((el) => {
+      if (!el.classList.contains('active')) {
+        el.classList.add('active');
+      }
+    });
+  }, 3000);
 }
 
 /**
