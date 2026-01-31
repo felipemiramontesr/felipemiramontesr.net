@@ -180,10 +180,10 @@ svg {
   }
 
   .reveal.active {
-    animation: up 0.1s ease-out both;
+    animation: fade-in 0.1s ease-out both;
   }
 
-  @keyframes up {
+  @keyframes fade-in {
     from {
       opacity: 0;
     }

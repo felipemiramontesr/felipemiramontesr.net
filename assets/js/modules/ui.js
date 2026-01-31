@@ -215,19 +215,20 @@ export function initScrollReveal() {
     },
     {
       threshold: 0,
-      rootMargin: '0px 0px 400px 0px', // Pre-reveal 400px before entry
+      rootMargin: '600px 0px 600px 0px', // Symmetrical: 600px ahead in BOTH directions
     }
   );
 
   reveals.forEach((el) => observer.observe(el));
 
-  // 1. Instant check for elements already in or near view (800px context)
+  // 1. Instant check for elements in the extended "active zone" (1200px total context)
   const manualScan = () => {
-    const triggerBottom = window.innerHeight + 800;
+    const vh = window.innerHeight;
     reveals.forEach((el) => {
       if (!el.classList.contains('active')) {
         const rect = el.getBoundingClientRect();
-        if (rect.top < triggerBottom) {
+        // Reveal if within 600px of visible area top or bottom
+        if (rect.top < vh + 600 && rect.bottom > -600) {
           revealElement(el);
           observer.unobserve(el);
         }
