@@ -200,10 +200,14 @@ export function initScrollReveal() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Performant: stop watching once active
         }
       });
     },
-    { threshold: 0.1 }
+    {
+      threshold: 0.01,
+      rootMargin: '0px 0px 80px 0px', // Trigger 80px before entering viewport
+    }
   );
 
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));

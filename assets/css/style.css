@@ -175,7 +175,12 @@ svg {
        ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
-    animation: up 0.62s cubic-bezier(0.2, 0.85, 0.2, 1) both;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .reveal.active {
+    animation: up 0.4s cubic-bezier(0.2, 0.85, 0.2, 1) both;
   }
 
   @keyframes up {
