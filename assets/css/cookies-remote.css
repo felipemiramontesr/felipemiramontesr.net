@@ -4,12 +4,10 @@
 @keyframes cookieSlideUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0px);
   }
 }
 
@@ -33,7 +31,7 @@
   border-radius: 20px;
   border: 1px solid var(--cookie-border, rgba(15, 23, 42, 0.12));
   background: var(--cookie-bg, rgba(255, 255, 255, 0.82));
-  animation: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0s 1 normal both running cookieSlideUp;
+  animation: 0.1s ease-out both cookieSlideUp;
 
   /* CRITICAL: Ensure glow isn't clipped (Implied by need for external shadow) */
   overflow: visible;
