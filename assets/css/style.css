@@ -180,7 +180,7 @@ svg {
   }
 
   .reveal.active {
-    animation: fade-in 0.1s ease-out both;
+    animation: fade-in 0.1s ease-out both !important;
   }
 
   @keyframes fade-in {
@@ -1622,6 +1622,11 @@ footer {
     transition: none !important;
   }
 
+  .reveal {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
   .floatPulse {
     animation: none !important;
   }
@@ -2238,7 +2243,7 @@ body.theme-light .theme-toggle-btn::before {
 .skills-content {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s ease-out;
+  transition: grid-template-rows 0.1s ease-out;
   padding: 0;
   overflow: hidden;
   /* Hide when closed/transitioning */
@@ -2252,7 +2257,7 @@ body.theme-light .theme-toggle-btn::before {
 
 #skills.section {
   overflow: visible !important;
-  transition: all 0.4s ease;
+  transition: all 0.1s ease;
   border: 1px solid var(--stroke) !important;
   /* Base standard border */
   box-shadow: none !important;
