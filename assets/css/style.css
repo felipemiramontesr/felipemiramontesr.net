@@ -180,7 +180,7 @@ svg {
   }
 
   .reveal.active {
-    animation: up 0.4s cubic-bezier(0.2, 0.85, 0.2, 1) both;
+    animation: up 0.25s cubic-bezier(0.2, 0.85, 0.2, 1) both;
   }
 
   @keyframes up {
