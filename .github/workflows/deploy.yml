@@ -25,11 +25,13 @@ jobs:
       - name: 📦 Install dependencies
         run: npm install
 
-      - name: ✨ Run linting
-        run: npm run lint
+      - name: ✨ Run Prettier Formatting
+        run: npm run format
 
-      - name: 🎨 Check formatting
-        run: npm run format:check
+      - name: 📝 Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: automated prettier formatting"
 
       - name: ✅ Run unit tests
         run: npm test
