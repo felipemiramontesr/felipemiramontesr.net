@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3. Initialize UI Interactions (Scroll Reveal, Download Menu)
-  initScrollReveal();
+  // initScrollReveal(); // DISABLED: Load all content immediately
 
   // Debug Download Menu
   initDownloadMenu();

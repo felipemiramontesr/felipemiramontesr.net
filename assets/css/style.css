@@ -172,32 +172,25 @@ svg {
 
 /* ==========================================================================
        4. ANIMATIONS
-       ========================================================================== */
+/* FORCE STATIC VISIBILITY (User Request: "Cargar de golpe") */
+.reveal,
+.reveal.active,
+.section,
+.glass-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+  transition: opacity 0s !important;
+  /* Keep transform transition for hover effects only */
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    opacity: 0;
-    will-change: transform, opacity;
-  }
-
-  .reveal.active {
-    animation: fade-in 0.1s ease-out both !important;
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
   .floatPulse {
     animation: floaty 2s ease-in-out infinite;
   }
 
   @keyframes floaty {
+
     0%,
     100% {
       transform: translateY(0);
@@ -209,6 +202,31 @@ svg {
       box-shadow: 0 30px 60px rgba(15, 23, 42, 0.3);
     }
   }
+}
+
+
+/* ==========================================================================
+   PERFORMANCE & COMPOSITING FIXES (The "Anti-Ghosting" Patch)
+   ========================================================================== */
+.glass-card,
+.contact,
+.download,
+.chip,
+.btn-solid {
+  /* Force GPU Promotion at all times */
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Force 3D Transform on Hover (Prevents layer repainting) */
+.glass-card:hover,
+.contact:hover,
+.download:hover,
+.chip:hover,
+.btn-solid:hover {
+  transform: translate3d(0, -3px, 0) !important;
 }
 
 /* ==========================================================================
@@ -811,6 +829,9 @@ body.theme-light .contact::before {
 .section {
   border-radius: var(--radius-xl);
   overflow: hidden;
+  /* Restored to fix backdrop bleed (Weird Strip) */
+  transform: translateZ(0);
+  /* Force GPU layer for stability */
 }
 
 .section-inner {
@@ -1081,6 +1102,8 @@ body.theme-light .skill-ico {
   min-width: 0;
   font-size: var(--fs-body);
   position: relative;
+  transform: translateZ(0);
+  /* Fix for backdrop-filter ghosting */
 }
 
 /* .glass-card::before removed in V84 to fix inexact glow artifact */
@@ -1466,6 +1489,7 @@ footer {
        13. RESPONSIVE QUERIES (Desktop & Tablet)
        ========================================================================== */
 @media (min-width: 861px) {
+
   /* Desktop: botón theme flotante arriba-derecha */
   .top-controls {
     position: fixed;
@@ -1637,6 +1661,7 @@ footer {
 }
 
 @media print {
+
   /* =========================
      BASE DOCUMENTO
      ========================= */
