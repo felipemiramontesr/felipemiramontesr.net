@@ -1,100 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #060B16;
-            color: #E2E8F0;
-            padding: 20px;
-            margin: 0;
-        }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #060b16;
+        color: #e2e8f0;
+        padding: 20px;
+        margin: 0;
+      }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #1E293B;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #334155;
-        }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #1e293b;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid #334155;
+      }
 
-        .header {
-            background-color: #0F172A;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #22D3EE;
-        }
+      .header {
+        background-color: #0f172a;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #22d3ee;
+      }
 
-        .header h1 {
-            margin: 0;
-            color: #f8fafc;
-            font-size: 24px;
-        }
+      .header h1 {
+        margin: 0;
+        color: #f8fafc;
+        font-size: 24px;
+      }
 
-        .content {
-            padding: 30px;
-            line-height: 1.6;
-        }
+      .content {
+        padding: 30px;
+        line-height: 1.6;
+      }
 
-        .label {
-            color: #94A3B8;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-            display: block;
-        }
+      .label {
+        color: #94a3b8;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+        display: block;
+      }
 
-        .value {
-            color: #F1F5F9;
-            font-size: 16px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
+      .value {
+        color: #f1f5f9;
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
 
-        .message-box {
-            background-color: #0F172A;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #22D3EE;
-            white-space: pre-wrap;
-        }
+      .message-box {
+        background-color: #0f172a;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #22d3ee;
+        white-space: pre-wrap;
+      }
 
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0F172A;
-            color: #64748B;
-            font-size: 12px;
-        }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #0f172a;
+        color: #64748b;
+        font-size: 12px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>New Message from Website</h1>
-        </div>
-        <div class="content">
-            <span class="label">From</span>
-            <div class="value">{{NAME}} &lt;{{EMAIL}}&gt;</div>
+      <div class="header">
+        <h1>New Message from Website</h1>
+      </div>
+      <div class="content">
+        <span class="label">From</span>
+        <div class="value">{{NAME}} &lt;{{EMAIL}}&gt;</div>
 
-            <span class="label">Subject</span>
-            <div class="value">{{SUBJECT}}</div>
+        <span class="label">Subject</span>
+        <div class="value">{{SUBJECT}}</div>
 
-            <span class="label">Date</span>
-            <div class="value">{{DATE}}</div>
+        <span class="label">Date</span>
+        <div class="value">{{DATE}}</div>
 
-            <span class="label">Message</span>
-            <div class="message-box">{{MESSAGE}}</div>
-        </div>
-        <div class="footer">
-            Sent from felipemiramontesr.net
-        </div>
+        <span class="label">Message</span>
+        <div class="message-box">{{MESSAGE}}</div>
+      </div>
+      <div class="footer">Sent from felipemiramontesr.net</div>
     </div>
-</body>
-
+  </body>
 </html>
