@@ -1,242 +1,244 @@
 /* Collapsible Section Styles */
 .skills-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
-    overflow: hidden;
-    opacity: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition:
+    grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .skills-content.open {
-    grid-template-rows: 1fr;
-    opacity: 1;
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
 
 /* Inner wrapper needed for animation */
-.skills-content>div {
-    min-height: 0;
-    overflow: hidden;
+.skills-content > div {
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* Contact Form Styles */
 .contact-container {
-    padding: 0 4px 10px;
-    /* Minimal padding */
+  padding: 0 4px 10px;
+  /* Minimal padding */
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    /* Full Width */
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  /* Full Width */
+  margin: 0;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    position: relative;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  width: 100%;
 }
 
 .form-label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    font-weight: 800;
-    margin-left: 4px;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 800;
+  margin-left: 4px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* Input Wrapper for Icons */
 .input-wrapper {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .input-icon {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    font-size: 1.1rem;
-    pointer-events: none;
-    transition: color 0.3s ease;
-    z-index: 2;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: color 0.3s ease;
+  z-index: 2;
 }
 
 .form-control {
-    background: var(--panel);
-    border: 1px solid var(--stroke);
-    border-radius: 14px;
-    /* Premium roundness */
-    padding: 14px 16px 14px 48px;
-    /* Left padding for icon */
-    color: var(--ink);
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  /* Premium roundness */
+  padding: 14px 16px 14px 48px;
+  /* Left padding for icon */
+  color: var(--ink);
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .form-control:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
-    background: var(--bg);
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
+  background: var(--bg);
 }
 
-.form-control:focus+.input-icon,
+.form-control:focus + .input-icon,
 .input-wrapper:focus-within .input-icon {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .form-control::placeholder {
-    color: var(--muted);
-    opacity: 0.5;
-    font-weight: 400;
+  color: var(--muted);
+  opacity: 0.5;
+  font-weight: 400;
 }
 
 /* Textarea specific */
 textarea.form-control {
-    min-height: 140px;
-    resize: vertical;
-    padding-top: 16px;
-    /* Align text top */
-    line-height: 1.6;
+  min-height: 140px;
+  resize: vertical;
+  padding-top: 16px;
+  /* Align text top */
+  line-height: 1.6;
 }
 
-textarea.form-control+.input-icon {
-    top: 24px;
-    /* Align icon to top for textarea */
-    transform: none;
+textarea.form-control + .input-icon {
+  top: 24px;
+  /* Align icon to top for textarea */
+  transform: none;
 }
 
 /* Button Wrapper */
 .form-actions {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 0.5rem;
-    border-top: 1px solid var(--stroke);
-    padding-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--stroke);
+  padding-top: 1.5rem;
 }
 
 .btn-submit {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    cursor: pointer;
-    padding: 14px 32px;
-    font-size: 1rem;
-    font-weight: 800;
-    border-radius: 14px;
-    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-    border: 1px solid var(--stroke);
-    background: var(--panel-2);
-    color: var(--accent);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 14px;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid var(--stroke);
+  background: var(--panel-2);
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3px;
 }
 
 .btn-submit:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent);
-    box-shadow: 0 12px 24px rgba(34, 211, 238, 0.2);
-    background: var(--panel);
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px rgba(34, 211, 238, 0.2);
+  background: var(--panel);
 }
 
 .btn-submit:active {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .btn-submit i {
-    transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .btn-submit:hover i {
-    transform: translate(3px, -3px);
+  transform: translate(3px, -3px);
 }
 
 .btn-submit:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Feedback Messages */
 .form-feedback {
-    font-size: 0.95rem;
-    font-weight: 600;
-    min-height: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: right;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-height: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .form-feedback.success {
-    color: #4ade80;
-    opacity: 1;
+  color: #4ade80;
+  opacity: 1;
 }
 
 .form-feedback.error {
-    color: #f87171;
-    opacity: 1;
+  color: #f87171;
+  opacity: 1;
 }
 
 /* Loader */
 .spinner {
-    width: 20px;
-    height: 20px;
-    border: 2.5px solid currentColor;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: none;
-    animation: rotation 0.8s linear infinite;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: none;
+  animation: rotation 0.8s linear infinite;
 }
 
 .btn-submit.loading .spinner {
-    display: inline-block;
+  display: inline-block;
 }
 
 @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Desktop Grid Layout */
 @media (min-width: 768px) {
-    .contact-form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem 2rem;
-        /* Row gap, Col gap */
-    }
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    /* Row gap, Col gap */
+  }
 
-    .form-group.full-width {
-        grid-column: span 2;
-    }
+  .form-group.full-width {
+    grid-column: span 2;
+  }
 
-    .form-actions {
-        grid-column: span 2;
-    }
+  .form-actions {
+    grid-column: span 2;
+  }
 }
