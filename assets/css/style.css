@@ -190,7 +190,6 @@ svg {
   }
 
   @keyframes floaty {
-
     0%,
     100% {
       transform: translateY(0);
@@ -1488,7 +1487,6 @@ footer {
        13. RESPONSIVE QUERIES (Desktop & Tablet)
        ========================================================================== */
 @media (min-width: 861px) {
-
   /* Desktop: botón theme flotante arriba-derecha */
   .top-controls {
     position: fixed;
@@ -1660,7 +1658,6 @@ footer {
 }
 
 @media print {
-
   /* =========================
      BASE DOCUMENTO
      ========================= */
@@ -1979,7 +1976,6 @@ body.theme-light .btn-square::before {
 
 /* V167: Increased breakpoint to 1367px for Pro Tablets */
 @media (min-width: 1367px) {
-
   .theme-toggle-btn:hover,
   .btn-square:hover {
     transform: translateY(-3px);

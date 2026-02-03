@@ -26,17 +26,17 @@ export function initCookieBanner() {
 
   const text = isSpanish
     ? {
-      policyLinkSelf: `esta política de privacidad`,
-      policyLinkOther: `mi <a href="../cookies.html" class="cookie-link">política de privacidad</a>`, // Access via relative path from /es/
-      message: `Este sitio web utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas`,
-      button: `¡Entendido!`,
-    }
+        policyLinkSelf: `esta política de privacidad`,
+        policyLinkOther: `mi <a href="../cookies.html" class="cookie-link">política de privacidad</a>`, // Access via relative path from /es/
+        message: `Este sitio web utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas`,
+        button: `¡Entendido!`,
+      }
     : {
-      policyLinkSelf: `this privacy policy`,
-      policyLinkOther: `my <a href="cookies.html" class="cookie-link">privacy policy</a>`,
-      message: `This website uses cookies to enhance your user experience. By continuing to browse, you agree to`,
-      button: `Got it!`,
-    };
+        policyLinkSelf: `this privacy policy`,
+        policyLinkOther: `my <a href="cookies.html" class="cookie-link">privacy policy</a>`,
+        message: `This website uses cookies to enhance your user experience. By continuing to browse, you agree to`,
+        button: `Got it!`,
+      };
 
   // Determine correct link based on current page AND language context
   let policyLinkHTML = '';
