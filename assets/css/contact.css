@@ -2,7 +2,9 @@
 .skills-content {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  transition:
+    grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
   overflow: hidden;
   opacity: 0;
 }
@@ -13,7 +15,7 @@
 }
 
 /* Inner wrapper needed for animation */
-.skills-content>div {
+.skills-content > div {
   min-height: 0;
   overflow: hidden;
 }
@@ -97,7 +99,7 @@
   color: #ffffff !important;
 }
 
-.form-control:focus+.input-icon,
+.form-control:focus + .input-icon,
 .input-wrapper:focus-within .input-icon {
   color: var(--accent);
 }
@@ -130,7 +132,7 @@ textarea.form-control {
   line-height: 1.6;
 }
 
-textarea.form-control+.input-icon {
+textarea.form-control + .input-icon {
   top: 24px;
   /* Align icon to top for textarea */
   transform: none;
