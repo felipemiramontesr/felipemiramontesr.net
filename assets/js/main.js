@@ -16,6 +16,8 @@ import {
 import { initCookieBanner } from './cookies-core.js';
 import './sw-reset.js';
 
+import { initContactForm } from './modules/contact.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize Theme (Dark/Light)
   try {
@@ -39,4 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Initialize Cookie Banner
   initCookieBanner();
+
+  // 5. Initialize Contact Form
+  initContactForm();
 });
