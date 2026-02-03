@@ -141,7 +141,8 @@ export function renderSkills() {
       link.rel = 'noopener noreferrer';
       link.className = 'skill-link-ico';
       link.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
-      link.setAttribute('aria-label', `Visit ${skill.name} website`);
+      const isEs = document.documentElement.lang === 'es';
+      link.setAttribute('aria-label', isEs ? `Visitar sitio web de ${skill.name}` : `Visit ${skill.name} website`);
       card.appendChild(link);
     }
 

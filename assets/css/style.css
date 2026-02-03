@@ -1922,16 +1922,42 @@ footer {
   }
 }
 
-.theme-toggle-btn {
+.theme-toggle-btn,
+.btn-square {
   width: 48px !important;
   height: 48px !important;
   display: grid !important;
   place-items: center !important;
   padding: 0 !important;
   border-radius: 14px !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  line-height: 0 !important;
 }
 
-.theme-toggle-btn::before {
+.btn-square:hover,
+.btn-square:visited,
+.btn-square:active,
+.btn-square:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.theme-toggle-btn i,
+.btn-square i,
+.btn-square wa-icon {
+  font-size: 18px !important;
+  /* Force global consistency */
+  text-decoration: none !important;
+  border: none !important;
+  display: block;
+  line-height: 1 !important;
+}
+
+.theme-toggle-btn::before,
+.btn-square::before {
   content: '';
   position: absolute;
   inset: 1px;
@@ -1941,18 +1967,22 @@ footer {
   opacity: 0.75;
 }
 
-body.theme-light .theme-toggle-btn {
+body.theme-light .theme-toggle-btn,
+body.theme-light .btn-square {
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
 }
 
-body.theme-light .theme-toggle-btn::before {
+body.theme-light .theme-toggle-btn::before,
+body.theme-light .btn-square::before {
   border: 1px solid rgba(8, 13, 24, 0.05);
   opacity: 0.55;
 }
 
 /* V167: Increased breakpoint to 1367px for Pro Tablets */
 @media (min-width: 1367px) {
-  .theme-toggle-btn:hover {
+
+  .theme-toggle-btn:hover,
+  .btn-square:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(34, 211, 238, 0.15);
     /* Cyan hint */
@@ -1990,6 +2020,26 @@ body.theme-light .theme-toggle-btn::before {
 
 .theme-toggle-btn i {
   animation: spin-interval 30s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Reverse Spin for Language Icon */
+@keyframes spin-interval-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  16.67% {
+    transform: rotate(-360deg);
+  }
+
+  /* Spin for 5s (16.67% of 30s) */
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.btn-square .fa-earth-americas {
+  animation: spin-interval-reverse 30s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Vertical Slide Animation for CV Download (Symmetry with Theme Spin) */

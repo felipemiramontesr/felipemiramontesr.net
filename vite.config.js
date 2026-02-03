@@ -7,6 +7,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         cookies: resolve(__dirname, 'cookies.html'),
+        es_main: resolve(__dirname, 'es/index.html'),
+        es_cookies: resolve(__dirname, 'es/cookies.html'),
         // Add other pages if necessary (e.g. cv.html)
         cv: resolve(__dirname, 'cv.html'),
         v1: resolve(__dirname, 'tarjeta-felipe-v1.html'),
