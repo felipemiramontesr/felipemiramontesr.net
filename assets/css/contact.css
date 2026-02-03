@@ -21,6 +21,43 @@
 }
 
 /* Contact Form Styles */
+/* Force chevron to point DOWN by default (0deg) and UP when open (180deg) */
+.toggle-trigger .chevron {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.toggle-trigger[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* "Technical Skills" Style Border & Glow for Contact Section */
+#contact {
+  overflow: visible !important;
+  transition: all 0.3s ease;
+  border: 1px solid var(--stroke);
+}
+
+#contact.glass {
+  /* Ensure glass effect is compatible */
+}
+
+/* When NOT collapsed (i.e. when potentially active or hovered? User asked for "same effect as Technical Skills") */
+/* Actually, Technical Skills glow when NOT expanded in style.css, or when active? */
+/* style.css says: #skills.section:not(.expanded) { border: 1.5px solid var(--accent); ... } */
+/* But here we want the effect on the section wrapper. */
+
+/* Applying the cyan border permanently or on hover? User said "la sección debe tener el mismo efecto border cyan que la sección Technical Skills". */
+/* I will simulate the Technical Skills logic: Glow when NOT expanded (to draw attention) or maybe always? */
+/* Let's replicate strict style.css logic for uniformity */
+
+#contact:not(.expanded) {
+  /* If the JS class logic matches skills (expanded class), this works. */
+  /* If not, I'll just add it generally or on hover */
+  border: 1.5px solid var(--accent) !important;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15) !important;
+}
+
 .contact-container {
   padding: 0 4px 10px;
   /* Minimal padding */
