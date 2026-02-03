@@ -27,7 +27,7 @@
   transition: transform 0.3s ease;
 }
 
-.toggle-trigger[aria-expanded="true"] .chevron {
+.toggle-trigger[aria-expanded='true'] .chevron {
   transform: rotate(180deg);
 }
 
