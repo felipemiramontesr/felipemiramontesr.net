@@ -190,6 +190,7 @@ svg {
   }
 
   @keyframes floaty {
+
     0%,
     100% {
       transform: translateY(0);
@@ -1487,6 +1488,7 @@ footer {
        13. RESPONSIVE QUERIES (Desktop & Tablet)
        ========================================================================== */
 @media (min-width: 861px) {
+
   /* Desktop: botón theme flotante arriba-derecha */
   .top-controls {
     position: fixed;
@@ -1658,6 +1660,7 @@ footer {
 }
 
 @media print {
+
   /* =========================
      BASE DOCUMENTO
      ========================= */
@@ -2225,10 +2228,11 @@ body.theme-light .btn-square::before {
 }
 
 .floating-menu a {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px;
+  /* justify-content: space-between; REMOVED in favor of grid */
+  padding: 10px 6px;
   border-radius: 12px;
   text-decoration: none;
   color: var(--accent);
@@ -2252,6 +2256,8 @@ body.theme-light .btn-square::before {
     transform 0.2s ease,
     opacity 0.2s ease;
   color: var(--accent) !important;
+  justify-self: end;
+  /* Ensure arrow hugs the right edge */
 }
 
 .floating-menu a:hover .arrow {
