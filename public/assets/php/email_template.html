@@ -26,9 +26,12 @@
       }
 
       .header {
-        background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        background-color: #0f172a;
+        /* Navy Background - Requested by User */
         padding: 30px;
         text-align: center;
+        border-bottom: 2px solid #22d3ee;
+        /* Cyan Accent Border */
       }
 
       .header h1 {
@@ -101,21 +104,21 @@
         <!-- Name -->
         <div class="field">
           <div class="label"><span>👤</span> From</div>
-          <div class="value">{{name}}</div>
+          <div class="value">{{NAME}}</div>
         </div>
 
         <!-- Email -->
         <div class="field">
           <div class="label"><span>📧</span> Email</div>
           <div class="value">
-            <a href="mailto:{{email}}" style="color: #38bdf8; text-decoration: none">{{email}}</a>
+            <a href="mailto:{{EMAIL}}" style="color: #38bdf8; text-decoration: none">{{EMAIL}}</a>
           </div>
         </div>
 
         <!-- Subject -->
         <div class="field">
           <div class="label"><span>📑</span> Subject</div>
-          <div class="value">{{subject}}</div>
+          <div class="value">{{SUBJECT}}</div>
         </div>
 
         <!-- Message -->
@@ -130,13 +133,13 @@
               border: 1px solid #334155;
             "
           >
-            {{message}}
+            {{MESSAGE}}
           </div>
         </div>
       </div>
 
       <!-- Footer -->
-      <div class="footer">Sent securely from felipemiramontesr.net • {{date}}</div>
+      <div class="footer">Sent securely from felipemiramontesr.net • {{DATE}}</div>
     </div>
   </body>
 </html>
