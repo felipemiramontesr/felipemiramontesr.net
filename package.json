@@ -12,15 +12,27 @@
     "format:check": "prettier --check .",
     "build": "vite build",
     "preview": "vite preview",
-    "dev": "vite"
+    "dev": "vite",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.0",
     "@vitest/browser": "^2.1.8",
     "eslint": "^9.17.0",
+    "husky": "^9.1.7",
     "jsdom": "^25.0.1",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.4.2",
     "vite": "^5.4.21",
     "vitest": "^2.1.8"
+  },
+  "lint-staged": {
+    "assets/js/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{html,css,json,md}": [
+      "prettier --write"
+    ]
   }
 }
