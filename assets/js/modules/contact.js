@@ -37,11 +37,25 @@ export function initContactForm() {
     feedback.className = 'form-feedback';
     feedback.textContent = '';
 
+    // 3. Bilingual Logic
+    const isSpanish = document.documentElement.lang === 'es';
+    const text = isSpanish
+      ? {
+          sending: 'Enviando...',
+          success: '¡Mensaje enviado con éxito!',
+          error: 'Error al enviar el mensaje. Inténtalo de nuevo.',
+        }
+      : {
+          sending: 'Sending...',
+          success: 'Message sent successfully!',
+          error: 'Failed to send message.',
+        };
+
     // Loading State
     btn.disabled = true;
     btn.classList.add('loading');
     const originalBtnText = btn.querySelector('.btn-text').textContent;
-    btn.querySelector('.btn-text').textContent = 'Sending...';
+    btn.querySelector('.btn-text').textContent = text.sending;
 
     // Collect Data
     const formData = new FormData(form);
@@ -59,7 +73,7 @@ export function initContactForm() {
       const result = await response.json();
 
       if (result.success) {
-        feedback.textContent = result.message || 'Message sent successfully!';
+        feedback.textContent = result.message || text.success;
         feedback.classList.add('success');
         form.reset();
 
@@ -72,11 +86,11 @@ export function initContactForm() {
           feedback.classList.remove('success');
         }, 3000);
       } else {
-        throw new Error(result.message || 'Failed to send message.');
+        throw new Error(result.message || text.error);
       }
     } catch (error) {
       console.error('Contact Form Error:', error);
-      feedback.textContent = error.message || 'An error occurred. Please try again later.';
+      feedback.textContent = error.message || text.error;
       feedback.classList.add('error');
     } finally {
       // Restore Button
