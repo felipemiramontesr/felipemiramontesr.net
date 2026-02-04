@@ -15,7 +15,7 @@
 }
 
 /* Inner wrapper needed for animation */
-.skills-content>div {
+.skills-content > div {
   min-height: 0;
   overflow: hidden;
 }
@@ -136,7 +136,7 @@
   color: var(--ink) !important;
 }
 
-.form-control:focus+.input-icon,
+.form-control:focus + .input-icon,
 .input-wrapper:focus-within .input-icon {
   color: var(--accent);
 }
@@ -199,8 +199,6 @@ body.theme-light textarea:-webkit-autofill:hover,
 body.theme-light textarea:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #eaecf1 inset !important;
   -webkit-text-fill-color: var(--ink) !important;
-
-
 }
 
 /* Button Wrapper */
