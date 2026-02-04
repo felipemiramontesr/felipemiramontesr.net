@@ -1,1 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🛡️  QA Guard: Checking code quality..."
+
+# 1. Lint & Format (JS Strictness)
 npx lint-staged
+
+# 2. HTML Validation (New)
+echo "🔍 Validating HTML structure..."
+npm run validate
+
+# 3. Unit Tests (Logic Check)
+echo "🧪 Running Unit Tests..."
+npm test
+
+echo "✅ QA Passed! Committing..."

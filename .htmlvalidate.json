@@ -1,0 +1,22 @@
+{
+  "elements": ["html5"],
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "no-trailing-whitespace": "off",
+    "void-style": "off",
+    "no-inline-style": "off",
+    "doctype-style": "off",
+    "long-title": "off",
+    "no-raw-characters": "off",
+    "no-implicit-button-type": "off",
+    "unique-landmark": "off",
+    "no-multiple-main": "off",
+    "attribute-allowed-values": "off",
+    "element-required-content": "off",
+    "prefer-native-element": "off",
+    "script-type": "off",
+    "attr-quotes": "off",
+    "tel-non-breaking": "off",
+    "element-required-attributes": "off"
+  }
+}
