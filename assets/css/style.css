@@ -190,6 +190,7 @@ svg {
   }
 
   @keyframes floaty {
+
     0%,
     100% {
       transform: translateY(0);
@@ -269,7 +270,8 @@ svg {
 
 .btn-solid:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  /* Tighter shadow to avoid rendering artifacts on sections below */
   border: 1px solid var(--accent) !important;
 }
 
@@ -292,6 +294,44 @@ svg {
   padding: 0 !important;
   /* Force override of btn-solid padding */
   justify-content: center;
+}
+
+/* Chevron Circle Styles */
+.chevron-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--stroke);
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.chevron-circle .chevron {
+  font-size: 14px;
+  color: var(--muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Override */
+body.theme-light .chevron-circle {
+  background: rgba(0, 0, 0, 0.05);
+  /* Darker background for visibility */
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Section Hover / Expanded State for Chevron */
+.section:hover .chevron-circle,
+.section-title[aria-expanded='true'] .chevron-circle {
+  border-color: var(--accent);
+  background: rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.2);
+}
+
+.section:hover .chevron-circle .chevron,
+.section-title[aria-expanded='true'] .chevron-circle .chevron {
+  color: var(--accent);
 }
 
 /* Desktop Actions (Fixed Top-Right) */
@@ -830,6 +870,8 @@ body.theme-light .contact::before {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  padding: 10px 4px;
+  /* Fix: Prevent clipping of hover lift and bottom borders */
 }
 
 /* Responsive Grid for Desktop */
@@ -872,8 +914,8 @@ body.theme-light .contact::before {
 }
 
 body.theme-light .skill-card {
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
-  /* Restore shadow for light mode? User specified 'dark theme'. Let's keep light mode as is or simplify too? Usually distinct. */
+  box-shadow: none;
+  /* Flat Sticker Style */
   background: #ffffff;
   border-color: rgba(0, 0, 0, 0.06);
 }
@@ -1005,8 +1047,8 @@ body.theme-light .skill-stars i.star-empty {
 }
 
 body.theme-light .skill-ico {
-  background: rgba(0, 0, 0, 0.07);
-  /* Ghost Dark (Matches Watermark) */
+  background: transparent;
+  /* User Request: Kill gray bg for clean look */
   border-color: rgba(0, 0, 0, 0.1);
   /* Softer border for light mode */
 }
@@ -1441,6 +1483,7 @@ footer {
        13. RESPONSIVE QUERIES (Desktop & Tablet)
        ========================================================================== */
 @media (min-width: 861px) {
+
   /* Desktop: botón theme flotante arriba-derecha */
   .top-controls {
     position: fixed;
@@ -1612,6 +1655,7 @@ footer {
 }
 
 @media print {
+
   /* =========================
      BASE DOCUMENTO
      ========================= */
@@ -1930,6 +1974,7 @@ body.theme-light .btn-square::before {
 
 /* V167: Increased breakpoint to 1367px for Pro Tablets */
 @media (min-width: 1367px) {
+
   .theme-toggle-btn:hover,
   .btn-square:hover {
     transform: translateY(-3px);

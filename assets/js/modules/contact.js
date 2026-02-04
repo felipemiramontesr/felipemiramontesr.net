@@ -22,14 +22,11 @@ export function initContactForm() {
 
     toggle.setAttribute('aria-expanded', nextState.toString());
     content.classList.toggle('open', nextState);
+    section.classList.toggle('expanded', nextState);
 
     // Rotate chevron
-    const chevron = toggle.querySelector('.chevron');
-    if (chevron) {
-      chevron.className = nextState
-        ? 'fa-solid fa-chevron-down chevron'
-        : 'fa-solid fa-chevron-up chevron';
-    }
+    // Chevron rotation is handled by CSS (transform: rotate) based on aria-expanded
+    // JS class swapping caused conflict. Removed.
   });
 
   // 2. Submit Logic

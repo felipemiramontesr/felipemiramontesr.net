@@ -55,7 +55,7 @@
   <noscript>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
   </noscript>
-
+
 
   <!-- JSON-LD Structured Data (Senior SEO) -->
   <script type="application/ld+json">
@@ -73,8 +73,10 @@
         "description": "Expert in IT leadership, cybersecurity, and full-stack development with over 12 years of experience."
       }
     </script>
-  <script type="module" crossorigin src="/assets/main-BT10fetq.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-C6SZ1t_k.css">
+  <script type="module" crossorigin src="/assets/contact-BWl8BgBQ.js"></script>
+  <script type="module" crossorigin src="/assets/main-DAsk2hoZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-rcH90TRS.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-q5uEe62l.css">
 </head>
 
 <body>
@@ -84,7 +86,7 @@
   <div class="desktop-actions-group">
     <!-- Theme Toggle Pill -->
     <div class="top-controls">
-      <button class="theme-toggle-btn btn-solid" id="themeToggle" type="button" aria-label="Cambiar tema">
+      <button class="theme-toggle-btn btn-solid btn-square" id="themeToggle" type="button" aria-label="Cambiar tema">
         <i class="fa-solid fa-sun"></i>
       </button>
     </div>
@@ -96,9 +98,9 @@
 
     <!-- Download CV Pill (Icon-only Redesign) -->
     <div class="floating-wrap">
-      <button class="floating-download" id="downloadToggle" type="button" aria-haspopup="true" aria-expanded="false"
+      <button class="btn-solid btn-square" id="downloadToggle" type="button" aria-haspopup="true" aria-expanded="false"
         aria-label="Download CV">
-        <span class="pill-ico"><i class="fa-solid fa-file-arrow-down"></i></span>
+        <i class="fa-solid fa-file-arrow-down"></i>
       </button>
 
       <div class="floating-menu" id="downloadMenu" role="menu" aria-label="Download options">
@@ -546,7 +548,9 @@
               <span class="badge-ico"><i class="fa-solid fa-code"></i></span>
               Technical Skills
             </div>
-            <i class="fa-solid fa-chevron-down chevron"></i>
+            <div class="chevron-circle">
+              <i class="fa-solid fa-chevron-down chevron"></i>
+            </div>
           </div>
 
           <!-- Collapsible Content -->
@@ -755,6 +759,74 @@
           </div>
         </div>
       </section>
+
+      <!-- 7. CONTACT FORM -->
+      <section class="section glass" id="contact">
+        <div class="section-inner">
+          <!-- Toggle Header -->
+          <div class="section-title toggle-trigger" id="contactToggle" role="button" aria-expanded="false"
+            aria-controls="contactContent">
+            <div class="toggle-title-group">
+              <span class="badge-ico"><i class="fa-solid fa-envelope"></i></span>
+              Get in Touch
+            </div>
+            <div class="chevron-circle">
+              <i class="fa-solid fa-chevron-down chevron"></i>
+            </div>
+          </div>
+
+          <!-- Collapsible Content -->
+          <div class="skills-content" id="contactContent">
+            <div class="contact-container">
+              <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com"
+                      required />
+                  </div>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="subject" class="form-label">Subject</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-heading input-icon"></i>
+                    <input type="text" id="subject" name="subject" class="form-control" placeholder="Project Inquiry"
+                      required />
+                  </div>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="message" class="form-label">Message</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-comment-dots input-icon"></i>
+                    <textarea id="message" name="message" class="form-control" placeholder="How can I help you?"
+                      required></textarea>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <div id="formFeedback" class="form-feedback"></div>
+                  <button type="submit" class="btn-submit" id="submitBtn">
+                    <span class="spinner"></span>
+                    <span class="btn-text">Send Message</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <!-- /section-wrap -->
 
@@ -765,7 +837,7 @@
       © <span id="year"></span> From strategy to delivery — secure, scalable, and reliable.
     </footer>
   </main>
-
+
 </body>
 
 </html>
