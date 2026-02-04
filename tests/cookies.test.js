@@ -21,7 +21,7 @@ describe('Cookie Consent Logic', () => {
     global.localStorage = {
       getItem: vi.fn((key) => dom.window.localStorage.getItem(key)),
       setItem: vi.fn((key, val) => dom.window.localStorage.setItem(key, val)),
-      clear: vi.fn(() => dom.window.localStorage.clear())
+      clear: vi.fn(() => dom.window.localStorage.clear()),
     };
   });
 
