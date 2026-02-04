@@ -15,7 +15,7 @@
 }
 
 /* Inner wrapper needed for animation */
-.skills-content > div {
+.skills-content>div {
   min-height: 0;
   overflow: hidden;
 }
@@ -38,24 +38,15 @@
   border: 1px solid var(--stroke);
 }
 
-#contact.glass {
-  /* Ensure glass effect is compatible */
-}
-
-/* When NOT collapsed (i.e. when potentially active or hovered? User asked for "same effect as Technical Skills") */
-/* Actually, Technical Skills glow when NOT expanded in style.css, or when active? */
-/* style.css says: #skills.section:not(.expanded) { border: 1.5px solid var(--accent); ... } */
-/* But here we want the effect on the section wrapper. */
-
-/* Applying the cyan border permanently or on hover? User said "la sección debe tener el mismo efecto border cyan que la sección Technical Skills". */
-/* I will simulate the Technical Skills logic: Glow when NOT expanded (to draw attention) or maybe always? */
-/* Let's replicate strict style.css logic for uniformity */
-
-#contact:not(.expanded) {
-  /* If the JS class logic matches skills (expanded class), this works. */
-  /* If not, I'll just add it generally or on hover */
+#contact:hover,
+#contact.expanded {
   border: 1.5px solid var(--accent) !important;
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.15) !important;
+}
+
+.contact-container {
+  padding: 0 4px 10px;
+  /* Minimal padding */
 }
 
 .contact-container {
@@ -136,7 +127,7 @@
   color: #ffffff !important;
 }
 
-.form-control:focus + .input-icon,
+.form-control:focus+.input-icon,
 .input-wrapper:focus-within .input-icon {
   color: var(--accent);
 }
@@ -169,7 +160,7 @@ textarea.form-control {
   line-height: 1.6;
 }
 
-textarea.form-control + .input-icon {
+textarea.form-control+.input-icon {
   top: 24px;
   /* Align icon to top for textarea */
   transform: none;
