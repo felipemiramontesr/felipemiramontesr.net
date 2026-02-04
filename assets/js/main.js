@@ -9,7 +9,7 @@
 import { initTheme } from './modules/theme.js';
 import {
   renderSkills,
-  initScrollReveal,
+  // initScrollReveal removed (unused)
   initDownloadMenu,
   initSkillsToggle,
 } from './modules/ui.js';

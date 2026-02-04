@@ -51,7 +51,7 @@ export function initCookieBanner() {
     // If we are at /es/ (es), we want "cookies.html" (relative to /es/) OR "es/cookies.html" (relative to root).
     // Let's rely on relative paths or absolute.
     // Safer:
-    const linkTarget = isSpanish ? 'cookies.html' : 'cookies.html';
+    // linkTarget variable removed as it was unused
     // If I am in /es/index.html, "cookies.html" resolves to /es/cookies.html. CORRECT.
     // If I am in /index.html, "cookies.html" resolves to /cookies.html. CORRECT.
 
