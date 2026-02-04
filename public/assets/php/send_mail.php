@@ -60,6 +60,46 @@ try {
     );
 
     if ($sent) {
+        // --- AUTO-REPLY LOGIC START ---
+        try {
+            $autoTemplate = file_get_contents(__DIR__ . '/autoreply_template.html');
+            $autoBody = str_replace(
+                ['{{SUBJECT}}', '{{DATE}}'],
+                [$subject, $date],
+                $autoTemplate
+            );
+
+            // Re-authenticate or reuse connection? SimpleSMTP might need reset or new instance.
+            // For safety and simplicity with this class, we send a second command set if connection is open, 
+            // but SimpleSMTP usage here implies a linear session. 
+            // Let's try sending on the SAME connection first (RSET usually required).
+            // Since SimpleSMTP is custom and minimal, creating a NEW instance is safer to avoid state issues.
+
+            // To be robust: Close first, open new for auto-reply.
+            // (Or if the class supported RSET).
+            // Let's just create a new instance to be 100% sure.
+
+            $smtpAuto = new SimpleSMTP(
+                $config['smtp_host'],
+                $config['smtp_port'],
+                $config['smtp_secure']
+            );
+            $smtpAuto->authenticate($config['smtp_user'], $config['smtp_pass']);
+
+            $smtpAuto->send(
+                $config['from_email'],                       // From (Admin Email)
+                'B. Eng. Felipe de Jesús Miramontes Romero', // From Name (Specific)
+                $email,                                      // To (The Visitor)
+                'Thank you for contacting B. Eng. Felipe de Jesús Miramontes Romero', // Subject
+                $autoBody,                                   // Body
+                $config['from_email']                        // Reply-To (Admin Email)
+            );
+            // Ignore auto-reply errors to not fail the user's success message
+        } catch (Exception $e) {
+            // Silently fail auto-reply or log it if logging existed.
+        }
+        // --- AUTO-REPLY LOGIC END ---
+
         echo json_encode(['success' => true, 'message' => 'Message sent successfully!']);
     } else {
         throw new Exception('SMTP rejected the message.');
