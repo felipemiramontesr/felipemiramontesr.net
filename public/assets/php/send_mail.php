@@ -54,7 +54,7 @@ try {
         $config['from_email'],        // From (Authenticated Account)
         $config['from_name'],         // From Name
         $config['from_email'], // To (Same as From, as requested)
-        $subject . " [Web Contact]",  // Subject
+        '"' . $subject . '" - Contact from felipemiramontesr.net',  // Subject
         $body,                        // Body (HTML)
         $email                        // Reply-To (The visitor)
     );
