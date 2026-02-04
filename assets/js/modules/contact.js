@@ -73,7 +73,7 @@ export function initContactForm() {
       const result = await response.json();
 
       if (result.success) {
-        feedback.textContent = result.message || text.success;
+        feedback.textContent = text.success;
         feedback.classList.add('success');
         form.reset();
 
@@ -86,7 +86,7 @@ export function initContactForm() {
           feedback.classList.remove('success');
         }, 3000);
       } else {
-        throw new Error(result.message || text.error);
+        throw new Error(text.error);
       }
     } catch (error) {
       console.error('Contact Form Error:', error);
