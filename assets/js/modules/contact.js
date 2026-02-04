@@ -48,7 +48,7 @@ export function initContactForm() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('assets/php/send_mail.php', {
+      const response = await fetch('/assets/php/send_mail.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
