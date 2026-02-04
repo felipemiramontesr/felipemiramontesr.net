@@ -10,7 +10,7 @@
     "lint": "eslint assets/js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "validate": "html-validate *.html **/*.html",
+    "validate": "html-validate \"*.html\" \"**/*.html\"",
     "build": "vite build",
     "preview": "vite preview",
     "dev": "vite",
