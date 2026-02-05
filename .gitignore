@@ -8,3 +8,14 @@ brain/
 *.log
 public/assets/php/config.php
 assets/php/config.php
+/dist/
+
+/coverage/
+
+/test-results/
+
+/dist/
+
+/coverage/
+
+/test-results/

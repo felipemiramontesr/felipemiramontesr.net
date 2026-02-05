@@ -356,12 +356,37 @@ body.theme-light .chevron-circle {
 }
 
 /* Mobile Theme Bar */
+/* Mobile Theme Bar (Refined: Stuck to Top + Full Width) */
 .mobile-theme-bar {
-  position: absolute;
-  top: 24px;
-  right: 24px;
+  position: relative;
   z-index: 90;
   display: none;
+  width: 100%;
+  max-width: 1280px;
+  /* Clean Layout Flow */
+  width: 100%;
+  max-width: 1280px;
+  /* Standard Margin: 0 top, 18px bottom (matched to section gap) */
+  margin: 0 auto calc(var(--section-gap) * 2) auto;
+  pointer-events: none;
+}
+
+.mobile-theme-bar-inner {
+  pointer-events: auto;
+  display: block;
+  width: 100%;
+}
+
+/* Force the button to be the full-width layout element */
+.mobile-theme-bar .btn-solid {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-md);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
 }
 
 @media (max-width: 1024px) {
@@ -464,6 +489,10 @@ body.theme-light .chevron-circle {
 header.hero {
   padding: var(--page-pad);
   background: var(--bg);
+}
+
+/* Fix mobile theme bar layout: Remove top padding on mobile so bar sits at top */
+@media (max-width: 1024px) {
 }
 
 main {
@@ -2070,9 +2099,16 @@ body.theme-light .btn-square::before {
 }
 
 @media (max-width: 1510px) {
+  header.hero {
+    padding-top: 0;
+  }
+
+  #heroFrame {
+    margin-top: 20px;
+  }
+
   .mobile-theme-bar {
     display: flex;
-    padding: 0 var(--page-pad);
     position: relative;
     /* Override absolute */
     top: auto;

@@ -25,4 +25,24 @@ test.describe('Visual Regression', () => {
     await page.emulateMedia({ colorScheme: 'dark' });
     await expect(page).toHaveScreenshot('homepage-dark.png');
   });
+
+  test('Critical Breakpoint: 1024px (Mobile/Tablet Max)', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 });
+    await expect(page).toHaveScreenshot('homepage-1024px.png');
+  });
+
+  test('Critical Breakpoint: 1025px (Tablet Transition)', async ({ page }) => {
+    await page.setViewportSize({ width: 1025, height: 800 });
+    await expect(page).toHaveScreenshot('homepage-1025px.png');
+  });
+
+  test('Critical Breakpoint: 1510px (Mobile UI Max)', async ({ page }) => {
+    await page.setViewportSize({ width: 1510, height: 800 });
+    await expect(page).toHaveScreenshot('homepage-1510px.png');
+  });
+
+  test('Critical Breakpoint: 1511px (Desktop UI Start)', async ({ page }) => {
+    await page.setViewportSize({ width: 1511, height: 800 });
+    await expect(page).toHaveScreenshot('homepage-1511px.png');
+  });
 });

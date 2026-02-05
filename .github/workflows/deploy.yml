@@ -33,6 +33,9 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
+      - name: 🛡️ Security Audit
+        run: npm audit --audit-level=high
+
       - name: 🔍 Lint Code
         run: npm run lint
 
@@ -52,10 +55,16 @@ jobs:
         # MUST PASS: Checks logic (Cookies, Buttons, Links)
         run: npx playwright test tests/e2e/cookies.spec.js
 
-      - name: 🎨 Run Visual E2E Tests (Experimental)
-        # ALLOW FAIL: Checks pixels (Fonts often differ on Linux vs Windows)
-        continue-on-error: true
         run: npx playwright test tests/e2e/visual.spec.js
+
+      - name: 📈 Lighthouse Audit
+        # Using a simplified check or the official action
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://www.felipemiramontesr.net/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
 
       - name: 🏗️ Build Production (Dry Run)
         run: npm run build
