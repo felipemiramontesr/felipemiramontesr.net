@@ -64,8 +64,8 @@ try {
         try {
             $autoTemplate = file_get_contents(__DIR__ . '/autoreply_template.html');
             $autoBody = str_replace(
-                ['{{SUBJECT}}', '{{DATE}}'],
-                [$subject, $date],
+                ['{{NAME}}', '{{SUBJECT}}', '{{DATE}}'],
+                [$name, $subject, $date],
                 $autoTemplate
             );
 
