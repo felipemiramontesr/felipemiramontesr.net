@@ -2348,3 +2348,30 @@ body.theme-light .btn-square::before {
   /* Important for grid transition */
   overflow: visible;
 }
+
+/* Cookie Banner v2 */
+.cookie-banner .cookie-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  width: 100%;
+}
+.cookie-banner .cookie-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cookie-banner .cookie-btn:not(.cookie-reject) {
+  background: var(--ink);
+  color: var(--bg);
+}
+.cookie-banner .cookie-btn.cookie-reject {
+  background: var(--danger);
+  color: #ffffff;
+}
