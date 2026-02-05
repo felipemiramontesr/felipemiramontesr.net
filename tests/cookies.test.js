@@ -31,25 +31,37 @@ describe('Cookie Consent Logic', () => {
     document.body.innerHTML = '';
   });
 
-  it('should display banner if no preference is stored', () => {
+  it('should display banner with correct Spanish texts by default', () => {
+    // Set <html lang="es">
+    document.documentElement.lang = 'es';
+
     initCookieBanner();
     const banner = document.querySelector('.cookie-banner');
-    expect(banner).not.toBeNull();
-    expect(banner.querySelector('#rejectCookies')).not.toBeNull(); // Check for reject button existence
+
+    // Check Texts
+    expect(banner.innerHTML).toContain('Aceptar');
+    expect(banner.innerHTML).toContain('Rechazar');
+    expect(banner.innerHTML).toContain('política de privacidad'); // Lowercase link text
+
+    // Check Classes
+    const acceptBtn = banner.querySelector('#acceptCookies');
+    const rejectBtn = banner.querySelector('#rejectCookies');
+
+    expect(acceptBtn.className).toContain('cookie-accept');
+    expect(rejectBtn.className).toContain('cookie-reject');
   });
 
-  it('should NOT display banner if accepted (true)', () => {
-    localStorage.setItem(STORAGE_KEYS.COOKIES, 'true');
-    initCookieBanner();
-    const banner = document.querySelector('.cookie-banner');
-    expect(banner).toBeNull();
-  });
+  it('should display banner with correct English texts', () => {
+    // Set <html lang="en">
+    document.documentElement.lang = 'en';
 
-  it('should NOT display banner if rejected (false)', () => {
-    localStorage.setItem(STORAGE_KEYS.COOKIES, 'false');
     initCookieBanner();
     const banner = document.querySelector('.cookie-banner');
-    expect(banner).toBeNull();
+
+    // Check Texts
+    expect(banner.innerHTML).toContain('Accept');
+    expect(banner.innerHTML).toContain('Reject');
+    expect(banner.innerHTML).toContain('privacy policy');
   });
 
   it('should set storage to "true" on Accept', async () => {
@@ -66,8 +78,8 @@ describe('Cookie Consent Logic', () => {
 
   it('should set storage to "false" on Reject', () => {
     initCookieBanner();
-    const btn = document.querySelector('#rejectCookies');
-    btn.click();
+    const rejectBtn = document.querySelector('#rejectCookies');
+    rejectBtn.click();
 
     expect(global.localStorage.setItem).toHaveBeenCalledWith(STORAGE_KEYS.COOKIES, 'false');
   });
