@@ -30,14 +30,14 @@ export function initCookieBanner() {
         policyLinkSelf: `esta política de privacidad`,
         policyLinkOther: `mi <a href="../cookies.html" class="cookie-link">política de privacidad</a>`, // Access via relative path from /es/
         message: `Este sitio web utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas`,
-        acceptBtn: `¡Entendido!`,
+        acceptBtn: `Aceptar`,
         rejectBtn: `Rechazar`,
       }
     : {
         policyLinkSelf: `this privacy policy`,
         policyLinkOther: `my <a href="cookies.html" class="cookie-link">privacy policy</a>`,
         message: `This website uses cookies to enhance your user experience. By continuing to browse, you agree to`,
-        acceptBtn: `Got it!`,
+        acceptBtn: `Accept`,
         rejectBtn: `Reject`,
       };
 
@@ -57,11 +57,11 @@ export function initCookieBanner() {
     <div class="cookie-content">
       ${text.message} ${policyLinkHTML}.
     </div>
-    <div class="cookie-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-        <button class="cookie-btn cookie-reject" id="rejectCookies" style="background: transparent; border: 1px solid currentColor; margin-left: auto;">
+    <div class="cookie-actions">
+        <button class="cookie-btn cookie-reject" id="rejectCookies">
         ${text.rejectBtn}
         </button>
-        <button class="cookie-btn" id="acceptCookies">
+        <button class="cookie-btn cookie-accept" id="acceptCookies">
         ${text.acceptBtn}
         </button>
     </div>

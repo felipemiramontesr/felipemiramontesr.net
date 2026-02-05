@@ -41,6 +41,7 @@
   --accent: #22d3ee;
   /* cian vibrante */
   --accent-2: #60a5fa;
+  --danger: #ef4444;
 
   --ring: rgba(34, 211, 238, 0.28);
   --ring-2: rgba(96, 165, 250, 0.22);
@@ -2349,16 +2350,98 @@ body.theme-light .btn-square::before {
   overflow: visible;
 }
 
-/* Cookie Banner v2 */
-.cookie-banner .cookie-actions {
+/* Cookie Banner Redesign (v3.1 - Sticky & Glass) */
+.cookie-banner {
+  position: fixed;
+  /* Sticky behavior */
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 10000;
+
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  /* Glassmorphism */
+  background: var(--cookie-bg);
+  backdrop-filter: blur(var(--cookie-blur));
+  -webkit-backdrop-filter: blur(var(--cookie-blur));
+  border: 1px solid var(--cookie-border);
+  box-shadow: var(--cookie-shadow);
+  border-radius: var(--radius-lg);
+  padding: 16px 24px;
+
+  animation: slideUpFade 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Privacy Link Style */
+.cookie-banner a,
+.cookie-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.cookie-banner a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+  /* Subtle feedback only */
+}
+
+/* Mobile Default: Stack buttons below text */
+.cookie-banner .cookie-actions {
+  display: flex !important;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 12px;
   width: 100%;
 }
+
+/* Desktop: Single Line Layout */
+@media (min-width: 768px) {
+  .cookie-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 12px 24px !important;
+    /* Compact padding */
+  }
+
+  .cookie-banner .cookie-content {
+    flex: 1;
+    /* Take available space */
+    margin-bottom: 0 !important;
+    /* Remove bottom margin if any */
+  }
+
+  .cookie-banner .cookie-actions {
+    width: auto;
+    /* Shrink to fit buttons */
+    margin-top: 0;
+    flex-shrink: 0;
+    /* Don't shrink buttons */
+  }
+
+  .cookie-banner .cookie-btn {
+    width: 140px;
+    /* Fixed standard width for desktop */
+    min-height: 38px;
+    /* Compact height */
+    height: 38px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Button & Color Styles (Universal) */
 .cookie-banner .cookie-btn {
   flex: 1;
+  /* Mobile: Full width */
   height: 44px;
+  /* Mobile: Tappable height */
   border-radius: 12px;
   font-weight: 700;
   border: none;
@@ -2366,12 +2449,24 @@ body.theme-light .btn-square::before {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.1s ease;
+  box-shadow: none !important;
+  /* NO GLOWS */
 }
+
+/* Accept: Cyan */
 .cookie-banner .cookie-btn:not(.cookie-reject) {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--accent);
+  color: #fff;
 }
+
+/* Reject: Red */
 .cookie-banner .cookie-btn.cookie-reject {
   background: var(--danger);
   color: #ffffff;
+}
+
+.cookie-banner .cookie-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
 }
