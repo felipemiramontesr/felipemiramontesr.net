@@ -215,6 +215,8 @@ body.theme-light textarea:-webkit-autofill:focus {
 .btn-submit {
   display: inline-flex;
   align-items: center;
+  justify-content: center; /* Center button text */
+  text-align: center;
   gap: 0.8rem;
   cursor: pointer;
   padding: 14px 32px;
@@ -319,4 +321,70 @@ body.theme-light textarea:-webkit-autofill:focus {
   .form-actions {
     grid-column: span 2;
   }
+}
+
+/* ==========================================================================
+   2FA MODAL OVERRIDES & SCALING
+   ========================================================================== */
+#twoFactorModal .modal-container {
+  max-width: 1200px;
+  min-height: 60vh;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#twoFactorModal .modal-header-row h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+#twoFactorModal .verification-desc {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+#twoFactorModal .code-input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#twoFactorModal .verification-code-input {
+  width: 100%;
+  max-width: 500px;
+  font-size: 3rem;
+  letter-spacing: 1rem;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--panel);
+  border: 2px solid var(--stroke);
+  color: var(--accent);
+}
+
+#twoFactorModal .verification-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+#twoFactorModal .verification-actions button {
+  font-size: 1.5rem;
+  padding: 20px 50px;
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+#twoFactorModal .modal-close {
+  top: 30px;
+  right: 40px;
+  font-size: 3.5rem;
 }

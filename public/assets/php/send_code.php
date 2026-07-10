@@ -75,13 +75,16 @@ try {
 }
 
 // 6. Send Email containing the code using SimpleSMTP
+// 6. Send Email containing the code using SimpleSMTP
 $mailSubject = "Verification Code / Código de verificación: $code";
-$mailBody = "Hi / Hola $name,<br><br>"
-          . "Your verification code is / Tu código de verificación es:<br><br>"
-          . "<h2>$code</h2><br>"
-          . "This code is valid for 5 minutes. / Este código es válido por 5 minutos.<br><br>"
-          . "Thank you / Gracias,<br>"
-          . "Felipe Miramontes";
+$date = date('Y-m-d H:i:s');
+
+$template = file_get_contents(__DIR__ . '/code_template.html');
+$mailBody = str_replace(
+    ['{{NAME}}', '{{CODE}}', '{{DATE}}'],
+    [$name, $code, $date],
+    $template
+);
 
 try {
     $smtp = new SimpleSMTP(
