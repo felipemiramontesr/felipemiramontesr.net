@@ -4,7 +4,7 @@ test.describe('Visual Regression', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     // Wait for fonts/images
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
   });
 
   test('Homepage Desktop', async ({ page }) => {

@@ -20,9 +20,8 @@ export function renderSkillIcon(container, skill) {
       const img = document.createElement('img');
       img.src = skill.localIcon;
       img.alt = skill.name;
-      img.style.width = '100%';
-      img.style.height = '100%';
-      img.style.objectFit = 'contain';
+      img.style.width = '34px';
+      img.style.height = '34px';
       img.style.objectFit = 'contain';
       container.appendChild(img);
       return;

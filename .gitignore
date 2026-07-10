@@ -6,6 +6,8 @@ node_modules/
 .gemini/
 brain/
 *.log
+*.db
+assets/php/2fa.db
 public/assets/php/config.php
 assets/php/config.php
 /dist/

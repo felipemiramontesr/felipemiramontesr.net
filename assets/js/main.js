@@ -44,4 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Initialize Contact Form
   initContactForm();
+
+  // 6. Initialize ARCHON Dashboard Modal
+  const viewBtn = document.getElementById('viewDashboardBtn');
+  const modal = document.getElementById('archonModal');
+  const closeBtn = document.getElementById('closeArchonModal');
+  if (viewBtn && modal && closeBtn) {
+    viewBtn.addEventListener('click', () => {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    });
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      }
+    });
+  }
 });
