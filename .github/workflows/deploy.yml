@@ -75,6 +75,7 @@ jobs:
         with:
           urls: |
             https://www.felipemiramontesr.net/
+          configPath: ./lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
 
