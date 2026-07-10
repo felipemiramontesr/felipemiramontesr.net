@@ -2,11 +2,23 @@
 /**
  * Send Code API Endpoint
  * Generates a 6-digit verification code, saves the pending message details in SQLite,
- * and sends the code to the user's email address.
+ * and sends the code to the user's email address using SimpleSMTP.
  */
 
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+
 require_once __DIR__ . '/db.php';
+$configFile = __DIR__ . '/config.php';
+require_once __DIR__ . '/smtp_helper.php';
+
+if (!file_exists($configFile)) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'error' => 'Server configuration missing.']);
+    exit;
+}
+$config = require $configFile;
 
 // 1. Validate request method
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -31,20 +43,18 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// 3. Purge expired entries (older than current time)
+// 3. Purge expired entries
 try {
     $now = time();
     $stmt = $db->prepare("DELETE FROM pending_messages WHERE expires_at < :now");
     $stmt->execute([':now' => $now]);
-} catch (PDOException $e) {
-    // Non-blocking error, log but continue
-}
+} catch (PDOException $e) {}
 
 // 4. Generate 6-digit code
 $code = sprintf("%06d", mt_rand(0, 999999));
 $expiresAt = time() + 300; // 5 minutes validity
 
-// 5. Store pending message in database
+// 5. Store pending message
 try {
     $stmt = $db->prepare("
         INSERT OR REPLACE INTO pending_messages (email, name, subject, message, code, created_at, expires_at, attempts)
@@ -64,41 +74,40 @@ try {
     exit;
 }
 
-// 6. Send Email containing the code
+// 6. Send Email containing the code using SimpleSMTP
 $mailSubject = "Verification Code / Código de verificación: $code";
-$mailBody = "Hi / Hola $name,\n\n"
-          . "Your verification code is / Tu código de verificación es:\n\n"
-          . "==>  $code  <==\n\n"
-          . "This code is valid for 5 minutes. / Este código es válido por 5 minutos.\n\n"
-          . "Thank you / Gracias,\n"
+$mailBody = "Hi / Hola $name,<br><br>"
+          . "Your verification code is / Tu código de verificación es:<br><br>"
+          . "<h2>$code</h2><br>"
+          . "This code is valid for 5 minutes. / Este código es válido por 5 minutos.<br><br>"
+          . "Thank you / Gracias,<br>"
           . "Felipe Miramontes";
 
-$headers = "From: no-reply@felipemiramontesr.net\r\n"
-         . "Reply-To: no-reply@felipemiramontesr.net\r\n"
-         . "X-Mailer: PHP/" . phpversion();
-
-// Local Dev Mock: Log mail payload to file for local testing convenience
-$isLocal = ($_SERVER['REMOTE_ADDR'] === '127.0.0.1' || $_SERVER['REMOTE_ADDR'] === '::1' || ($_SERVER['SERVER_NAME'] ?? '') === 'localhost');
-$loggedToFile = false;
-
 try {
-    $logEntry = "[" . date('Y-m-d H:i:s') . "] TO: $email\nSUBJECT: $mailSubject\nBODY:\n$mailBody\n---------------------------------------\n";
-    file_put_contents(__DIR__ . '/mail_debug.log', $logEntry, FILE_APPEND);
-    $loggedToFile = true;
+    $smtp = new SimpleSMTP(
+        $config['smtp_host'],
+        $config['smtp_port'],
+        $config['smtp_secure']
+    );
+
+    $smtp->authenticate($config['smtp_user'], $config['smtp_pass']);
+
+    $sent = $smtp->send(
+        $config['from_email'],                       // From
+        'Felipe Miramontes Web (No-Reply)',          // From Name
+        $email,                                      // To
+        $mailSubject,                                // Subject
+        $mailBody,                                   // Body
+        $config['from_email']                        // Reply-To
+    );
+
+    if ($sent) {
+        echo json_encode(['success' => true, 'message' => 'Verification code sent / Código de verificación enviado']);
+    } else {
+        throw new Exception('SMTP rejected the message.');
+    }
+
 } catch (Exception $e) {
-    // Non-blocking log error
-}
-
-$sent = false;
-if (!$isLocal) {
-    $sent = @mail($email, $mailSubject, $mailBody, $headers);
-} else {
-    // Mock send locally
-    $sent = true;
-}
-
-if ($sent || $loggedToFile) {
-    echo json_encode(['success' => true, 'message' => 'Verification code sent / Código de verificación enviado']);
-} else {
-    echo json_encode(['success' => false, 'error' => 'Failed to send email / Error al enviar el correo']);
+    http_response_code(500);
+    echo json_encode(['success' => false, 'error' => 'Failed to send email: ' . $e->getMessage()]);
 }
