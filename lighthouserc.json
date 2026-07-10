@@ -1,6 +1,7 @@
 {
   "ci": {
     "collect": {
+      "staticDistDir": "./dist",
       "settings": {
         "chromeFlags": "--no-sandbox --disable-gpu --headless"
       }

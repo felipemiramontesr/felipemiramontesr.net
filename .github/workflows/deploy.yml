@@ -69,18 +69,16 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
+      - name: 🏗️ Build Production (Dry Run)
+        run: npm run build
+
       - name: 📈 Lighthouse Audit
         # Using a simplified check or the official action
         uses: treosh/lighthouse-ci-action@v12
         with:
-          urls: |
-            https://www.felipemiramontesr.net/
           configPath: ./lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
-
-      - name: 🏗️ Build Production (Dry Run)
-        run: npm run build
 
   deploy:
     name: 🚀 Deploy to Production
