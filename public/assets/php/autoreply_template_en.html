@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Message Received - B. Eng. Felipe Miramontes</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0f172a;
+        color: #d1d5db;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #1e293b;
+        border-radius: 16px;
+        border: 1px solid #334155;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      }
+
+      .header {
+        background-color: #0f172a;
+        padding: 30px;
+        text-align: center;
+        border-bottom: 2px solid #22d3ee;
+      }
+
+      .header h1 {
+        color: #ffffff;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .content {
+        padding: 30px;
+        text-align: center;
+      }
+
+      .message-box {
+        background: #0f172a;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #334155;
+        text-align: left;
+        margin: 20px 0;
+        color: #f1f5f9;
+        line-height: 1.6;
+      }
+
+      .footer {
+        background-color: #0f172a;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #64748b;
+        border-top: 1px solid #334155;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #22d3ee;
+        color: #0f172a;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Message Received</h1>
+      </div>
+
+      <div class="content">
+        <p style="font-size: 18px; color: #fff; text-align: left">Hello {{NAME}},</p>
+
+        <div class="message-box">
+          <p>
+            Thank you for reaching out. I have received your message regarding
+            "<strong>{{SUBJECT}}</strong>".
+          </p>
+          <p>
+            I usually respond within 24 hours. In the meantime, feel free to check out my latest
+            work or connect with me on LinkedIn.
+          </p>
+        </div>
+
+        <a href="https://felipemiramontesr.net" class="btn">Visit Website</a>
+      </div>
+
+      <div class="footer">
+        B. Eng. Felipe de Jesús Miramontes Romero<br />
+        {{DATE}}
+      </div>
+    </div>
+  </body>
+</html>

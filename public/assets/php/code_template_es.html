@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Message Received - B. Eng. Felipe Miramontes</title>
+    <title>Código de Verificación - Ing. Felipe Miramontes</title>
     <style>
       body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,15 +43,17 @@
         text-align: center;
       }
 
-      .message-box {
+      .code-box {
         background: #0f172a;
-        padding: 20px;
-        border-radius: 8px;
-        border: 1px solid #334155;
-        text-align: left;
-        margin: 20px 0;
-        color: #f1f5f9;
-        line-height: 1.6;
+        padding: 30px;
+        border-radius: 12px;
+        border: 2px dashed #22d3ee;
+        text-align: center;
+        margin: 30px 0;
+        color: #22d3ee;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 10px;
       }
 
       .footer {
@@ -62,46 +64,30 @@
         color: #64748b;
         border-top: 1px solid #334155;
       }
-
-      .btn {
-        display: inline-block;
-        background-color: #22d3ee;
-        color: #0f172a;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        margin-top: 20px;
-      }
     </style>
   </head>
 
   <body>
     <div class="container">
       <div class="header">
-        <h1>Message Received</h1>
+        <h1>Código de Verificación</h1>
       </div>
 
       <div class="content">
-        <p style="font-size: 18px; color: #fff">Hello {{NAME}},</p>
+        <p style="font-size: 18px; color: #fff; text-align: left">Hola {{NAME}},</p>
 
-        <div class="message-box">
-          <p>
-            Thank you for reaching out. I have received your message regarding
-            "<strong>{{SUBJECT}}</strong>".
-          </p>
-          <p>
-            I usually respond within 24 hours. In the meantime, feel free to check out my latest
-            work or connect with me on LinkedIn.
-          </p>
-        </div>
+        <p style="text-align: left; line-height: 1.6">
+          Por favor utiliza el siguiente código de 6 dígitos para verificar tu solicitud y enviar el
+          mensaje.
+        </p>
 
-        <a href="https://felipemiramontesr.net" class="btn">Visit Website</a>
+        <div class="code-box">{{CODE}}</div>
+
+        <p style="font-size: 14px; color: #94a3b8">Este código es válido por 5 minutos.</p>
       </div>
 
       <div class="footer">
-        B. Eng. Felipe de Jesús Miramontes Romero<br />
-        Full Stack Developer • Automation Expert<br />
+        Ing. Felipe de Jesús Miramontes Romero<br />
         {{DATE}}
       </div>
     </div>

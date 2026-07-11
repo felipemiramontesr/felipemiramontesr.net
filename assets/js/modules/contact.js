@@ -141,6 +141,7 @@ export function initContactForm() {
     // Collect Data
     const formData = new FormData(form);
     activeFormData = Object.fromEntries(formData.entries());
+    activeFormData.lang = isSpanish ? 'es' : 'en';
     activeEmail = activeFormData.email;
 
     // Direct submission fallback if there is no modal in the DOM (e.g. testing)
@@ -263,6 +264,7 @@ export function initContactForm() {
           body: JSON.stringify({
             email: activeEmail,
             code: tfaInput ? tfaInput.value : '',
+            lang: isSpanish ? 'es' : 'en',
           }),
         });
 

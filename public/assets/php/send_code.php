@@ -32,6 +32,7 @@ $name = trim($input['name'] ?? '');
 $email = trim($input['email'] ?? '');
 $subject = trim($input['subject'] ?? '');
 $message = trim($input['message'] ?? '');
+$lang = trim($input['lang'] ?? 'en');
 
 if (empty($name) || empty($email) || empty($subject) || empty($message)) {
     echo json_encode(['success' => false, 'error' => 'All fields are required / Todos los campos son obligatorios']);
@@ -75,11 +76,12 @@ try {
 }
 
 // 6. Send Email containing the code using SimpleSMTP
-// 6. Send Email containing the code using SimpleSMTP
-$mailSubject = "Verification Code / Código de verificación: $code";
+$isEs = ($lang === 'es');
+$mailSubject = $isEs ? "Código de verificación: $code" : "Verification Code: $code";
 $date = date('Y-m-d H:i:s');
 
-$template = file_get_contents(__DIR__ . '/code_template.html');
+$templateFile = $isEs ? '/code_template_es.html' : '/code_template_en.html';
+$template = file_get_contents(__DIR__ . $templateFile);
 $mailBody = str_replace(
     ['{{NAME}}', '{{CODE}}', '{{DATE}}'],
     [$name, $code, $date],

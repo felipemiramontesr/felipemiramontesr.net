@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $input = json_decode(file_get_contents('php://input'), true);
 $email = trim($input['email'] ?? '');
 $code = trim($input['code'] ?? '');
+$lang = trim($input['lang'] ?? 'en');
 
 if (empty($email) || empty($code)) {
     echo json_encode(['success' => false, 'error' => 'Email and code are required / Correo y código requeridos']);
@@ -123,7 +124,9 @@ try {
     if ($sent) {
         // --- AUTO-REPLY LOGIC START ---
         try {
-            $autoTemplate = file_get_contents(__DIR__ . '/autoreply_template.html');
+            $isEs = ($lang === 'es');
+            $autoTemplateFile = $isEs ? '/autoreply_template_es.html' : '/autoreply_template_en.html';
+            $autoTemplate = file_get_contents(__DIR__ . $autoTemplateFile);
             $autoBody = str_replace(
                 ['{{NAME}}', '{{SUBJECT}}', '{{DATE}}'],
                 [$senderName, $subject, $date],
@@ -136,11 +139,15 @@ try {
                 $config['smtp_secure']
             );
             $smtpAuto->authenticate($config['smtp_user'], $config['smtp_pass']);
+
+            $senderDisplayName = $isEs ? 'Ing. Felipe de Jesús Miramontes Romero' : 'B. Eng. Felipe de Jesús Miramontes Romero';
+            $autoReplySubject = $isEs ? 'Gracias por contactar a Ing. Felipe de Jesús Miramontes Romero' : 'Thank you for contacting B. Eng. Felipe de Jesús Miramontes Romero';
+
             $smtpAuto->send(
                 $config['from_email'],
-                'B. Eng. Felipe de Jesús Miramontes Romero',
+                $senderDisplayName,
                 $senderEmail,
-                'Thank you for contacting B. Eng. Felipe de Jesús Miramontes Romero',
+                $autoReplySubject,
                 $autoBody,
                 $config['from_email']
             );
