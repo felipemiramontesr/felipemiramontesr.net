@@ -1352,24 +1352,17 @@
     <!-- 2FA Verification Modal -->
     <div class="modal-overlay" id="twoFactorModal">
       <div class="modal-container glass dialog-modal">
+        <button class="modal-close" id="closeTwoFactorModal" aria-label="Close modal">
+          &times;
+        </button>
         <div class="modal-header-row">
-          <h3 class="u-accent">
-            <i class="fa-solid fa-shield-halved"></i> Verification Required / Verificación Requerida
-          </h3>
-          <button class="modal-close" id="closeTwoFactorModal" aria-label="Close modal">
-            &times;
-          </button>
+          <h3 class="u-accent"><i class="fa-solid fa-shield-halved"></i> Verification Required</h3>
         </div>
         <div class="modal-body">
           <p class="verification-desc text-en">
             We've sent a 6-digit verification code to
             <strong id="verificationEmailDisplay"></strong>.<br />
             Please enter the code below to verify and deliver your message.
-          </p>
-          <p class="verification-desc text-es">
-            Hemos enviado un código de verificación de 6 dígitos a
-            <strong id="verificationEmailDisplayEs"></strong>.<br />
-            Por favor, ingresa el código a continuación para verificar y enviar tu mensaje.
           </p>
           <form class="verification-form" id="twoFactorForm">
             <div class="code-input-container">
@@ -1388,10 +1381,10 @@
             <div id="verificationFeedback" class="form-feedback"></div>
             <div class="verification-actions">
               <button type="submit" class="btn-submit" id="verifyBtn">
-                <span class="btn-text">Verify & Send / Verificar y Enviar</span>
+                <span class="btn-text">Verify &amp; Send</span>
               </button>
               <button type="button" class="btn-resend" id="resendCodeBtn" disabled>
-                <span class="btn-text">Resend / Reenviar</span>
+                <span class="btn-text">Resend</span>
               </button>
             </div>
           </form>
