@@ -338,6 +338,7 @@ body.theme-light textarea:-webkit-autofill:focus {
 #twoFactorModal .modal-header-row {
   justify-content: center;
   position: relative;
+  margin-top: 40px;
 }
 
 #twoFactorModal .modal-header-row h3 {
