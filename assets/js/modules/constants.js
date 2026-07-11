@@ -2,6 +2,7 @@
 export const SKILLS = [
   {
     name: 'PHP',
+    scale: 1.3,
     url: 'https://www.php.net/',
     si: null,
     localIcon:
@@ -13,6 +14,7 @@ export const SKILLS = [
   },
   {
     name: 'MySQL',
+    scale: 1.15,
     url: 'https://www.mysql.com/',
     si: null,
     localIcon:
@@ -24,6 +26,7 @@ export const SKILLS = [
   },
   {
     name: 'Node.js',
+    scale: 0.9,
     url: 'https://nodejs.org/',
     si: null,
     localIcon:
@@ -35,6 +38,7 @@ export const SKILLS = [
   },
   {
     name: 'Fastify',
+    scale: 0.9,
     url: 'https://fastify.dev/',
     si: 'fastify',
     localIcon: null,
@@ -45,6 +49,7 @@ export const SKILLS = [
   },
   {
     name: 'Vitest',
+    scale: 1.1,
     url: 'https://vitest.dev/',
     si: 'vitest',
     localIcon: null,
@@ -55,6 +60,7 @@ export const SKILLS = [
   },
   {
     name: 'Playwright',
+    scale: 1.15,
     url: 'https://playwright.dev/',
     si: null,
     localIcon:
@@ -66,6 +72,7 @@ export const SKILLS = [
   },
   {
     name: 'REST',
+    scale: 1.15,
     url: 'https://restfulapi.net/',
     si: null,
     localIcon:
@@ -77,6 +84,7 @@ export const SKILLS = [
   },
   {
     name: 'JSON',
+    scale: 0.85,
     url: 'https://www.json.org/',
     si: null,
     localIcon:
@@ -88,6 +96,7 @@ export const SKILLS = [
   },
   {
     name: 'YAML',
+    scale: 0.85,
     url: 'https://yaml.org/',
     si: null,
     localIcon:
@@ -99,6 +108,7 @@ export const SKILLS = [
   },
   {
     name: 'Drush',
+    scale: 1.1,
     url: 'https://www.drush.org/',
     si: null,
     localIcon:
@@ -110,6 +120,7 @@ export const SKILLS = [
   },
   {
     name: 'Twig',
+    scale: 1.15,
     url: 'https://twig.symfony.com/',
     si: null,
     localIcon:
@@ -121,6 +132,7 @@ export const SKILLS = [
   },
   {
     name: 'Composer',
+    scale: 0.9,
     url: 'https://getcomposer.org/',
     si: null,
     localIcon:
@@ -133,6 +145,7 @@ export const SKILLS = [
 
   {
     name: 'JavaScript',
+    scale: 0.85,
     url: 'https://developer.mozilla.org/docs/Web/JavaScript',
     si: null,
     localIcon:
@@ -144,6 +157,7 @@ export const SKILLS = [
   },
   {
     name: 'TypeScript',
+    scale: 0.85,
     url: 'https://www.typescriptlang.org/',
     si: 'typescript',
     localIcon: null,
@@ -154,6 +168,7 @@ export const SKILLS = [
   },
   {
     name: 'HTML',
+    scale: 0.9,
     url: 'https://developer.mozilla.org/docs/Web/HTML',
     si: null,
     localIcon:
@@ -165,6 +180,7 @@ export const SKILLS = [
   },
   {
     name: 'CSS',
+    scale: 0.9,
     url: 'https://developer.mozilla.org/docs/Web/CSS',
     si: null,
     localIcon:
@@ -176,6 +192,7 @@ export const SKILLS = [
   },
   {
     name: 'SASS',
+    scale: 0.9,
     url: 'https://sass-lang.com/',
     si: null,
     localIcon:
@@ -187,6 +204,7 @@ export const SKILLS = [
   },
   {
     name: 'Tailwind CSS',
+    scale: 1.15,
     url: 'https://tailwindcss.com/',
     si: 'tailwindcss',
     localIcon: null,
@@ -197,6 +215,7 @@ export const SKILLS = [
   },
   {
     name: 'Chart.js',
+    scale: 0.9,
     url: 'https://www.chartjs.org/',
     si: null,
     localIcon:
@@ -208,6 +227,7 @@ export const SKILLS = [
   },
   {
     name: 'Linux',
+    scale: 0.9,
     url: 'https://www.linux.org/',
     si: null,
     localIcon:
@@ -219,6 +239,7 @@ export const SKILLS = [
   },
   {
     name: 'Apache',
+    scale: 0.9,
     url: 'https://httpd.apache.org/',
     si: null,
     localIcon:
@@ -230,6 +251,7 @@ export const SKILLS = [
   },
   {
     name: 'NVM',
+    scale: 0.9,
     url: 'https://github.com/nvm-sh/nvm',
     si: null,
     localIcon:
@@ -241,6 +263,7 @@ export const SKILLS = [
   },
   {
     name: 'Gulp.js',
+    scale: 1.15,
     url: 'https://gulpjs.com/',
     si: null,
     localIcon:
@@ -252,6 +275,7 @@ export const SKILLS = [
   },
   {
     name: 'Drupal',
+    scale: 0.9,
     url: 'https://www.drupal.org/',
     si: null,
     localIcon:
@@ -263,6 +287,7 @@ export const SKILLS = [
   },
   {
     name: 'Odoo',
+    scale: 0.9,
     url: 'https://www.odoo.com/',
     si: null,
     localIcon:
@@ -274,6 +299,7 @@ export const SKILLS = [
   },
   {
     name: 'Moodle',
+    scale: 0.9,
     url: 'https://moodle.org/',
     si: null,
     localIcon:
@@ -285,6 +311,7 @@ export const SKILLS = [
   },
   {
     name: 'PrestaShop',
+    scale: 0.9,
     url: 'https://prestashop.com/',
     si: null,
     localIcon:
@@ -296,6 +323,7 @@ export const SKILLS = [
   },
   {
     name: 'AI Agentic Orchestration',
+    scale: 0.9,
     url: 'https://github.com/features/copilot',
     si: null,
     localIcon: null,
@@ -306,6 +334,7 @@ export const SKILLS = [
   },
   {
     name: 'Bun',
+    scale: 0.9,
     url: 'https://bun.sh/',
     si: null,
     localIcon:
@@ -317,6 +346,7 @@ export const SKILLS = [
   },
   {
     name: 'ESLint / Unicorn',
+    scale: 1.15,
     url: 'https://eslint.org/',
     si: 'eslint',
     localIcon: null,
@@ -327,6 +357,7 @@ export const SKILLS = [
   },
   {
     name: 'SonarJS',
+    scale: 0.9,
     url: 'https://www.sonarsource.com/products/sonarcloud/',
     si: null,
     localIcon:
@@ -338,6 +369,7 @@ export const SKILLS = [
   },
   {
     name: 'OWASP 10',
+    scale: 0.9,
     url: 'https://owasp.org/www-project-top-ten/',
     si: null,
     localIcon:
@@ -349,6 +381,7 @@ export const SKILLS = [
   },
   {
     name: 'Husky',
+    scale: 0.9,
     url: 'https://typicode.github.io/husky/',
     si: null,
     localIcon: null,
@@ -359,6 +392,7 @@ export const SKILLS = [
   },
   {
     name: 'rsync (SSH)',
+    scale: 1.1,
     url: 'https://rsync.samba.org/',
     si: null,
     localIcon: null,
@@ -369,6 +403,7 @@ export const SKILLS = [
   },
   {
     name: 'TruffleHog',
+    scale: 1.1,
     url: 'https://github.com/trufflesecurity/trufflehog',
     si: null,
     localIcon: null,
@@ -379,6 +414,7 @@ export const SKILLS = [
   },
   {
     name: 'Rollup Visualizer',
+    scale: 1.15,
     url: 'https://github.com/bberak/rollup-plugin-visualizer',
     si: null,
     localIcon:
@@ -390,6 +426,7 @@ export const SKILLS = [
   },
   {
     name: 'VS Code',
+    scale: 0.9,
     url: 'https://code.visualstudio.com/',
     si: null,
     localIcon:
@@ -401,6 +438,7 @@ export const SKILLS = [
   },
   {
     name: 'Trello',
+    scale: 0.85,
     url: 'https://trello.com/',
     si: null,
     localIcon:

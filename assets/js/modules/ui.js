@@ -13,6 +13,8 @@ import { SKILLS } from './constants.js';
  */
 export function renderSkillIcon(container, skill) {
   const iconColor = skill.color || 'var(--accent)';
+  const scale = skill.scale || 1.0;
+  const size = Math.round(34 * scale);
 
   if (skill.si || skill.localIcon) {
     // If unmasked (e.g. VS Code original logo), render as standard image to preserve colors
@@ -20,8 +22,8 @@ export function renderSkillIcon(container, skill) {
       const img = document.createElement('img');
       img.src = skill.localIcon;
       img.alt = skill.name;
-      img.style.width = '34px';
-      img.style.height = '34px';
+      img.style.width = `${size}px`;
+      img.style.height = `${size}px`;
       img.style.objectFit = 'contain';
       container.appendChild(img);
       return;
@@ -35,6 +37,8 @@ export function renderSkillIcon(container, skill) {
     }
     const iconSpan = document.createElement('span');
     iconSpan.className = 'skill-ico-img';
+    iconSpan.style.width = `${size}px`;
+    iconSpan.style.height = `${size}px`;
 
     // Use mask to apply specific hex color to the monochromatic SVG
     iconSpan.style.maskImage = `url(${iconUrl})`;
@@ -55,6 +59,10 @@ export function renderSkillIcon(container, skill) {
   const i = document.createElement('i');
   i.className = skill.fallback || 'fa-solid fa-code';
   i.style.color = iconColor;
+  i.style.fontSize = `${size}px`;
+  i.style.width = `${size}px`;
+  i.style.height = `${size}px`;
+  i.style.lineHeight = `${size}px`;
   container.appendChild(i);
 }
 
